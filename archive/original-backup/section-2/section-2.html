@@ -1,0 +1,89 @@
+/* ==========================================================
+   SECTION-2 — HTML Markup Reference
+   File: section-2/section-2.html
+   
+   This file is the HTML partial reference for section-2.
+   The actual markup is injected directly into index.html.
+   To use: copy the <div id="scs-section">…</div> block
+   and paste it in index.html where the section should appear.
+   ========================================================== */
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║  SECTION 2 — Cinematic Scroll Showcase              ║
+     ║  8 Phases · GSAP · ScrollTrigger · Pinned           ║
+     ╚══════════════════════════════════════════════════════╝
+     
+     Dependencies (must be loaded before section-2.js):
+       - GSAP 3.12+      https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js
+       - ScrollTrigger   https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js
+     
+     Link in <head>:
+       <link rel="stylesheet" href="section-2/section-2.css">
+     
+     Script before </body>:
+       <script src="section-2/section-2.js" defer></script>
+-->
+
+<div id="scs-section">
+  <div id="scs-pin">
+
+    <!-- ── Card wrapper (rotates, scales, fades) ── -->
+    <div id="scs-wrapper">
+
+      <!-- ── Image frame ── -->
+      <div id="scs-frame">
+        <!--
+          IMAGES — swap these src values when client provides assets.
+          Each image needs:  class="scs-img"  (first also: scs-active)
+          Add/remove <img> elements freely — JS reads them dynamically.
+        -->
+        <img class="scs-img scs-active" id="scs-img-0"
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 1" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-1"
+          src="https://images.unsplash.com/photo-1545315003-c5ad6226c272?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 2" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-2"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 3" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-3"
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 4" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-4"
+          src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 5" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-5"
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 6" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-6"
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 7" loading="eager" decoding="async">
+
+        <img class="scs-img" id="scs-img-7"
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80&auto=format&fit=crop"
+          alt="Portfolio showcase 8" loading="eager" decoding="async">
+      </div>
+      <!-- END #scs-frame -->
+
+      <!-- UX label (Phase 1 only) -->
+      <div id="scs-label">Scroll to explore</div>
+
+      <!-- Image counter (Phase 1 only) -->
+      <div id="scs-counter">01 / 08</div>
+
+    </div>
+    <!-- END #scs-wrapper -->
+
+    <!-- Phase 8 overlay: fades in to reveal next section -->
+    <div id="scs-next-reveal" aria-hidden="true"></div>
+
+  </div>
+  <!-- END #scs-pin -->
+</div>
+<!-- END #scs-section -->

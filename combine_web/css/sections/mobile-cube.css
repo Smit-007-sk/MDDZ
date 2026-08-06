@@ -1,0 +1,127 @@
+/* =============================================================
+   MOBILE CUBE — Mobile-only alternative to the desktop cube
+   Source: extracted from index.html inline media queries and section styles
+   ============================================================= */
+
+.mobile-cube-section {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cube-section {
+    display: block;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    padding: 10vw 0 20vw 0;
+    overflow: hidden;
+  }
+
+  .mobile-cube-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.25;
+  }
+
+  .mobile-cube-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mcube-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 6vw;
+    margin-bottom: 8vw;
+  }
+
+  .mcube-title__eye {
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 2vw;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .mcube-title__line {
+    font-family: var(--font-family-display);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #fff;
+  }
+
+  .mobile-cube-scene {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 0 auto 10vw auto;
+  }
+
+  .mobile-cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(-45deg);
+    animation: spinMobileCube 20s infinite linear;
+  }
+
+  @keyframes spinMobileCube {
+    from { transform: rotateX(-15deg) rotateY(0deg); }
+    to { transform: rotateX(-15deg) rotateY(360deg); }
+  }
+
+  .mobile-cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #0c0c0c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+
+  .mobile-cube-face video,
+  .mobile-cube-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobile-cube-face.is-front  { transform: rotateY(0deg) translateZ(100px); }
+  .mobile-cube-face.is-back   { transform: rotateY(180deg) translateZ(100px); }
+  .mobile-cube-face.is-right  { transform: rotateY(90deg) translateZ(100px); }
+  .mobile-cube-face.is-left   { transform: rotateY(-90deg) translateZ(100px); }
+  .mobile-cube-face.is-top    { transform: rotateX(90deg) translateZ(100px); }
+  .mobile-cube-face.is-bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+  .mcube-copy {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 8vw;
+  }
+
+  .mcube-copy__desc {
+    font-size: var(--text-sm);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

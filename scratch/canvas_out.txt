@@ -1,0 +1,351 @@
+1;
+
+      pointer-events: none;
+
+      /* 🎯 WebGL canvas , GPU  hero */
+
+      transform: translateZ(0);
+
+      will-change: trans
+==================================================
+ackground: var(--color-bg);
+
+    }
+
+
+
+    #sketch canvas {
+
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      
+==================================================
+ </div>
+
+                </div>
+
+                <canvas id="ip-reveal-canvas" data-reveal-mode="css-mask"
+
+                  styl
+==================================================
+    </div>
+
+                <canvas id="ip-reveal-canvas" data-reveal-mode="css-mask"
+
+                  style="position:absolute;
+==================================================
+;pointer-events:none;z-index:200;display:none;"></canvas>
+
+              </div>
+
+
+
+              <div id="section-2-content" class
+==================================================
+（uTexReady=1）
+
+              //     2  RAF（ WebGL canvas ） container。
+
+            } else {
+
+              vid = document.createEl
+==================================================
+Promise.all  resolve，。
+
+        //    600ms  hero canvas 、 slider01 。
+
+        (function () {
+
+          function _preloadSlide1()
+==================================================
+)  VideoTexture，
+
+      //     uTexReady  1，WebGL canvas（z-index:1, alpha:true）。
+
+      (function promotePrwarmToHeroBg() {
+
+     
+==================================================
+ }
+
+
+
+      class RevealGL {
+
+        constructor(canvas) {
+
+          this.canvas = canvas;
+
+          this.gl = canvas.getContex
+==================================================
+ {
+
+        constructor(canvas) {
+
+          this.canvas = canvas;
+
+          this.gl = canvas.getContext('webgl', { alpha: true, 
+==================================================
+   constructor(canvas) {
+
+          this.canvas = canvas;
+
+          this.gl = canvas.getContext('webgl', { alpha: true, premultip
+==================================================
+       this.canvas = canvas;
+
+          this.gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false });
+
+       
+==================================================
+    const nextWidth = Math.max(1, Math.floor(this.canvas.offsetWidth * dpr));
+
+          const nextHeight = Math.max(1, Math.floor
+==================================================
+   const nextHeight = Math.max(1, Math.floor(this.canvas.offsetHeight * dpr));
+
+          if (this.canvas.width === nextWidth && t
+==================================================
+.canvas.offsetHeight * dpr));
+
+          if (this.canvas.width === nextWidth && this.canvas.height === nextHeight) return;
+
+      
+==================================================
+      if (this.canvas.width === nextWidth && this.canvas.height === nextHeight) return;
+
+          this.canvas.width = nextWidth;
+
+==================================================
+as.height === nextHeight) return;
+
+          this.canvas.width = nextWidth;
+
+          this.canvas.height = nextHeight;
+
+         
+==================================================
+   this.canvas.width = nextWidth;
+
+          this.canvas.height = nextHeight;
+
+          if (this.gl) this.gl.viewport(0, 0, this.
+==================================================
+         if (this.gl) this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+
+        }
+
+        render(reveal) {
+
+       
+==================================================
+l) this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+
+        }
+
+        render(reveal) {
+
+          const gl = this.
+==================================================
+, 0, 4);
+
+        }
+
+      }
+
+
+
+      const revealCanvas = document.getElementById('ip-reveal-canvas');
+
+      // WebGL reveal is 
+==================================================
+revealCanvas = document.getElementById('ip-reveal-canvas');
+
+      // WebGL reveal is currently opt-in. The default path uses the 
+==================================================
+he CSS clip-path mask above
+
+      // because the canvas stays display:none and should not allocate a WebGL context.
+
+      const 
+==================================================
+GL context.
+
+      const enableIpRevealGL = revealCanvas?.dataset.revealMode === 'webgl';
+
+      const revealGL = enableIpRevealGL
+==================================================
+ = enableIpRevealGL
+
+        ? new RevealGL(revealCanvas)
+
+        : null;
+
+
+
+      // 🎯 : progress,,
+
+      //     gsap.set , scr
+==================================================
+ick();
+
+      })();
+
+
+
+    });
+
+  </script>
+
+
+
+  <canvas id="film-grain-canvas" aria-hidden="true"></canvas>
+
+  <script src="noise
+==================================================
+
+    });
+
+  </script>
+
+
+
+  <canvas id="film-grain-canvas" aria-hidden="true"></canvas>
+
+  <script src="noise.js?v=5" defer></scrip
+==================================================
+anvas id="film-grain-canvas" aria-hidden="true"></canvas>
+
+  <script src="noise.js?v=5" defer></script>
+
+
+
+  <!-- ================
+==================================================
+    createFallbackTexture(index) {
+
+        const canvas = document.createElement("canvas");
+
+        canvas.width = 320;
+
+       
+==================================================
+{
+
+        const canvas = document.createElement("canvas");
+
+        canvas.width = 320;
+
+        canvas.height = 400;
+
+
+
+        
+==================================================
+nvas = document.createElement("canvas");
+
+        canvas.width = 320;
+
+        canvas.height = 400;
+
+
+
+        const context = can
+==================================================
+("canvas");
+
+        canvas.width = 320;
+
+        canvas.height = 400;
+
+
+
+        const context = canvas.getContext("2d");
+
+      
+==================================================
+  canvas.height = 400;
+
+
+
+        const context = canvas.getContext("2d");
+
+        const hue = (index * 37) % 360;
+
+        conte
+==================================================
+tyle = "#050505";
+
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = `hsl(${hue} 45% 34%)`
+==================================================
+5";
+
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        context.fillStyle = `hsl(${hue} 45% 34%)`;
+
+        con
+==================================================
+hue} 45% 34%)`;
+
+        context.fillRect(24, 24, canvas.width - 48, canvas.height - 48);
+
+        context.fillStyle = "var(--colo
+==================================================
+      context.fillRect(24, 24, canvas.width - 48, canvas.height - 48);
+
+        context.fillStyle = "var(--color-gold-line)";
+
+   
+==================================================
+";
+
+        context.fillText(`CCAP ${index + 1}`, canvas.width / 2, canvas.height / 2);
+
+
+
+        return new THREE.CanvasTexture(
+==================================================
+t.fillText(`CCAP ${index + 1}`, canvas.width / 2, canvas.height / 2);
+
+
+
+        return new THREE.CanvasTexture(canvas);
+
+      }
+
+==================================================
+, canvas.height / 2);
+
+
+
+        return new THREE.CanvasTexture(canvas);
+
+      }
+
+
+
+      async loadTextures() {
+
+        const l
+==================================================
+t / 2);
+
+
+
+        return new THREE.CanvasTexture(canvas);
+
+      }
+
+
+
+      async loadTextures() {
+
+        const loader = new TH
+==================================================

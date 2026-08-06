@@ -1,0 +1,97 @@
+/* =============================================================
+   RESET & BASE — Global resets and body defaults
+   Source: extracted from index.html inline styles
+   ============================================================= */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+  font-family: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+html {
+  font-size: var(--type-root);
+  /* Lenis takes over scrolling — disable native smooth scroll */
+  scroll-behavior: auto;
+  /* Prevent Mac trackpad overscroll bounce */
+  overscroll-behavior-y: none;
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* GPU text rendering anti-aliasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+@media (hover: none),
+(pointer: coarse) {
+  html,
+  body {
+    overscroll-behavior-y: auto;
+  }
+}
+
+/* ── Scrollbar (Webkit) ── */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  transition: background-color .25s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .glow-bottom-left,
+  .glow-center-left {
+    filter: none;
+  }
+}

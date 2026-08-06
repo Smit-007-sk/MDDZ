@@ -1,0 +1,162 @@
+/* =============================================================
+   SECTION-2 — Cinematic Scroll Showcase (SCS)
+   8-Phase GSAP + ScrollTrigger Animation
+   File: section-2/section-2.css
+   ============================================================= */
+
+/* ── Outer scroll container ─────────────────────────────────── */
+#scs-section {
+  position: relative;
+  /* 7000px scroll travel — JS overrides via matchMedia          */
+  height: 7000px;
+  z-index: 6;
+  background: var(--color-bg);
+  isolation: isolate;
+}
+
+/* ── GSAP pin target — viewport-height container ─────────────── */
+#scs-pin {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+/* ── Next-section reveal overlay (Phase 8) ───────────────────── */
+#scs-next-reveal {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  will-change: opacity;
+}
+
+/* ── Card wrapper — rotates, scales, fades ───────────────────── */
+#scs-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  z-index: 5;
+}
+
+/* ── Image frame ─────────────────────────────────────────────── */
+#scs-frame {
+  position: relative;
+  width: clamp(260px, 38vw, 520px);
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 16px 80px rgba(253, 250, 246, 0.75),
+    0 0 0 1px var(--color-gold-line),
+    inset 0 0 0 1px var(--color-gold-line);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ── Stacked images ──────────────────────────────────────────── */
+.scs-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.scs-img.scs-active {
+  opacity: 1;
+}
+
+/* ── Label (Phase 1 hint) ────────────────────────────────────── */
+#scs-label {
+  position: absolute;
+  bottom: -2.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-family-body, 'DM Sans', 'Inter', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(23, 20, 17, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#scs-wrapper.scs-label-on #scs-label {
+  opacity: 1;
+}
+
+/* ── Image counter ───────────────────────────────────────────── */
+#scs-counter {
+  position: absolute;
+  top: -2.2rem;
+  right: 0;
+  font-family: var(--font-family-body, 'DM Sans', 'Inter', sans-serif);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(23, 20, 17, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  user-select: none;
+}
+
+#scs-wrapper.scs-label-on #scs-counter {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  #scs-frame {
+    width: clamp(280px, 52vw, 480px);
+  }
+}
+
+@media (max-width: 768px) {
+  #scs-section {
+    height: 4800px;
+  }
+  #scs-frame {
+    width: clamp(240px, 84vw, 360px);
+    border-radius: 6px;
+  }
+  #scs-label {
+    font-size: 0.55rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #scs-frame {
+    width: 88vw;
+  }
+}

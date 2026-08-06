@@ -1,0 +1,50 @@
+
+
+
+
+  <div data-barba="wrapper">
+
+    <div data-barba="container" data-barba-namespace="home">
+
+
+
+      <div id="scroll-progress"></div>
+
+      <!-- ── NAV () ── -->
+
+      <div id="nav">
+
+        <a id="fixed-logo" href="#nav" data-cursor="HOME" aria-label="MDZ home">
+
+          <img src="https://nudot.com.tw/images/pc_logo.svg" alt="MDZ " width="45" height="35" fetchpriority="high" decoding="async">
+
+        </a>
+
+        <!-- <button id="menu-btn" aria-label="Open menu">
+
+      <div class="menu-lines">
+
+        <span></span>
+
+        <span></span>
+
+      </div>
+
+      Menu
+
+    </button> -->
+
+      </div>
+
+
+
+      <!-- ── NAV_SCROLL ( bar) ── -->
+
+      <div id="nav_scroll_container" inert>
+
+        <div id="nav_scroll">
+
+          <!--  -->
+
+          <a class="ns-icon" href="contact" 
+==================================================

@@ -1,0 +1,230 @@
+  : [];
+
+      const navScrollLinks = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('a')
+
+        : [];
+
+      const navShowcaseRows = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row')
+
+        : [];
+
+      const navShowcaseThumbs = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb')
+
+        : [];
+
+      const navShowcaseThumbImages = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb img')
+
+        : [];
+
+      let isNavScrollMenuOpen = false;
+
+      let navScrollMenuAnimating = false;
+
+      let navScrollMenuTl = null;
+
+      let navScrollMenuCloseTl = null;
+
+      let navScrollHoverCloseTimer = null;
+
+      let navScrollBlendFadeTimer = null;
+
+      let activeNavShowcaseRow = null;
+
+      const navRowHoverTimelines = new Map();
+
+      const NAV_SCROLL_CLOSED_HEIGHT = 64;
+
+      const NAV_SCROLL_COLLAPSED_HEIGHT = 4;
+
+      const NAV_SCROLL_CLOSED_RADIUS = 6;
+
+      const NAV_SCROLL_LINE_RADIUS = 999;
+
+      const NAV_SCROLL_CLOSED_BG = '#141414';
+
+      const NAV_SCROLL_OPEN_BG = '#efe6d8';
+
+      const NAV_SCROLL_THUMB_IDLE_SCALE = 1.3;
+
+      const 
+==================================================
+st navShowcaseRows = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row')
+
+        : [];
+
+      const navShowcaseThumbs = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb')
+
+        : [];
+
+      const navShowcaseThumbImages = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb img')
+
+        : [];
+
+      let isNavScrollMenuOpen = false;
+
+      let navScrollMenuAnimating = false;
+
+      let navScrollMenuTl = null;
+
+      let navScrollMenuCloseTl = null;
+
+      let navScrollHoverCloseTimer = null;
+
+      let navScrollBlendFadeTimer = null;
+
+      let activeNavShowcaseRow = null;
+
+      const navRowHoverTimelines = new Map();
+
+      const NAV_SCROLL_CLOSED_HEIGHT = 64;
+
+      const NAV_SCROLL_COLLAPSED_HEIGHT = 4;
+
+      const NAV_SCROLL_CLOSED_RADIUS = 6;
+
+      const NAV_SCROLL_LINE_RADIUS = 999;
+
+      const NAV_SCROLL_CLOSED_BG = '#141414';
+
+      const NAV_SCROLL_OPEN_BG = '#efe6d8';
+
+      const NAV_SCROLL_THUMB_IDLE_SCALE = 1.3;
+
+      const NAV_SCROLL_TITLE_SHIFT = 104;
+
+      const NAV_SCROLL_HOVER_TRACK_SHIFT = 26;
+
+      const NAV_SCROLL_HOVER_INDEX_SHIFT = 9;
+
+
+
+    
+==================================================
+Thumbs = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb')
+
+        : [];
+
+      const navShowcaseThumbImages = navScrollDropdown
+
+        ? navScrollDropdown.querySelectorAll('.ns-showcase-row__thumb img')
+
+        : [];
+
+      let isNavScrollMenuOpen = false;
+
+      let navScrollMenuAnimating = false;
+
+      let navScrollMenuTl = null;
+
+      let navScrollMenuCloseTl = null;
+
+      let navScrollHoverCloseTimer = null;
+
+      let navScrollBlendFadeTimer = null;
+
+      let activeNavShowcaseRow = null;
+
+      const navRowHoverTimelines = new Map();
+
+      const NAV_SCROLL_CLOSED_HEIGHT = 64;
+
+      const NAV_SCROLL_COLLAPSED_HEIGHT = 4;
+
+      const NAV_SCROLL_CLOSED_RADIUS = 6;
+
+      const NAV_SCROLL_LINE_RADIUS = 999;
+
+      const NAV_SCROLL_CLOSED_BG = '#141414';
+
+      const NAV_SCROLL_OPEN_BG = '#efe6d8';
+
+      const NAV_SCROLL_THUMB_IDLE_SCALE = 1.3;
+
+      const NAV_SCROLL_TITLE_SHIFT = 104;
+
+      const NAV_SCROLL_HOVER_TRACK_SHIFT = 26;
+
+      const NAV_SCROLL_HOVER_INDEX_SHIFT = 9;
+
+
+
+      function clearNavScrollBlend() {
+
+        if (!navScrollContainer) return;
+
+        if (navScrollBlendFadeTimer) {
+
+          clearTimeout(nav
+==================================================
+')
+
+          ? 'inset(0% 100% 0% 0%)'
+
+          : 'inset(0% 0% 0% 100%)';
+
+      }
+
+
+
+      function getNavShowcaseThumbTargets(row = null) {
+
+        const thumbs = row
+
+          ? Array.from(row.querySelectorAll('.ns-showcase-row__thumb'))
+
+          : Array.from(navShowcaseThumbs);
+
+        const images = row
+
+          ? thumbs.map((thumb) => thumb.querySelector('img')).filter(Boolean)
+
+          : Array.from(navShowcaseThumbImages);
+
+        return { thumbs, images };
+
+      }
+
+
+
+      function getNavShowcaseTitleTargets(row = null) {
+
+        const track = row ? row.querySelector('.ns-showcase-row__title-track') : null;
+
+        const primary = row ? row.querySelector('.ns-showcase-row__title-layer.is-primary') : null;
+
+        const accent = row ? row.querySelector('.ns-showcase-row__title-layer.is-accent') : null;
+
+        const indexEl = row ? row.querySelector('.ns-showcase-row__index') : null;
+
+        return { track, primary, accent, indexEl };
+
+      }
+
+
+
+      function hydrateNavShowcaseImages(scope = navScrollDropdown) {
+
+        if (!scope) return;
+
+        scope.querySelectorAll('img[data-nav-src]').forEach((img) => {
+
+          img.src = img.dataset.navSrc;
+
+  
+==================================================

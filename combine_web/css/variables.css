@@ -1,0 +1,63 @@
+/* =============================================================
+   DESIGN TOKENS — CSS Custom Properties
+   Source: extracted from index.html inline styles
+   ============================================================= */
+
+:root {
+  /* ── Colors ── */
+  --color-text: #fff;
+  --color-bg: #000;
+
+  /* ── Slideshow Controls ── */
+  --thumb-width: 120px;
+  --line-spacing: 10px;
+  --line-base-height: 15px;
+  --line-max-height: 50px;
+
+  /* ── Font Families ── */
+  --font-family-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-family-display: "Zalando Sans SemiExpanded", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-family-accent: "Bitcount Grid Single", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* ── Type Scale (fluid clamp) ── */
+  --type-root: clamp(13px, 12.4px + 0.2vw, 16px);
+  --text-2xs: clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);
+  --text-xs: clamp(0.75rem, 0.72rem + 0.22vw, 0.85rem);
+  --text-sm: clamp(0.8125rem, 0.77rem + 0.28vw, 0.95rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.28vw, 1.05rem);
+  --text-md: clamp(1rem, 0.94rem + 0.44vw, 1.2rem);
+  --text-lg: clamp(1.125rem, 1.04rem + 0.8vw, 1.5rem);
+  --text-display-xs: clamp(2rem, 3.5vw, 3.125rem);
+  --text-display-sm: clamp(2.8rem, 4.6vw, 4.8rem);
+  --text-display-md: clamp(3rem, 8vw, 5rem);
+  --text-display-lg: clamp(4rem, 15vw, 11.5rem);
+  --text-display-xl: clamp(5.5rem, 14vw, 13rem);
+  --text-watermark: clamp(10rem, 22vw, 22rem);
+
+  /* ── Leading (line-height) ── */
+  --leading-tight: 1;
+  --leading-display: 0.88;
+  --leading-body: 1.7;
+
+  /* ── Tracking (letter-spacing) ── */
+  --tracking-tight: -0.04em;
+  --tracking-display: -0.02em;
+  --tracking-brand: 0.02em;
+  --tracking-copy: 0.03em;
+  --tracking-meta: 0.12em;
+  --tracking-ui: 0.05em;
+  --tracking-label: 0.08em;
+  --tracking-wide: 0.1em;
+  --tracking-caps: 0.18em;
+
+  /* ── Page Transitions ── */
+  --pt-bg: #000;
+  --pt-top: -102%;
+  --pt-bottom: 102%;
+
+  /* ── Nav Scroll Menu ── */
+  --ns-menu-bg: #efe6d8;
+  --ns-menu-text: #171411;
+  --ns-menu-accent: #c89a45;
+  --ns-menu-line: rgba(23, 20, 17, 0.14);
+}

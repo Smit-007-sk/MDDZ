@@ -1,0 +1,64 @@
+/* =============================================================
+   ANIMATIONS — Consolidated @keyframes rules
+   Source: extracted from index.html inline CSS
+   ============================================================= */
+
+@keyframes blink-cursor {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes ndBoxOpen {
+  0% { width: 0; height: 0; }
+  15% { width: 7vw; height: 4vw; }
+  100% { width: 300vmax; height: 300vmax; }
+}
+
+@keyframes ndLetterIn {
+  to { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+}
+
+@keyframes ndIconOut {
+  to { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes ndSpreadL {
+  to { transform: translateX(calc(-50vw + 120px)); }
+}
+
+@keyframes ndSpreadR {
+  to { transform: translateX(calc(50vw - 120px)); }
+}
+
+@keyframes ndFadeOut {
+  to { opacity: 0; }
+}
+
+@keyframes ndLoaderShieldOff {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes menuBtnIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mouseTracker_fadeOut {
+  to { opacity: 0; }
+}
+
+@keyframes nsBarIn {
+  0% { transform: translateX(-50%) scaleX(0) scaleY(0.04); opacity: 1; border-radius: 100px; }
+  55% { transform: translateX(-50%) scaleX(1) scaleY(0.04); opacity: 1; border-radius: 100px; }
+  100% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 1; border-radius: 6px; }
+}
+
+@keyframes nsBarOut {
+  0% { transform: translateX(-50%) scaleX(1) scaleY(1); opacity: 1; border-radius: 6px; }
+  45% { transform: translateX(-50%) scaleX(1) scaleY(0.04); opacity: 1; border-radius: 100px; }
+  100% { transform: translateX(-50%) scaleX(0) scaleY(0.04); opacity: 0; border-radius: 100px; }
+}

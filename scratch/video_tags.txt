@@ -1,0 +1,224 @@
+eload" as="video">  WHATWG ( + ),
+
+        hidden <video preload="auto">  <video>  Range request,
+
+        HTTP cache  WebGLManager 。 -->
+
+  <script>
+
+    (function () {
+
+      var isDesktop = !!(window.matchMedia && window.matchMedia('(min-width: 768px)').matches);
+
+      var src = isDesktop
+
+        ? 'images/home/slider1/slider01.mp4'
+
+        : 'images/home/slider1/slider01_s.mp4';
+
+      var 
+==================================================
+WG ( + ),
+
+        hidden <video preload="auto">  <video>  Range request,
+
+        HTTP cache  WebGLManager 。 -->
+
+  <script>
+
+    (function () {
+
+      var isDesktop = !!(window.matchMedia && window.matchMedia('(min-width: 768px)').matches);
+
+      var src = isDesktop
+
+        ? 'images/home/slider1/slider01.mp4'
+
+        : 'images/home/slider1/slider01_s.mp4';
+
+      var v = document.createEleme
+==================================================
+LManager ：index=0  decode  element，
+
+      //     <video>  demux/decode ， uTexReady=0 。
+
+      window._prewarmVideo = { el: v, src: src };
+
+      // prewarm  WebGLManager ； 8 。
+
+      // 🛡️  (a)  hero （dataset.ndPromoted），
+
+      //         (b) DOMContentLoaded （ defer scripts ），
+
+      //    ，。
+
+      (function scheduleCleanup() {
+
+        window.setTimeout(function () {
+
+          if (!(window._
+==================================================
+r nd-n">M</span>
+
+          <span class="nd-icon"><video src="https://nudot.com.tw/images/loading.mp4" autoplay muted playsinline preload="auto"
+
+              disableRemotePlayback fetchpriority="high" aria-hidden="true"></video></span>
+
+          <span class="nd-letter nd-d">Z</span>
+
+        </div>
+
+      </div>
+
+
+
+      <script>
+
+        // Anchor hero reveal to page-load time using performanc
+==================================================
+;height:100%;cursor:pointer;">
+
+                  <video autoplay muted loop playsinline preload="none" disableRemotePlayback data-lazy-video
+
+                    poster="images/home/slider_video02_thumb.jpg" style="cursor:pointer;">
+
+                    <source data-src="https://nudot.com.tw/images/home/slider_video02.mp4?v=1" type="video/mp4">
+
+                  </video>
+
+                </a>
+
+ 
+==================================================
+r ( data-lazy-priority="high") -->
+
+              <video autoplay muted loop playsinline preload="none" disableRemotePlayback data-lazy-video
+
+                data-lazy-on-scroll="true"
+
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.45;">
+
+                <source data-src="https://nudot.com.tw/images/wavebg.mp4" type="vide
+==================================================
+ront" style="padding: 0;">
+
+                      <video class="face-media" autoplay muted loop playsinline preload="none" disableRemotePlayback
+
+                        data-lazy-video data-lazy-on-scroll="true">
+
+                        <source data-src="https://nudot.com.tw/images/cube/responsive-web-design-showcase-mobile-ipad.mp4" type="video/mp4">
+
+                      </video>
+
+           
+==================================================
+s="mobile-cube-bg" aria-hidden="true">
+
+          <video autoplay muted loop playsinline preload="none" disableRemotePlayback data-lazy-video
+
+            data-lazy-on-scroll="true">
+
+            <source data-src="https://nudot.com.tw/images/bg.mp4" type="video/mp4">
+
+          </video>
+
+        </div>
+
+        <div class="mcube-title">
+
+          <h2 class="mcube-title__eye">（  ）</h2>
+
+          
+==================================================
+class="mobile-cube-face is-front">
+
+              <video autoplay muted loop playsinline preload="none" disableRemotePlayback data-lazy-video
+
+                data-lazy-on-scroll="true">
+
+                <source data-src="https://nudot.com.tw/images/cube/t1.mp4" type="video/mp4">
+
+              </video>
+
+            </div>
+
+            <div class="mobile-cube-face is-right">
+
+              <img sr
+==================================================
+ class="center-video-box">
+
+                      <video autoplay loop muted playsinline preload="auto" disableRemotePlayback data-lazy-video
+
+                        data-lazy-priority="high">
+
+                        <source data-src="https://nudot.com.tw/images/home/star.mp4" type="video/mp4">
+
+                      </video>
+
+                    </div>
+
+                    <div class="service-l
+==================================================
+ry-header-video" aria-hidden="true">
+
+            <video autoplay muted playsinline loop preload="none" disableRemotePlayback data-lazy-video>
+
+              <source data-src="https://nudot.com.tw/images/wavebg.mp4" type="video/mp4">
+
+            </video>
+
+          </div>
+
+          <!-- <div class="gh-side-rails" aria-hidden="true">
+
+        <div class="gh-side-rail gh-side-rail-left">
+
+        
+==================================================
+<div class="footer-video-thumb">
+
+                <video autoplay muted loop playsinline preload="metadata" width="320" height="180" disableRemotePlayback
+
+                  data-lazy-video>
+
+                  <source data-src="https://nudot.com.tw/images/footer.mp4" type="video/mp4">
+
+                </video>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="foo
+==================================================
+==========================
+
+    /**
+
+     *  HLS  <video> 。
+
+     * ：
+
+     *   1. Safari / iOS —  HLS， vid.src
+
+     *   2. Chrome / Firefox / Edge —  hls.js 
+
+     *   3.  fallback —  .mp4（server  fallback）
+
+     */
+
+    function attachHLSToVideo(vid, hlsUrl) {
+
+      // ① Safari / iOS  HLS
+
+      if (vid.canPlayType('application/vnd.apple.mpegurl')) {
+
+        vid.src = hlsUrl;
+
+        return;
+==================================================

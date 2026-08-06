@@ -1,0 +1,153 @@
+/* =============================================================
+   FOOTER — Site footer, parallax background, contact, copyright
+   Source: extracted from index.html lines 4304-4572
+   ============================================================= */
+
+.site-footer {
+  position: relative;
+  overflow: visible;
+  background: #000;
+  color: #fff;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.footer-top {
+  padding: 3vw 2.5vw;
+  position: relative;
+  z-index: 5;
+  background-color: #000000;
+}
+
+.footer-brand-title {
+  font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif;
+  font-size: clamp(4rem, 15vw, 11.5rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.footer-brand-title sup {
+  font-size: 0.13em;
+  vertical-align: top;
+  letter-spacing: 0;
+}
+
+.footer-info-bar {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #222;
+  padding-top: 30px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.footer-main-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #888;
+  max-width: 450px;
+  margin-bottom: 32px;
+}
+
+.footer-contact-info a { display: block; color: #fff; text-decoration: none; font-size: clamp(20px, 3.5vw, 50px); font-weight: 400; margin-bottom: 4px; transition: opacity 0.2s; }
+.footer-contact-info a:hover { opacity: 0.6; }
+.footer-contact-info span { color: #ffffff; font-size: clamp(18px, 2.5vw, 30px); }
+
+.web_add { color: #575757; }
+
+.footer-nav-links { display: flex; gap: 28px; margin-top: 38px; }
+.footer-nav-links a { color: #fff; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1.5px; transition: opacity 0.2s; }
+.footer-nav-links a:hover { opacity: 0.5; }
+
+.footer-right-panel { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; }
+
+.footer-video-thumb { width: 100%; max-width: 340px; aspect-ratio: 16 / 9; overflow: hidden; position: relative; }
+.footer-video-thumb img, .footer-video-thumb video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.footer-copyright-bridge {
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+  width: clamp(90px, 10vw, 148px);
+  height: clamp(90px, 10vw, 148px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(50%);
+  z-index: 20;
+}
+
+.footer-copyright-bridge span { font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif; font-size: 180px; font-weight: 600; color: #fff; line-height: 1; }
+
+.footer-parallax-section { height: 50vh; width: 100%; overflow: hidden; position: relative; z-index: 1; }
+
+.footer-parallax-copy {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  pointer-events: none;
+}
+
+.footer-parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--footer-bg-image, none);
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: bottom;
+  opacity: 1;
+  mix-blend-mode: luminosity;
+}
+
+/* ── Footer Reveal System ── */
+.footer-info-line { height: 1px; background: #222; transform-origin: left center; margin-bottom: 18px; will-change: transform; }
+.frev-wrap { overflow: hidden; display: inline-block; vertical-align: bottom; }
+
+.footer-video-cover {
+  position: absolute;
+  inset: 0;
+  background: #0a0a0a;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: right center;
+  will-change: transform;
+}
+
+@media (max-width: 1440px) {
+  .footer-parallax-section { height: 300px; }
+}
+
+@media (max-width: 1024px) {
+  .footer-copyright-bridge,
+  .footer-parallax-section { display: none !important; }
+  .fwa-badge { display: none; }
+}
+
+@media (max-width: 768px) {
+  .footer-top { padding: 1.5rem; line-height: normal; }
+  .footer-nav-links { gap: 16px; margin-top: 24px; flex-wrap: wrap; }
+  .web_add { margin-top: 8px; }
+  .footer-main-content { grid-template-columns: 1fr; }
+  .footer-right-panel { align-items: flex-start; margin-top: 40px; }
+}
