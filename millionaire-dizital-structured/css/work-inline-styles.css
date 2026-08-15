@@ -1,0 +1,366 @@
+/* ═══════════════════════════════════════════════════════════
+       Hover Reveal — Frosted Glass + Desaturation Blend
+       Layer order (z-index): image(1) → blur(4) → blend(8) → video(9) → text(12)
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Lift .work-video above blur/blend so it renders in full colour */
+    .work-video {
+      z-index: 9 !important;
+      background: transparent !important;
+    }
+
+    /* Neutralise CSS hover state on video — GSAP manages opacity */
+    .work-box:hover .work-video {
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) scale(0.94);
+    }
+
+    /* Remove transform from cover’s CSS transition — GSAP drives scale */
+    .work-cover {
+      transition: opacity 0.72s var(--work-ease), filter 0.72s var(--work-ease) !important;
+    }
+
+    /* ── Frosted-glass blur overlay ──────────────────────────────── */
+    .work-blur {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(23, 20, 17, 0.06);
+      pointer-events: none;
+      will-change: opacity;
+    }
+
+    /* ── Desaturation blend layer (mix-blend-mode: color) ──────────── */
+    .work-color-blend {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      background: var(--color-bg, #FDFAF6);
+      mix-blend-mode: color;
+      pointer-events: none;
+      will-change: opacity;
+    }
+
+    /* ── Slide-up text ──────────────────────────────────────── */
+    .work-text-bottom {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.4rem;
+      right: 1.4rem;
+      z-index: 12;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: none;
+      color: var(--color-text, #171411);
+      will-change: transform, opacity;
+    }
+
+    .work-text-bottom__index {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+      opacity: 0.55;
+      line-height: 1;
+    }
+
+    .work-text-bottom__action {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+      opacity: 0.88;
+      line-height: 1;
+    }
+
+    /* Hide overlay layers on touch / small screens */
+    @media (max-width: 1024px),
+    (hover: none),
+    (pointer: coarse) {
+
+      .work-blur,
+      .work-color-blend,
+      .work-text-bottom {
+        display: none;
+      }
+    }
+
+    /* ── Project info (tablet/mobile only) ───────────────────────── */
+    .project-info {
+      display: none;
+      padding: 14px 0 4px;
+    }
+
+    .project-date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary, #5a544d);
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif;
+      font-size: clamp(1rem, 3.5vw, 1.4rem);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-text, #171411);
+      margin-bottom: 4px;
+    }
+
+    .project-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary, #5a544d);
+    }
+
+    @media (max-width: 1024px) {
+      .project-info {
+        display: block;
+      }
+    }
+
+    /* ── Site footer ────────────────────────────────────────────────── */
+    .site-footer {
+      position: relative;
+      overflow: visible;
+      color: var(--color-text, #171411);
+      padding: 0;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .footer-top {
+      padding: 3vw 2.5vw;
+      position: relative;
+      z-index: 5;
+      line-height: normal;
+    }
+
+    .footer-main-content {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-contact-info a {
+      display: block;
+      color: var(--color-text, #171411);
+      text-decoration: none;
+      font-size: clamp(20px, 3.5vw, 50px);
+      font-weight: 400;
+      margin-bottom: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-contact-info a:hover {
+      opacity: 0.6;
+    }
+
+    .footer-contact-info span {
+      color: var(--color-text, #171411);
+      font-size: clamp(18px, 2.5vw, 30px);
+    }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 28px;
+      margin-top: 38px;
+    }
+
+    .footer-nav-links a {
+      color: var(--color-text, #171411);
+      text-decoration: none;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: opacity 0.2s;
+    }
+
+    .footer-nav-links a:hover {
+      opacity: 0.5;
+    }
+
+    .footer-right-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    .footer-video-thumb {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .footer-video-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .footer-copyright-bridge {
+      position: absolute;
+      bottom: 0;
+      right: 6%;
+      width: clamp(90px, 10vw, 148px);
+      height: clamp(90px, 10vw, 148px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(50%);
+      z-index: 20;
+    }
+
+    .footer-copyright-bridge span {
+      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif;
+      font-size: 180px;
+      font-weight: 600;
+      color: var(--color-text, #171411);
+      line-height: 1;
+    }
+
+   .footer-parallax-section {
+      height: 50vh;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-parallax-copy {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+      z-index: 3;
+      color: rgba(255, 255, 255, 0.65);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+      pointer-events: none;
+    }
+
+     @media (max-width: 1440px) {
+     .footer-parallax-section {
+      height: 300px;
+      
+    }
+    }
+
+    .footer-parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--footer-bg-image, none);
+      background-attachment: fixed;
+      background-size: contain;
+      background-position: bottom;
+      opacity: 1;
+      mix-blend-mode: luminosity;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-top {
+        padding: 6vw 4vw;
+      }
+
+      .footer-copyright-bridge,
+      .footer-parallax-section {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-top {
+        padding: 1.5rem;
+      }
+
+      .footer-main-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-right-panel {
+        align-items: flex-start;
+      }
+
+      .footer-video-thumb {
+        max-width: 100%;
+      }
+
+      .footer-nav-links {
+        gap: 16px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+       .footer-nav-links a{
+            font-size:11px;
+      }
+      
+    }
+
+    /* ================================================================
+       MARQUEE
+    ================================================================ */
+    .lab-marquee {
+      width: 100%;
+      overflow: hidden;
+      /* background: var(--mie-black, #0a0a0a); */
+      padding: 10px;
+      border-top: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.35));
+      border-bottom: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.35));
+    }
+    .lab-marquee__track {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+      will-change: transform;
+    }
+    .lab-marquee__item {
+      font-family: 'Bitcount Grid Single', monospace;
+      font-size: clamp(1.4rem, 4vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text, #171411);
+      padding: 0 clamp(20px, 3vw, 60px);
+    }
+    .lab-marquee__sep {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      width: clamp(20px, 2.8vw, 40px);
+    }
+    .lab-marquee__sep img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      animation: sep-spin 3s ease-in-out infinite;
+    }
+    @keyframes sep-spin {
+      0%   { transform: rotate(0deg); }
+      40%  { transform: rotate(180deg); }
+      60%  { transform: rotate(180deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .lab-marquee__track { transform: none !important; }
+    }
+  
+
+.frev-wrap { overflow: hidden; display: inline-block; vertical-align: bottom; }
+    .footer-video-cover { position: absolute; inset: 0; background: var(--color-bg, #FDFAF6); z-index: 2; pointer-events: none; transform-origin: right center; will-change: transform; }
+  

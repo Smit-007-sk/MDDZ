@@ -1,0 +1,92 @@
+=== SEARCH: Globally deployed ===
+play: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 6vw 2.5vw;">
+          <div>
+            <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// FOUNDING STORY</span>
+            <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; text-transform: uppercase; margin-bottom: 24px; color: var(--color-text, #F5F3EE);">Rajkot-built.<br>Globally deployed.</h3>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary, rgba(245, 243, 238, 0.7)); max-width: 520px;">
+              Three friends, ₹599 a piece, Rajkot businesses that needed to look world-class on a real budget. Now a full studio — content, AI, websites, performance, owned event IPs. Every service still passes the same test: does it make the client money?
+            </p>
+          </div>
+          <div>
+            <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// OUR PHILOSOPHY</span>
+            <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; text-transform: uppercase; margin-bottom: 24px; color: var(--color-text, #F5F3EE);">Growth-anchored.<br>Zero vanity metrics.</h3>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary, rg
+
+========================================
+
+=== SEARCH: Meet the Founders ===
+data-i="1"></div>
+
+            <div class="cc-panel" data-i="2"></div>
+
+            <div class="cc-panel" data-i="3"></div>
+
+            <div class="cc-panel" data-i="4"></div>
+
+            <div class="cc-panel" data-i="5"></div>
+
+          </div>
+
+
+
+        </div><!-- /cc-viewport -->
+
+      </section>
+
+
+
+            <section class="team-section" aria-label="Our Team">
+        <div class="team-header">
+          <span class="team-group-label">// THE TEAM</span>
+          <h2 class="team-title">Meet the Founders &amp; Strategists</h2>
+        </div>
+        <div class="team-grid">
+          <!-- Vikram -->
+          <div class="team-member">
+            <div class="team-photo-wrap">
+              <img src="images/about/team/vikram.webp" alt="Vikram" onerror="this.src='images/about/box2.webp'">
+            </div>
+            <div class="team-info">
+              <span class="team-name">Vikram</span>
+              <span class="team-role">Founder &amp; Director</span>
+              <p class="team-one-liner">Directing high-growth strategies, conversion architectures, and brand engines.</p>
+            </div>
+          </div>
+          <!-- Kishan -->
+          <div class="team-member">
+            <div class="team-photo-wrap">
+              <img src="images/about/team/kishan.webp" alt="Kishan" onerror="this.src='images/about/box3.webp'">
+            </div>
+            <div class="team-info">
+              <span class="team-name">Kishan</span>
+              <span class="team-role"
+
+========================================
+
+=== SEARCH: 0&thinsp;YEARS ===
+=== SEARCH: Zero vanity ===
+me test: does it make the client money?
+            </p>
+          </div>
+          <div>
+            <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// OUR PHILOSOPHY</span>
+            <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; text-transform: uppercase; margin-bottom: 24px; color: var(--color-text, #F5F3EE);">Growth-anchored.<br>Zero vanity metrics.</h3>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary, rgba(245, 243, 238, 0.7)); max-width: 520px;">
+              We split our services into two families: ON-GROUND (high-fidelity video/photo shoots on request across India) and BUILT ANYWHERE (SMM, Meta ads, SEO/AEO, and custom UI design managed globally). No fluff, no inflated claims — just pure conversion engineering.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="about-work-preview">
+        <div class="awp-header">
+          <div class="awp-header-meta">
+            <span class="awp-header-meta__tag">MILLIOANER DIZITAL CREATIVE STUDIO</span>
+            <p class="awp-header-meta__copy">Master of absolute precision and the art of subtraction.</p>
+          </div>
+        </div>
+        <div class="awp-grid">
+          <div class="awp-item-1">
+            <div class="awp-lens-1">
+              <img src="images/about/box.webp" alt
+
+========================================

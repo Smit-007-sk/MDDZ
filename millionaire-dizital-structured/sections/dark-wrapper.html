@@ -1,0 +1,192 @@
+<div class="dark-wrapper-mask" id="dark-wrapper-mask">
+            <div class="dark-wrapper" id="dark-wrapper">
+              <div id="dw-black-overlay"
+                style="position:absolute;inset:0;background:#000;z-index:9;pointer-events:none;opacity:0;transition:opacity 0.05s;">
+              </div>
+              <!-- bg.mp4  dark-wrapper(), hero ;
+                    IntersectionObserver ( data-lazy-priority="high") -->
+              <video autoplay muted loop playsinline preload="none" disableRemotePlayback data-lazy-video
+                data-lazy-on-scroll="true"
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.45;">
+                <source data-src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+              </video>
+
+              <div class="glow-bottom-left" id="ui-glow1"></div>
+              <div class="glow-center-left" id="ui-glow2"></div>
+
+
+
+
+              <div class="scroll-indicator" id="ui-scroll">
+                <div class="si-block">
+                  <div class="si-letter"><img src="./images/down.svg" alt="" aria-hidden="true"></div>
+                  <div class="si-label">DOWN</div>
+                  <!-- <div class="si-line"></div> -->
+                </div>
+              </div>
+
+              <div id="intro-panel" class="intro-panel">
+                <div class="ip-top-chapter1">(  )</div>
+                <div class="ip-top-header">
+                  <h2 class="ip-top-chapter">( ， )</h2>
+                </div>
+                <div class="ip-bottom-letter"></div>
+
+                <div class="dual-wave-wrapper" id="ip-wave-wrapper">
+                  <div class="wave-column wave-column-left">
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Core-Site</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Gen-AI Visual</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Motion Flow</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">WebGL Realm</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">3D Matrix</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Interaction</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Pixel Perfect</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Logic Build</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Fluid UI</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Aero Design</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Pure Code</div>
+                    <div class="animated-text" data-image="https://picsum.photos/800/600">Digital Art</div>
+                  </div>
+                  <div class="wave-column wave-column-right">
+                    <div class="animated-text">Strategy</div>
+                    <div class="animated-text">Design</div>
+                    <div class="animated-text">Tech</div>
+                    <div class="animated-text">Creative</div>
+                    <div class="animated-text">Motion</div>
+                    <div class="animated-text">Brand</div>
+                    <div class="animated-text">Future</div>
+                    <div class="animated-text">Vision</div>
+                    <div class="animated-text">System</div>
+                    <div class="animated-text">Labs</div>
+                    <div class="animated-text">Core</div>
+                    <div class="animated-text">Craft</div>
+                  </div>
+                </div>
+                <div class="image-thumbnail-wrapper">
+                  <div class="ip-thumb-row">
+                    <div class="ip-thumb-line"></div>
+                    <img src="https://picsum.photos/800/600" alt="" class="image-thumbnail" id="ip-wave-thumb" width="128"
+                      height="64" loading="lazy" decoding="async">
+                    <div class="ip-thumb-line"></div>
+                  </div>
+                </div>
+                <canvas id="ip-reveal-canvas" data-reveal-mode="css-mask"
+                  style="position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:destination-out;pointer-events:none;z-index:200;display:none;"></canvas>
+              </div>
+
+              <div id="section-2-content" class="section-2-content">
+                <div class="subtitle" id="title-subtitle"
+                  style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;overflow:hidden;margin:0;padding:0;">
+                </div>
+                <p class="desc" id="title-desc"
+                  style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;overflow:hidden;margin:0;padding:0;">
+                </p>
+                <!-- <div class="title-reveal-wrap">
+            <div class="subtitle" id="title-subtitle">( ， )</div>
+          </div> -->
+                <div class="title-wrapper marquee-wrapper">
+                  <!-- ghost elements kept for GSAP scroll-reveal JS compatibility -->
+                  <div id="title-line1"
+                    style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;overflow:hidden;margin:0;padding:0;">
+                  </div>
+                  <div id="title-line2"
+                    style="position:absolute;opacity:0;pointer-events:none;width:0;height:0;overflow:hidden;margin:0;padding:0;">
+                  </div>
+                  <div class="title-reveal-wrap">
+                    <div id="title-marquee" class="marquee-outer">
+                      <div class="marquee-inner js-scroll-marquee" id="marquee-inner" data-marquee-dir="-1">
+                        <div class="marquee-set">
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">WEBDESIGN</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">UI/UX</span>
+                            <span class="marquee-label">（ / ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">MOTION</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">BRANDING</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                        </div>
+                        <div class="marquee-set">
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">WEBDESIGN</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">UI/UX</span>
+                            <span class="marquee-label">（ / ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">MOTION</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                          <span class="marquee-block">
+                            <span class="huge-title marquee-item">BRANDING</span>
+                            <span class="marquee-label">（  ）</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="title-reveal-wrap">
+            <p class="desc" id="title-desc">，，<br>，</p>
+          </div> -->
+              </div>
+
+              <div class="new-text-group" id="new-text-group">
+                <div class="title-reveal-wrap">
+                  <div class="subtitle" id="new-subtitle"></div>
+                </div>
+                <div class="title-wrapper">
+                  <div class="title-reveal-wrap">
+                    <div class="huge-title title-outline" id="new-line1"></div>
+                  </div>
+                  <div class="title-reveal-wrap">
+                    <div class="huge-title" id="new-line2"></div>
+                  </div>
+                </div>
+                <div class="title-reveal-wrap">
+                  <p class="desc" id="new-desc"> </p>
+                </div>
+              </div>
+
+              <div class="scene-wrapper" id="sceneWrapper">
+                <div class="scene" id="cubeScene">
+                  <div class="cube" id="cube">
+                    <div class="face front" style="padding: 0;">
+                      <video class="face-media" autoplay muted loop playsinline preload="none" disableRemotePlayback
+                        data-lazy-video data-lazy-on-scroll="true">
+                        <source data-src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                      </video>
+                      <div id="img-overlay"
+                        style="position: absolute; inset: 0; background: #000; opacity: 0; transition: opacity 0.1s;">
+                      </div>
+                    </div>
+                    <div class="face right"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        data-defer-src="https://picsum.photos/800/600" alt="Cube right"
+                        class="face-media" width="1200" height="1200" loading="lazy" decoding="async"></div>
+                    <div class="face back"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        data-defer-src="https://picsum.photos/800/600" alt="Cube back"
+                        class="face-media" width="1200" height="1200" loading="lazy" decoding="async"></div>
+                    <div class="face left"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        data-defer-src="https://picsum.photos/800/600" alt="Cube left"
+                        class="face-media" width="1200" height="1200" loading="lazy" decoding="async"></div>
+                    <div class="face top"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        data-defer-src="https://picsum.photos/800/600" alt="Cube top"
+                        class="face-media" width="1200" height="1200" loading="lazy" decoding="async"></div>
+                    <div class="face bottom"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                        data-defer-src="https://picsum.photos/800/600" alt="Cube bottom"
+                        class="face-media" width="1200" height="1200" loading="lazy" decoding="async"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
