@@ -8,6 +8,7 @@ echo "   STARTING DEPLOYMENT FOR MDZ-DEVELOP"
 echo "==============================================="
 
 TARGET_DIR="/vps/mdz-develop"
+SITE_DIR="$TARGET_DIR/millionaire-dizital-structured"
 
 # Check if target directory exists
 if [ ! -d "$TARGET_DIR" ]; then
@@ -34,7 +35,10 @@ echo "Setting owner to $NGINX_USER..."
 chown -R $NGINX_USER:$NGINX_USER "$TARGET_DIR"
 chmod -R 755 "$TARGET_DIR"
 
-echo "3. Testing and reloading Nginx configuration..."
+echo "3. Copying Nginx configuration..."
+cp "$SITE_DIR/mdz-website.conf" "/etc/nginx/conf.d/mdz-website.conf"
+
+echo "4. Testing and reloading Nginx configuration..."
 nginx -t
 systemctl reload nginx || nginx -s reload
 
