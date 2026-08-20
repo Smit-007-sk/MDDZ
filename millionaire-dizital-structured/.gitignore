@@ -1,0 +1,9 @@
+# Large media files
+*PP R1 KB (2).mp4
+
+# Dependencies
+node_modules/
+
+# OS metadata files
+.DS_Store
+Thumbs.db

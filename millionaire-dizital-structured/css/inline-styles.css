@@ -372,47 +372,25 @@
 
 
 
+    html, body {
+
+      scrollbar-width: none !important; /* Firefox */
+
+      -ms-overflow-style: none !important; /* IE/Edge */
+
+    }
+
+
+
+    html::-webkit-scrollbar,
+
     body::-webkit-scrollbar {
 
-      width: 6px;
+      display: none !important; /* Chrome, Safari, Opera */
 
-    }
+      width: 0 !important;
 
-
-
-    body::-webkit-scrollbar-track {
-
-      background: var(--color-bg);
-
-    }
-
-
-
-    body::-webkit-scrollbar-thumb { background: var(--color-gold-line);
-
-      border-radius: 3px;
-
-      transition: background-color .25s ease;
-
-    }
-
-
-
-    body::-webkit-scrollbar-thumb:hover {
-
-      background: var(--color-gold-line);
-
-    }
-
-
-
-    /* Firefox */
-
-    html {
-
-      scrollbar-width: thin;
-
-      scrollbar-color: var(--color-gold-line) var(--color-bg-secondary);
+      height: 0 !important;
 
     }
 
@@ -541,6 +519,8 @@
 
 
     #webgl-container {
+
+      display: none !important;
 
       position: absolute;
 
@@ -4102,6 +4082,10 @@
       background: var(--color-bg);
 
       z-index: 30;
+
+      --color-text: #fdfaf6;
+
+      --color-text-secondary: #c5c0b8;
 
     }
 
@@ -8701,6 +8685,10 @@
 
       z-index: 1;
 
+      background: linear-gradient(135deg, #b88a32 0%, #e0bd68 35%, #f1d78f 55%, #c59a3b 75%, #9b7024 100%);
+
+      border-top: 1px solid rgba(23, 20, 17, 0.08);
+
     }
 
 
@@ -8811,7 +8799,65 @@
 
       opacity: 1;
 
-      mix-blend-mode: luminosity;
+      /* mix-blend-mode removed */
+
+      
+
+      /* Layout & Alignment */
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-end;
+
+      padding-bottom: 2vh;
+
+      box-sizing: border-box;
+
+      
+
+      /* Typography - Oversized Brand Engraving */
+
+      font-family: var(--font-family-display, sans-serif);
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      font-size: clamp(33px, 8.4vw, 155px) !important;
+
+      line-height: 0.85;
+
+      letter-spacing: -0.05em;
+
+      word-spacing: 0.25em !important;
+
+      color: rgba(23, 20, 17, 0.12); /* Recess fill color */
+
+      
+
+      /* 3D Physical Pressed / Engraved Bevel Effect */
+
+      text-shadow: 
+
+        -1px -1px 0px rgba(0, 0, 0, 0.25),
+
+        -2px -2px 2px rgba(0, 0, 0, 0.12),
+
+        1px 1px 0px rgba(255, 255, 255, 0.85),
+
+        2px 2px 2px rgba(255, 255, 255, 0.5);
+
+        
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      user-select: none;
+
+      pointer-events: none;
 
     }
 
@@ -8875,11 +8921,17 @@
 
 
 
-      .footer-copyright-bridge,
+      .footer-copyright-bridge {
+
+        display: none !important;
+
+      }
+
+
 
       .footer-parallax-section {
 
-        display: none !important;
+        display: block !important;
 
       }
 

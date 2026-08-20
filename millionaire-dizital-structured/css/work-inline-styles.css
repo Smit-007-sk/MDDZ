@@ -236,6 +236,8 @@
       overflow: hidden;
       position: relative;
       z-index: 1;
+      background: linear-gradient(135deg, #b88a32 0%, #e0bd68 35%, #f1d78f 55%, #c59a3b 75%, #9b7024 100%);
+      border-top: 1px solid rgba(23, 20, 17, 0.08);
     }
     .footer-parallax-copy {
       position: absolute;
@@ -268,7 +270,36 @@
       background-size: contain;
       background-position: bottom;
       opacity: 1;
-      mix-blend-mode: luminosity;
+      /* mix-blend-mode removed */
+
+      /* Layout & Alignment */
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 2vh;
+      box-sizing: border-box;
+
+      /* Typography - Oversized Brand Engraving */
+      font-family: var(--font-family-display, sans-serif);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(33px, 8.4vw, 155px) !important;
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      word-spacing: 0.25em !important;
+      color: rgba(23, 20, 17, 0.12); /* Recess fill color */
+
+      /* 3D Physical Pressed / Engraved Bevel Effect */
+      text-shadow: 
+        -1px -1px 0px rgba(0, 0, 0, 0.25),
+        -2px -2px 2px rgba(0, 0, 0, 0.12),
+        1px 1px 0px rgba(255, 255, 255, 0.85),
+        2px 2px 2px rgba(255, 255, 255, 0.5);
+
+      white-space: nowrap;
+      overflow: hidden;
+      user-select: none;
+      pointer-events: none;
     }
 
     @media (max-width: 1024px) {
@@ -276,9 +307,12 @@
         padding: 6vw 4vw;
       }
 
-      .footer-copyright-bridge,
-      .footer-parallax-section {
+      .footer-copyright-bridge {
         display: none !important;
+      }
+
+      .footer-parallax-section {
+        display: block !important;
       }
     }
 
@@ -363,4 +397,16 @@
 
 .frev-wrap { overflow: hidden; display: inline-block; vertical-align: bottom; }
     .footer-video-cover { position: absolute; inset: 0; background: var(--color-bg, #FDFAF6); z-index: 2; pointer-events: none; transform-origin: right center; will-change: transform; }
+
+    html, body {
+      scrollbar-width: none !important; /* Firefox */
+      -ms-overflow-style: none !important; /* IE/Edge */
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none !important; /* Chrome, Safari, Opera */
+      width: 0 !important;
+      height: 0 !important;
+    }
   

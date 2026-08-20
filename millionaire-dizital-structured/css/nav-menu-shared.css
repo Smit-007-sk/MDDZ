@@ -1443,3 +1443,15 @@ body.index-nav-sync #nav_scroll_container.is-menu-phase-line {
   opacity: 1;
 
 }
+
+
+
+/* SEO Cloak Utility for rendering data-text content */
+
+.ns-showcase-row__index::before,
+
+.ns-showcase-row__title-layer::before {
+
+  content: attr(data-text);
+
+}

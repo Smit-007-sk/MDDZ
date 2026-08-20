@@ -22,33 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ── 2. Navbar Toggle ────────────────────────────────────────
-  const navBtn = document.getElementById("nav-scroll-menu-btn");
-  const navContainer = document.getElementById("nav_scroll_container");
-  const dropdown = document.getElementById("nav-scroll-dropdown");
-
-  if (navBtn && navContainer && dropdown) {
-    navBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = navContainer.classList.toggle("is-menu-open");
-      navBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      dropdown.setAttribute("aria-hidden", isOpen ? "false" : "true");
-      if (lenis) {
-        isOpen ? lenis.stop() : lenis.start();
-      }
-    });
-
-    // Close on Escape
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && navContainer.classList.contains("is-menu-open")) {
-        navContainer.classList.remove("is-menu-open");
-        navBtn.setAttribute("aria-expanded", "false");
-        dropdown.setAttribute("aria-hidden", "true");
-        if (lenis) lenis.start();
-      }
-    });
-  }
+  // ── 2. Navbar Toggle (handled by transitions.js) ────────────
 
   // ── 3. GSAP Scroll Animations ───────────────────────────────
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
@@ -122,6 +96,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       );
     });
+
+    // Footer Parallax reveal
+    const parallaxBg = document.getElementById('footer-parallax-bg');
+    if (parallaxBg) {
+      gsap.fromTo(parallaxBg, 
+        { y: '25px', scale: 0.97, opacity: 0.7 },
+        {
+          y: '0px',
+          scale: 1,
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#footer-parallax-section',
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: true
+          }
+        }
+      );
+    }
   }
 
   // ── 4. Animated counter for stat numbers ────────────────────

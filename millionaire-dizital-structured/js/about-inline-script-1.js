@@ -4,7 +4,7 @@
 
       try {
 
-        var raw = sessionStorage.getItem('MILLIOANER DIZITAL:page-transition');
+        var raw = sessionStorage.getItem('mdz:page-transition');
 
         if (!raw) return;
 

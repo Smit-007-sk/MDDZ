@@ -4,7 +4,7 @@
   "description": "Millionaire Dizital website project",
   "main": "index.html",
   "scripts": {
-    "dev": "http-server . -p 8085"
+    "dev": "http-server . -p 8085 --ext html"
   },
   "keywords": [],
   "author": "",

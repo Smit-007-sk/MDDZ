@@ -67,6 +67,14 @@
         } catch (error) {}
     }
 
+    function startLenis() {
+        var lenis = getLenis();
+        if (!lenis || typeof lenis.start !== 'function') return;
+        try {
+            lenis.start();
+        } catch (error) {}
+    }
+
     function scrollToTarget(target) {
         if (!target) return;
         var lenis = getLenis();
@@ -688,6 +696,8 @@
         container.classList.add('is-menu-animating');
         container.classList.remove('ns-enter', 'ns-exit');
 
+        startLenis();
+
         if (skipAnimation) {
             killSharedMenuTimeline('closeTl');
             finishSharedMenuClosed(container, dropdown, items);
@@ -753,8 +763,9 @@
             container.classList.add('is-menu-animating');
             container.classList.remove('ns-enter', 'ns-exit');
             setMenuExpanded(container, true);
-
             container.classList.add('is-menu-phase-compact');
+
+            stopLenis();
             container.classList.remove('is-menu-phase-line');
 
             scheduleSharedMenuPhase(function() {

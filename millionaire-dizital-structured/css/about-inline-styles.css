@@ -48,37 +48,27 @@
 
       
 
-      overflow-y: scroll;
+    html, body {
 
-      scrollbar-width: thin; /* Firefox */
+      scrollbar-width: none !important; /* Firefox */
 
-      scrollbar-color: rgba(255, 255, 255, 0.18) #000;
+      -ms-overflow-style: none !important; /* IE/Edge */
 
     }
+
+
 
     html::-webkit-scrollbar,
 
-    body::-webkit-scrollbar { width: 6px; }
+    body::-webkit-scrollbar {
 
-    html::-webkit-scrollbar-track,
+      display: none !important; /* Chrome, Safari, Opera */
 
-    body::-webkit-scrollbar-track { background: #000; }
+      width: 0 !important;
 
-    html::-webkit-scrollbar-thumb,
-
-    body::-webkit-scrollbar-thumb {
-
-      background: rgba(255, 255, 255, 0.18);
-
-      border-radius: 3px;
-
-      transition: background-color .25s ease;
+      height: 0 !important;
 
     }
-
-    html::-webkit-scrollbar-thumb:hover,
-
-    body::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.32); }
 
 
 
@@ -2294,7 +2284,7 @@
 
       transform: translateZ(calc(var(--s)/2));
 
-      background: #262626 url('../images/about/box/b1.webp') center/cover no-repeat;
+      background: #262626 url('../images/main-images/Silver Leaf final (1).png') center/cover no-repeat;
 
     }
 
@@ -2304,7 +2294,7 @@
 
       transform: rotateY(180deg) translateZ(calc(var(--s)/2));
 
-      background: #1A1A1A url('../images/about/box/b2.webp') center/cover no-repeat;
+      background: #1A1A1A url('../images/main-images/Silver Leaf final (2).png') center/cover no-repeat;
 
     }
 
@@ -2314,7 +2304,7 @@
 
       transform: rotateY(90deg) translateZ(calc(var(--s)/2));
 
-      background: #0D0D0D url('../images/about/box/b3.webp') center/cover no-repeat;
+      background: #0D0D0D url('../images/main-images/Silver Leaf final (3).png') center/cover no-repeat;
 
     }
 
@@ -2324,7 +2314,7 @@
 
       transform: rotateY(-90deg) translateZ(calc(var(--s)/2));
 
-      background: #171717 url('../images/about/box/b4.webp') center/cover no-repeat;
+      background: #171717 url('../images/main-images/Js 1.png') center/cover no-repeat;
 
     }
 
@@ -2334,7 +2324,7 @@
 
       transform: rotateX(-90deg) translateZ(calc(var(--s)/2));
 
-      background: #404040 url('../images/about/box/b5.webp') center/cover no-repeat;
+      background: #404040 url('../images/main-images/Gold Neutral Modern Jewellery Instagram Post.png') center/cover no-repeat;
 
     }
 
@@ -2344,7 +2334,7 @@
 
       transform: rotateX(90deg) translateZ(calc(var(--s)/2));
 
-      background: #000000 url('../images/about/box/b6.webp') center/cover no-repeat;
+      background: #000000 url('../images/main-images/Pink Vibrant Gradient Weekend Special Promo Smoothie Instagram Post.png') center/cover no-repeat;
 
     }
 
@@ -3564,6 +3554,10 @@
 
       z-index: 1;
 
+      background: linear-gradient(135deg, #b88a32 0%, #e0bd68 35%, #f1d78f 55%, #c59a3b 75%, #9b7024 100%);
+
+      border-top: 1px solid rgba(23, 20, 17, 0.08);
+
     }
 
     .footer-parallax-copy {
@@ -3630,7 +3624,65 @@
 
       opacity: 1;
 
-      mix-blend-mode: luminosity;
+      /* mix-blend-mode removed */
+
+
+
+      /* Layout & Alignment */
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: flex-end;
+
+      padding-bottom: 2vh;
+
+      box-sizing: border-box;
+
+
+
+      /* Typography - Oversized Brand Engraving */
+
+      font-family: var(--font-family-display, sans-serif);
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      font-size: clamp(33px, 8.4vw, 155px) !important;
+
+      line-height: 0.85;
+
+      letter-spacing: -0.05em;
+
+      word-spacing: 0.25em !important;
+
+      color: rgba(23, 20, 17, 0.12); /* Recess fill color */
+
+
+
+      /* 3D Physical Pressed / Engraved Bevel Effect */
+
+      text-shadow: 
+
+        -1px -1px 0px rgba(0, 0, 0, 0.25),
+
+        -2px -2px 2px rgba(0, 0, 0, 0.12),
+
+        1px 1px 0px rgba(255, 255, 255, 0.85),
+
+        2px 2px 2px rgba(255, 255, 255, 0.5);
+
+
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      user-select: none;
+
+      pointer-events: none;
 
     }
 
@@ -3946,11 +3998,17 @@
 
 
 
-      .footer-copyright-bridge,
+      .footer-copyright-bridge {
+
+        display: none !important;
+
+      }
+
+
 
       .footer-parallax-section {
 
-        display: none !important;
+        display: block !important;
 
       }
 

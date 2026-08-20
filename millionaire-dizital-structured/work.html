@@ -9,7 +9,7 @@
   <script>
     (function () {
       try {
-        var raw = sessionStorage.getItem('nudot:page-transition');
+        var raw = sessionStorage.getItem('mdz:page-transition');
         if (!raw) return;
         var payload = JSON.parse(raw);
         if (payload && payload.at && Date.now() - payload.at < 12000) {
@@ -35,13 +35,13 @@
 <meta name="author" content="MILLIOANER DIZITAL">
 <meta name="theme-color" content="#030303">
 <meta name="format-detection" content="telephone=no">
-<link rel="canonical" href="https://nudot.com.tw/work">
+<link rel="canonical" href="https://millioaner-dizital.com/work">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://nudot.com.tw/work">
+<meta property="og:url" content="https://millioaner-dizital.com/work">
 <meta property="og:title" content="Selected Works Portfolio | MILLIOANER DIZITAL">
 <meta property="og:description" content="Explore Selected Works Portfolio of MILLIOANER DIZITAL. We specialize in digital development, brand transformation, and custom AI systems.">
-<meta property="og:image" content="https://nudot.com.tw/images/og.jpg">
+<meta property="og:image" content="https://millioaner-dizital.com/images/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_TW">
@@ -50,7 +50,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Selected Works Portfolio | MILLIOANER DIZITAL">
 <meta name="twitter:description" content="Explore Selected Works Portfolio of MILLIOANER DIZITAL. We specialize in digital development, brand transformation, and custom AI systems.">
-<meta name="twitter:image" content="https://nudot.com.tw/images/oglab.jpg">
+<meta name="twitter:image" content="https://millioaner-dizital.com/images/og.jpg">
 
 
 
@@ -59,11 +59,11 @@
   <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/pp-neue-montreal">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&family=Bitcount+Grid+Single:wght@100..700&display=swap">
-  <link rel="stylesheet" href="css/cursor-shared.css">
+  <link rel="stylesheet" href="css/cursor-shared.css?v=2">
 
- <link rel="stylesheet" href="css/nav-menu-shared.css">
-  <link rel="stylesheet" href="css/page-transitions.css">
-  <link rel="stylesheet" href="css/project-creative-process.css">
+  <link rel="stylesheet" href="css/nav-menu-shared.css?v=2">
+  <link rel="stylesheet" href="css/page-transitions.css?v=2">
+  <link rel="stylesheet" href="css/project-creative-process.css?v=2">
   <link rel="icon" href="images/fav.png" type="image/png">
 
   <!-- GSAP Core & ScrollTrigger -->
@@ -73,11 +73,11 @@
   <!-- Lenis (Smooth Scroll) -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.min.js" defer></script>
-  <script src="js/transitions.js" defer></script>
-  <script src="js/project-creative-process.js" defer></script>
-  <script src="js/cursor-shared.js" defer></script>
+  <script src="transitions.js?v=2" defer></script>
+  <script src="js/project-creative-process.js?v=2" defer></script>
+  <script src="js/cursor-shared.js?v=2" defer></script>
 
-  <link rel="stylesheet" href="css/work-inline-styles.css">
+  <link rel="stylesheet" href="css/work-inline-styles.css?v=2">
   
 
 </head>
@@ -137,21 +137,21 @@
             <a class="ns-menu-topline__contact" href="#site-footer">CONTACT</a>
           </div> -->
 
-             <div class="ns-menu-rows">
+              <div class="ns-menu-rows">
                 <a class="ns-showcase-row ns-dropdown__item" href="index.html" data-transition-label="Home" aria-label="Home">
-                  <span class="ns-showcase-row__index" data-text="( HOME )">( HOME )</span>
+                  <span class="ns-showcase-row__index" data-text="( HOME )"></span>
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-                    <img src="images/nav/1.webp" data-nav-src="images/nav/1.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/DSC01984 copy.jpg" data-nav-src="images/main-images/DSC01984 copy.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                   <span class="ns-showcase-row__title">
                     <span class="ns-showcase-row__title-track">
-                      <span class="ns-showcase-row__title-layer is-primary" data-text="HOME">HOME</span>
-                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="HOME">HOME</span>
+                      <span class="ns-showcase-row__title-layer is-primary" data-text="HOME"></span>
+                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="HOME"></span>
                     </span>
                   </span>
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-                    <img src="images/nav/2.webp" data-nav-src="images/nav/2.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/DSC02014 copy.jpg" data-nav-src="images/main-images/DSC02014 copy.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                 </a>
@@ -159,71 +159,71 @@
                 <a class="ns-showcase-row ns-dropdown__item" href="about.html" data-transition-label="About" aria-label="MILLIOANER DIZITAL">
                   <span class="ns-showcase-row__index" data-text="( MILLIOANER DIZITAL )"></span>
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-                    <img src="images/nav/3.webp" data-nav-src="images/nav/3.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/DSC06677-Recovered.jpg" data-nav-src="images/main-images/DSC06677-Recovered.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                   <span class="ns-showcase-row__title">
                     <span class="ns-showcase-row__title-track">
-                      <span class="ns-showcase-row__title-layer is-primary" data-text="ABOUT">ABOUT</span>
-                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="ABOUT">ABOUT</span>
+                      <span class="ns-showcase-row__title-layer is-primary" data-text="ABOUT"></span>
+                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="ABOUT"></span>
                     </span>
                   </span>
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-                    <img src="images/nav/4.webp" data-nav-src="images/nav/4.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/DSC09792.JPG" data-nav-src="images/main-images/DSC09792.JPG" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                 </a>
 
                 <a class="ns-showcase-row ns-dropdown__item" href="work.html" data-transition-label="Work" aria-label="Work">
-                  <span class="ns-showcase-row__index" data-text="( WORK )">( WORK )</span>
+                  <span class="ns-showcase-row__index" data-text="( WORK )"></span>
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-                    <img src="images/nav/5.webp" data-nav-src="images/nav/5.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/1.jpg" data-nav-src="images/main-images/1.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                   <span class="ns-showcase-row__title">
                     <span class="ns-showcase-row__title-track">
-                      <span class="ns-showcase-row__title-layer is-primary" data-text="WORK">WORK</span>
-                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="WORK">WORK</span>
+                      <span class="ns-showcase-row__title-layer is-primary" data-text="WORK"></span>
+                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="WORK"></span>
                     </span>
                   </span>
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-                    <img src="images/nav/6.webp" data-nav-src="images/nav/6.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/15.jpg" data-nav-src="images/main-images/15.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                 </a>
 
                 <a class="ns-showcase-row ns-dropdown__item" href="mdz-makes-ai.html" data-transition-label="Labs" aria-label="MDZ Makes AI">
-                  <span class="ns-showcase-row__index" data-text="( MDZ MAKES AI )">( MDZ MAKES AI )</span>
+                  <span class="ns-showcase-row__index" data-text="( MDZ MAKES AI )"></span>
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-                    <img src="images/nav/7.webp" data-nav-src="images/nav/7.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/16.jpg" data-nav-src="images/main-images/16.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                   <span class="ns-showcase-row__title">
                     <span class="ns-showcase-row__title-track">
-                      <span class="ns-showcase-row__title-layer is-primary" data-text="MDZ MAKES AI">MDZ MAKES AI</span>
-                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="MDZ MAKES AI">MDZ MAKES AI</span>
+                      <span class="ns-showcase-row__title-layer is-primary" data-text="MDZ MAKES AI"></span>
+                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="MDZ MAKES AI"></span>
                     </span>
                   </span>
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-                    <img src="images/nav/8.webp" data-nav-src="images/nav/8.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/17.jpg" data-nav-src="images/main-images/17.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                 </a>
 
                 <a class="ns-showcase-row ns-dropdown__item" href="contact.html" data-transition-label="Contact" aria-label="Contact">
-                  <span class="ns-showcase-row__index" data-text="( CONTACT )">( CONTACT )</span>
+                  <span class="ns-showcase-row__index" data-text="( CONTACT )"></span>
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-                    <img src="images/nav/9.webp" data-nav-src="images/nav/9.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/Copy of TO,JS,CW COVER PAGE.png" data-nav-src="images/main-images/Copy of TO,JS,CW COVER PAGE.png" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                   <span class="ns-showcase-row__title">
                     <span class="ns-showcase-row__title-track">
-                      <span class="ns-showcase-row__title-layer is-primary" data-text="CONTACT">CONTACT</span>
-                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="CONTACT">CONTACT</span>
+                      <span class="ns-showcase-row__title-layer is-primary" data-text="CONTACT"></span>
+                      <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="CONTACT"></span>
                     </span>
                   </span>
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-                    <img src="images/nav/10.webp" data-nav-src="images/nav/10.webp" alt="" width="300" height="200"
+                    <img src="images/main-images/Copy of Untitled (1080 x 1920 px).png" data-nav-src="images/main-images/Copy of Untitled (1080 x 1920 px).png" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
                   </span>
                 </a>
@@ -270,11 +270,11 @@
                 
               </div>
               <div class="work-box is-active">
-                <img src="images/work/list/1.webp" alt="MILLIOANER DIZITAL selected work 01" class="work-cover" width="2560"
+                <img src="images/main-images/Bb May 2.jpg" alt="MILLIOANER DIZITAL selected work 01" class="work-cover" width="2560"
                   height="1920" fetchpriority="high" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
-                    <source data-src="images/work/list/item/1.mp4" type="video/mp4">
+                    <source data-src="images/main-images/Sindhu by M.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -296,11 +296,11 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/2.webp" alt="MILLIOANER DIZITAL selected work 06" class="work-cover" width="3000"
+                <img src="images/main-images/lust emergency hoodie.png" alt="MILLIOANER DIZITAL selected work 06" class="work-cover" width="3000"
                   height="2000" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
-                    <source data-src="images/work/list/item/2.mp4" type="video/mp4">
+                    <source data-src="images/main-images/LEBEL BHOHO.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -319,7 +319,7 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/3.webp" alt="MILLIOANER DIZITAL selected work 04" class="work-cover" width="2752"
+                <img src="images/main-images/DSC02016 copy.jpg" alt="MILLIOANER DIZITAL selected work 04" class="work-cover" width="2752"
                   height="1536" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
@@ -345,7 +345,7 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/4.webp" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1200"
+                <img src="images/main-images/Pink Vibrant Gradient Weekend Special Promo Smoothie Instagram Post.png" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1200"
                   height="860" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
@@ -372,7 +372,7 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/5.webp" alt="MILLIOANER DIZITAL selected work 03" class="work-cover" width="1280"
+                <img src="images/main-images/Beige Aesthetics Photo Collage Moodboard.png" alt="MILLIOANER DIZITAL selected work 03" class="work-cover" width="1280"
                   height="960" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
@@ -395,11 +395,11 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/6.webp" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
+                <img src="images/main-images/Brown and Gold Elegant We are Open Restaurant Instagram Story.png" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
                   height="1920" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
-                    <source data-src="images/work/list/item/6.mp4" type="video/mp4">
+                    <source data-src="images/main-images/chef fasto Caru 4.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -419,11 +419,11 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/7.webp" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1280"
+                <img src="images/main-images/opsi.png" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1280"
                   height="853" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
-                    <source data-src="images/work/list/item/7.mp4" type="video/mp4">
+                    <source data-src="images/main-images/Mtv story .mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -442,11 +442,11 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/8.webp" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
+                <img src="images/main-images/ARB X HS 1.png" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
                   height="1920" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
-                    <source data-src="images/work/list/item/8.mp4" type="video/mp4">
+                    <source data-src="images/main-images/Mtv story  (1).mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
@@ -468,7 +468,7 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/9.webp" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1280"
+                <img src="images/main-images/Silver Leaf final.png" alt="MILLIOANER DIZITAL selected work 05" class="work-cover" width="1280"
                   height="853" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
@@ -491,7 +491,7 @@
                 <span class="work-meta__right">PREVIEW <span class="work-toggle" aria-hidden="true"></span></span>
               </div>
               <div class="work-box">
-                <img src="images/work/list/10.webp" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
+                <img src="images/main-images/ChatGPT Image Aug 17, 2026, 03_15_40 PM.png" alt="MILLIOANER DIZITAL selected work 02" class="work-cover" width="2560"
                   height="1920" loading="lazy" decoding="async">
                 <div class="work-video" aria-hidden="true">
                   <video muted loop playsinline preload="metadata">
@@ -564,7 +564,7 @@
               </div>
               <div style="color:#888;font-size:14px;margin-top:8px;">Amin Marg, Rajkot, Gujarat</div>
               <div class="footer-nav-links">
-                <a href="https://www.instagram.com/nudotlabs" target="_blank" rel="noopener noreferrer" data-transition-label="Instagram">Instagram</a>
+                <a href="https://www.instagram.com/mdzlabs" target="_blank" rel="noopener noreferrer" data-transition-label="Instagram">Instagram</a>
                 <a href="https://www.threads.net/" target="_blank" rel="noopener noreferrer" data-transition-label="Threads">Threads</a>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                   data-transition-label="Facebook">Facebook</a>
@@ -583,7 +583,7 @@
         </div>
 
         <div class="footer-parallax-section" id="footer-parallax-section">
-          <div class="footer-parallax-bg" id="footer-parallax-bg" style="display:flex; justify-content:center; align-items:flex-end; font-size: 9.5vw; font-family: var(--font-family-display, sans-serif); font-weight: 800; color: rgba(200, 154, 69, 0.12); line-height: 0.75; padding-bottom: 2vh; user-select:none; white-space:nowrap; overflow:hidden; letter-spacing:-0.04em;">MILLIOANER DIZITAL</div>
+          <div class="footer-parallax-bg" id="footer-parallax-bg">MILLIOANER DIZITAL</div>
           <div class="footer-parallax-copy">
             <div>MILLIOANER DIZITAL LLP</div>
             <div>&#169; 2026 MILLIOANER DIZITAL STUDIO. ALL RIGHTS RESERVED.</div>
@@ -596,9 +596,7 @@
   <div id="cursor-dot" aria-hidden="true"></div>
   <div id="cursor-ring" aria-hidden="true" data-cursor-label="EXPLORE" data-cursor-side="right"></div>
 
-  <script src="js/contact-inline-script.js" defer></script>
-
-  <script src="js/work-inline-script.js" defer></script>
+  <script src="js/work-inline-script.js?v=2" defer></script>
   <!-- Marquee JS -->
   
 

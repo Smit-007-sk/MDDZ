@@ -6116,6 +6116,42 @@
 
             }
 
+
+
+            if (parallaxBg) {
+
+              gsap.fromTo(parallaxBg, 
+
+                { y: '25px', scale: 0.97, opacity: 0.7 },
+
+                {
+
+                  y: '0px',
+
+                  scale: 1,
+
+                  opacity: 1,
+
+                  ease: 'none',
+
+                  scrollTrigger: {
+
+                    trigger: '#footer-parallax-section',
+
+                    start: 'top bottom',
+
+                    end: 'bottom bottom',
+
+                    scrub: true
+
+                  }
+
+                }
+
+              );
+
+            }
+
           })();
 
         });

@@ -33,34 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
-  // 2. Simple & Robust Navbar Dropdown Toggle
-  const navBtn = document.getElementById('nav-scroll-menu-btn');
-  const navContainer = document.getElementById('nav_scroll_container');
-  const dropdown = document.getElementById('nav-scroll-dropdown');
-
-  if (navBtn && navContainer && dropdown) {
-    navBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = navContainer.classList.toggle('is-menu-open');
-      navBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      dropdown.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-
-      if (lenis) {
-
-        if (isOpen) {
-
-          lenis.stop();
-
-        } else {
-
-          lenis.start();
-
-        }
-
-      }
-    });
-  }
+  // 2. Simple & Robust Navbar Dropdown Toggle (handled by transitions.js)
 
   // 3. Captcha Generator
   let capVal1 = Math.floor(Math.random() * 9) + 1;
@@ -170,56 +143,77 @@ document.addEventListener("DOMContentLoaded", function () {
   const lbOverlay = document.getElementById("lb-overlay");
   const lbClose = document.getElementById("lb-close");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let isValid = true;
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let isValid = true;
 
-    // Reset errors
-    nameError.classList.remove("visible");
-    emailError.classList.remove("visible");
-    phoneError.classList.remove("visible");
-    captchaError.classList.remove("visible");
+      // Reset errors
+      nameError.classList.remove("visible");
+      emailError.classList.remove("visible");
+      phoneError.classList.remove("visible");
+      captchaError.classList.remove("visible");
 
-    if (!nameInput.value.trim()) {
-      nameError.classList.add("visible");
-      isValid = false;
-    }
-
-    if (!emailInput.value.trim() || !emailInput.value.includes("@")) {
-      emailError.classList.add("visible");
-      isValid = false;
-    }
-
-    if (!phoneInput.value.trim()) {
-      phoneError.classList.add("visible");
-      isValid = false;
-    }
-
-    if (parseInt(captchaInput.value) !== correctAnswer) {
-      captchaError.classList.add("visible");
-      isValid = false;
-    }
-
-    if (isValid) {
-      // Mock successful submission -> Show lightbox
-      lbOverlay.classList.add("active");
-      form.reset();
-      resetBudgetSelection();
-      
-      // Regenerate captcha
-      capVal1 = Math.floor(Math.random() * 9) + 1;
-      capVal2 = Math.floor(Math.random() * 9) + 1;
-      correctAnswer = capVal1 + capVal2;
-      if (capDisplay1 && capDisplay2) {
-        capDisplay1.textContent = capVal1;
-        capDisplay2.textContent = capVal2;
+      if (!nameInput.value.trim()) {
+        nameError.classList.add("visible");
+        isValid = false;
       }
-    }
-  });
+
+      if (!emailInput.value.trim() || !emailInput.value.includes("@")) {
+        emailError.classList.add("visible");
+        isValid = false;
+      }
+
+      if (!phoneInput.value.trim()) {
+        phoneError.classList.add("visible");
+        isValid = false;
+      }
+
+      if (parseInt(captchaInput.value) !== correctAnswer) {
+        captchaError.classList.add("visible");
+        isValid = false;
+      }
+
+      if (isValid) {
+        // Mock successful submission -> Show lightbox
+        lbOverlay.classList.add("active");
+        form.reset();
+        resetBudgetSelection();
+        
+        // Regenerate captcha
+        capVal1 = Math.floor(Math.random() * 9) + 1;
+        capVal2 = Math.floor(Math.random() * 9) + 1;
+        correctAnswer = capVal1 + capVal2;
+        if (capDisplay1 && capDisplay2) {
+          capDisplay1.textContent = capVal1;
+          capDisplay2.textContent = capVal2;
+        }
+      }
+    });
+  }
 
   if (lbClose) {
     lbClose.addEventListener("click", function () {
       lbOverlay.classList.remove("active");
     });
+  }
+
+  const parallaxBg = document.getElementById('footer-parallax-bg');
+  if (parallaxBg && window.gsap && window.ScrollTrigger) {
+    gsap.fromTo(parallaxBg, 
+      { y: '25px', scale: 0.97, opacity: 0.7 },
+      {
+        y: '0px',
+        scale: 1,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#footer-parallax-section',
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: true
+        }
+      }
+    );
   }
 });
