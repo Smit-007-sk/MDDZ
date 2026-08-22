@@ -34,6 +34,11 @@ body.shared-nav-page.nav-menu-open {
 
 
 
+body.shared-nav-page #nav_scroll_container,
+body.shared-nav-page #nav_scroll_container * {
+  box-sizing: border-box;
+}
+
 body.shared-nav-page #nav_scroll_container {
 
   position: fixed;
@@ -49,6 +54,8 @@ body.shared-nav-page #nav_scroll_container {
   flex-direction: column;
 
   width: min(500px, calc(100vw - 80px));
+
+  max-width: calc(100vw - 24px);
 
   height: 64px;
 
@@ -1053,7 +1060,7 @@ body.shared-nav-page .ns-showcase-row.is-previewed .ns-showcase-row__thumb img {
     top: 16px;
 
     width: calc(100vw - 24px);
-
+    margin-left: -12px;
   }
 
 

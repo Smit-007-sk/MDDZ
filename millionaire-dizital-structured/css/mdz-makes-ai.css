@@ -16,6 +16,10 @@
 }
 
 /* ── Base ────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html.lenis { scroll-behavior: auto; }
 
 body.ai-page {
