@@ -948,71 +948,41 @@
             //    ： 400ms ， readyState >= 2  resolve。
 
             const fallbackTick = () => {
-
               textureFallbackTimer = null;
-
               if (didResolveTexture) return;
-
               if (vid.readyState >= 2) { resolveTexture(); return; }
-
-              textureFallbackTimer = setTimeout(fallbackTick, 400);
-
+              resolveTexture();
             };
-
-            textureFallbackTimer = setTimeout(fallbackTick, 2500);
-
+            textureFallbackTimer = setTimeout(fallbackTick, 800);
             if (vid.readyState >= 2) resolveTexture();
-
-            else vid.addEventListener('loadeddata', resolveTexture, { once: true });
-
+            else {
+              vid.addEventListener('loadeddata', resolveTexture, { once: true });
+              vid.addEventListener('canplay', resolveTexture, { once: true });
+              vid.addEventListener('playing', resolveTexture, { once: true });
+            }
             vid.addEventListener('error', resolveEmptyTexture, { once: true });
-
-            // hls.js ， vid.load()（）
-
             if (vid.readyState === 0 && !vid._hls) vid.load();
-
             if (index === 0) this._safePlay(vid);
-
           });
-
           return this.texturePromises[index];
-
         }
 
-
-
         this.texturePromises[index] = new Promise((resolve) => {
-
           this.textureLoader.load(
-
             url,
-
             (texture) => {
-
               texture.generateMipmaps = true;
-
               texture.minFilter = THREE.LinearMipmapLinearFilter;
-
               this.textures[index] = texture;
-
               if (texture.image) {
-
                 this.rememberTextureResolution(index, texture.image.width, texture.image.height);
-
               }
-
               if (index === 0) {
-
                 this.material.uniforms.uTex1.value = texture;
-
+                this.material.uniforms.uTexReady.value = 1;
                 this.applyTextureResolution(index, texture, 1);
-
-                //  slot2,
-
                 this.applyTextureResolution(index, texture, 2);
-
               }
-
               resolve(texture);
 
             },
