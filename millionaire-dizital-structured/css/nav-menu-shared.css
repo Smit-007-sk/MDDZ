@@ -209,19 +209,19 @@ body.shared-nav-page #nav_scroll {
 
 
 body.shared-nav-page #nav_scroll_container.is-menu-open #nav_scroll {
-
   border-bottom: 1px solid var(--ns-menu-line);
-
+  flex: 0 0 76px;
+  min-height: 76px;
+  height: 76px;
+  padding: 0 max(32px, 3vw);
 }
-
-
 
 body.shared-nav-page #nav_scroll .ns-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background: transparent;
   border: none;
   outline: none;
@@ -247,8 +247,10 @@ body.shared-nav-page #nav_scroll button.ns-icon {
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
-  width: 32px !important;
-  height: 32px !important;
+  width: 40px !important;
+  height: 40px !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 body.shared-nav-page #nav_scroll .ns-icon svg {
@@ -290,8 +292,8 @@ body.shared-nav-page #nav_scroll_container.is-menu-open #nav_scroll .ns-logo img
 
 body.shared-nav-page .ns-ham-svg {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   overflow: visible;
 }
 
