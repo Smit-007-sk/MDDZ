@@ -579,6 +579,7 @@
         container.style.removeProperty('top');
         container.style.removeProperty('left');
         container.style.removeProperty('width');
+        container.style.removeProperty('max-width');
         container.style.removeProperty('height');
         container.style.removeProperty('border-radius');
         container.style.removeProperty('transform');
@@ -776,11 +777,12 @@
                     container.classList.remove('is-menu-phase-line');
                     setSharedMenuShellStyles(container, {
                         top: '0px',
-                        left: '50%',
+                        left: '0px',
                         width: '100vw',
+                        maxWidth: '100vw',
                         height: '100vh',
                         borderRadius: '0px',
-                        transform: 'translateX(-50%)',
+                        transform: 'none',
                         backgroundColor: '#efe6d8'
                     });
                 }, 250);
