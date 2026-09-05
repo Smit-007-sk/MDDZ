@@ -20,13 +20,31 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html.lenis { scroll-behavior: auto; }
 
 body.ai-page {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
   background: var(--ai-bg);
   color: var(--ai-text);
   font-family: var(--ai-font-sans);
   overflow-x: hidden;
+}
+
+[data-barba="wrapper"],
+[data-barba="container"] {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* ── Page-work-pattern background override ─────────────────── */
