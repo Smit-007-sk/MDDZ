@@ -795,6 +795,7 @@ const NEXT = 1;
               webglManager?.preloadTexture(index);
               ensureTopAndLock();
               slideshow.goTo(index);
+              startAutoLoop();
             });
 
             thumb.addEventListener("mouseenter", () => {

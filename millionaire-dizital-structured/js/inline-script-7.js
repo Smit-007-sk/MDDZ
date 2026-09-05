@@ -1591,15 +1591,11 @@
 
 
             thumb.addEventListener("click", () => {
-
               lastHoveredThumbIndex = index;
-
               webglManager?.preloadTexture(index);
-
               ensureTopAndLock();
-
               slideshow.goTo(index);
-
+              startAutoLoop();
             });
 
 
