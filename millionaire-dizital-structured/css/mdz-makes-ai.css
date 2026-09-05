@@ -504,22 +504,22 @@ body.ai-page.page-work-pattern::before {
   color: #0f0f0f;
 }
 
-/* ── Site Footer ────────────────────────────────────────────── */
+/* ── Site Footer (Gold & Ivory Theme matching About page) ── */
 .site-footer {
   position: relative;
   overflow: visible;
-  background: #0a0a0a;
-  color: #f5f5f5;
+  background: #FDFAF6;
+  color: #171411;
   padding: 0;
-  font-family: var(--ai-font-sans, 'DM Sans', sans-serif);
+  font-family: 'DM Sans', sans-serif;
   border-top: 1px solid rgba(200, 154, 69, 0.2);
 }
 
 .footer-top {
-  padding: 6vw 4vw 4vw;
+  padding: 4vw 3vw;
   position: relative;
   z-index: 5;
-  background-color: #0a0a0a;
+  background-color: #FDFAF6;
 }
 
 .footer-main-content {
@@ -529,29 +529,24 @@ body.ai-page.page-work-pattern::before {
 
 .footer-contact-info a {
   display: block;
-  font-size: clamp(24px, 4.5vw, 64px);
-  font-weight: 600;
+  font-size: clamp(20px, 3.5vw, 50px);
+  font-weight: 400;
   color: #c89a45;
-  background: linear-gradient(135deg, #c89a45, #e4b86a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-decoration: none;
-  line-height: 1.1;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-  transition: opacity 0.3s ease;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  transition: opacity 0.2s ease;
 }
 
 .footer-contact-info a:hover {
-  opacity: 0.75;
+  opacity: 0.65;
 }
 
 .footer-contact-info span {
   display: block;
-  font-size: clamp(18px, 2.5vw, 32px);
-  color: #e4b86a;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-size: clamp(16px, 2.5vw, 30px);
+  color: #c89a45;
+  font-weight: 400;
 }
 
 .footer-nav-links {
@@ -559,62 +554,90 @@ body.ai-page.page-work-pattern::before {
   flex-wrap: wrap;
   gap: 28px;
   margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-nav-links a {
-  color: #04b360;
-  font-size: 14px;
+  color: #046A38;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 1.5px;
   text-decoration: none;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .footer-nav-links a:hover {
-  color: #c89a45;
+  opacity: 0.5;
 }
 
 .footer-parallax-section {
-  height: 280px;
+  height: 50vh;
+  min-height: 300px;
   width: 100%;
   overflow: hidden;
   position: relative;
   z-index: 1;
-  background: #050505;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, #b88a32 0%, #e0bd68 35%, #f1d78f 55%, #c59a3b 75%, #9b7024 100%);
+  border-top: 1px solid rgba(23, 20, 17, 0.08);
 }
 
 .footer-parallax-bg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2vh;
+  box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(3rem, 12vw, 9rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.04);
+  font-size: clamp(33px, 8.4vw, 155px) !important;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  word-spacing: 0.25em !important;
+  color: rgba(23, 20, 17, 0.12);
+  text-shadow: 
+    -1px -1px 0px rgba(0, 0, 0, 0.25),
+    -2px -2px 2px rgba(0, 0, 0, 0.12),
+    1px 1px 0px rgba(255, 255, 255, 0.85),
+    2px 2px 2px rgba(255, 255, 255, 0.5);
   white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
   pointer-events: none;
 }
 
 .footer-parallax-copy {
   position: absolute;
-  bottom: 24px;
-  left: 4vw;
-  right: 4vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  top: 30px;
+  left: 40px;
+  z-index: 3;
+  color: rgba(23, 20, 17, 0.65);
+  font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  pointer-events: none;
+}
+
+@media (max-width: 1440px) {
+  .footer-parallax-section {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    padding: 32px 20px 40px;
+  }
+  .footer-nav-links {
+    gap: 16px;
+    margin-top: 24px;
+  }
 }
 
 /* ── Responsive ──────────────────────────────────────────────── */
