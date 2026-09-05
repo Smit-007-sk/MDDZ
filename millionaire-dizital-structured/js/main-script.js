@@ -2063,52 +2063,10 @@ const NEXT = 1;
         document.fonts.ready.then(() => ScrollTrigger.refresh()).catch(() => { });
       }
 
-      if (typeof Lenis !== 'undefined' && !_useNativeTouchScroll) {
+      const lenis = window._lenis || (typeof initSmoothScroll === 'function' ? initSmoothScroll() : null);
 
-        // 🎯 ：
-        //   -  lerp （ duration ），「」
-        //   - lerp 0.09： 9%，~12 ，
-        //   - wheelMultiplier 1.0：，
-        //   - touchMultiplier 1.5：，
-        const lenis = new Lenis({
-          lerp: _prefersReducedMotion ? 1 : 0.09,
-          smoothWheel: !_prefersReducedMotion,
-          wheelMultiplier: 1.0,
-          touchMultiplier: 1.5,
-          syncTouch: false,
-          infinite: false,
-          //  Lenis 1.0.42  fallback（lerp ）
-          duration: 1.0,
-          easing: t => 1 - Math.pow(1 - t, 3),
-        });
-        lenis.on('scroll', ScrollTrigger.update);
+      if (lenis) {
         lenis.on('scroll', scheduleSyncScrollState);
-
-        gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
-        window._lenis = lenis;
-
-        // 🎯 ,Lenis  rAF ,「」
-        document.addEventListener('visibilitychange', () => {
-          if (document.visibilityState === 'visible' && window._lenis) {
-            // , velocity
-            window._lenis.scrollTo(window._lenis.scroll, { immediate: true, force: true });
-          }
-        });
-
-        // 🎯  (href="#xxx")  Lenis, Lenis 
-        document.addEventListener('click', (e) => {
-          const a = e.target.closest('a[href^="#"]');
-          if (!a) return;
-          const href = a.getAttribute('href');
-          if (!href || href === '#' || href.length < 2) return;
-          const target = document.querySelector(href);
-          if (!target) return;
-          e.preventDefault();
-          window._lenis.scrollTo(target, { duration: 1.4, offset: 0 });
-        }, { passive: false });
-      } else {
-        window._lenis = null;
       }
 
       let currentVelocity = 0;

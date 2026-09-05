@@ -269,18 +269,9 @@
   
 
 (function () {
-      // 1. Lenis smooth scroll — exposed as window._lenis for transitions.js
-      var lenis = new Lenis({
-        duration: 1.2,
-        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 0.85,
-        touchMultiplier: 1.2,
-      });
-      window._lenis = lenis;
-      function raf(time) { lenis.raf(time); window.requestAnimationFrame(raf); }
-      window.requestAnimationFrame(raf);
+      // 1. Lenis smooth scroll — managed by smooth-scroll.js
+      if (!window._lenis && typeof window.initSmoothScroll === 'function') {
+        window.initSmoothScroll();
+      }
     })();
   

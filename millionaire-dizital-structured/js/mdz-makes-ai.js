@@ -1,26 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ── 1. Lenis Smooth Scroll ──────────────────────────────────
-  let lenis = window._lenis || null;
-  if (!lenis && typeof Lenis !== "undefined") {
-    lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-      smoothTouch: false,
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-    window._lenis = lenis;
-    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    }
-  }
+  // ── 1. Lenis Smooth Scroll (managed by smooth-scroll.js) ─────
+  let lenis = window._lenis || (typeof initSmoothScroll === 'function' ? initSmoothScroll() : null);
 
   // ── 2. Navbar Toggle (handled by transitions.js) ────────────
 

@@ -42,57 +42,13 @@
 
 
 
-      var lenis = window._lenis || null;
-
-      var createdLenis = false;
-
-      if (!lenis && typeof window.Lenis !== 'undefined') {
-
-        lenis = new window.Lenis({
-
-          duration: 1.5,
-
-          easing: function (time) {
-
-            return Math.min(1, 1.001 - Math.pow(2, -10 * time));
-
-          },
-
-          smoothWheel: true,
-
-          smoothTouch: false
-
-        });
-
-        window._lenis = lenis;
-
-        createdLenis = true;
-
-      }
-
-
+      var lenis = window._lenis || (typeof window.initSmoothScroll === 'function' ? window.initSmoothScroll() : null);
 
       if (lenis && !lenis.__aboutScrollTriggerBound) {
 
         lenis.on('scroll', window.ScrollTrigger.update);
 
         lenis.__aboutScrollTriggerBound = true;
-
-      }
-
-
-
-      if (lenis && createdLenis) {
-
-        var raf = function (time) {
-
-          lenis.raf(time);
-
-          requestAnimationFrame(raf);
-
-        };
-
-        requestAnimationFrame(raf);
 
       }
 

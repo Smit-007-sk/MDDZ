@@ -1,36 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Initialize Lenis Scroll (if not already initialized by another page script)
-
-  let lenis = window._lenis || null;
-
-  if (!lenis && typeof Lenis !== 'undefined') {
-
-    lenis = new Lenis({
-
-      duration: 1.2,
-
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-
-      smooth: true,
-
-      smoothTouch: false
-
-    });
-
-
-
-    function raf(time) {
-
-      lenis.raf(time);
-
-      requestAnimationFrame(raf);
-
-    }
-
-    requestAnimationFrame(raf);
-
-    window._lenis = lenis;
-
+  // 1. Lenis smooth scroll — managed by smooth-scroll.js
+  if (!window._lenis && typeof window.initSmoothScroll === 'function') {
+    window.initSmoothScroll();
   }
 
   // 2. Simple & Robust Navbar Dropdown Toggle (handled by transitions.js)

@@ -951,10 +951,15 @@
         window.addEventListener('resize', scheduleSync, {
             passive: true
         });
+        hookLenis();
         window.setTimeout(function() {
             hookLenis();
             scheduleSync();
-        }, 250);
+        }, 100);
+        window.setTimeout(function() {
+            hookLenis();
+            scheduleSync();
+        }, 300);
         window.setTimeout(function() {
             hookLenis();
             scheduleSync();

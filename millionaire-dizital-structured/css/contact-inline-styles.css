@@ -5,6 +5,26 @@ html, body {
   color: var(--color-text, #171411) !important;
 }
 
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 .page {
   padding: 0 var(--work-side-pad) 0 var(--work-side-pad);
   max-width: 1400px;
