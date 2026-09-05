@@ -513,6 +513,9 @@ body.ai-page.page-work-pattern::before {
   padding: 0;
   font-family: 'DM Sans', sans-serif;
   border-top: 1px solid rgba(200, 154, 69, 0.2);
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 .footer-top {
@@ -520,16 +523,19 @@ body.ai-page.page-work-pattern::before {
   position: relative;
   z-index: 5;
   background-color: #FDFAF6;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-main-content {
   display: block;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-contact-info a {
   display: block;
-  font-size: clamp(20px, 3.5vw, 50px);
+  font-size: clamp(24px, 4.2vw, 56px);
   font-weight: 400;
   color: #c89a45;
   text-decoration: none;
@@ -544,7 +550,7 @@ body.ai-page.page-work-pattern::before {
 
 .footer-contact-info span {
   display: block;
-  font-size: clamp(16px, 2.5vw, 30px);
+  font-size: clamp(18px, 2.8vw, 34px);
   color: #c89a45;
   font-weight: 400;
 }
@@ -552,8 +558,9 @@ body.ai-page.page-work-pattern::before {
 .footer-nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 32px;
   margin-top: 36px;
+  width: 100%;
 }
 
 .footer-nav-links a {
@@ -574,17 +581,21 @@ body.ai-page.page-work-pattern::before {
   height: 50vh;
   min-height: 300px;
   width: 100%;
+  max-width: 100vw;
   overflow: hidden;
   position: relative;
   z-index: 1;
   background: linear-gradient(135deg, #b88a32 0%, #e0bd68 35%, #f1d78f 55%, #c59a3b 75%, #9b7024 100%);
   border-top: 1px solid rgba(23, 20, 17, 0.08);
+  box-sizing: border-box;
 }
 
 .footer-parallax-bg {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -595,9 +606,9 @@ body.ai-page.page-work-pattern::before {
   font-family: 'DM Sans', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(33px, 8.4vw, 155px) !important;
+  font-size: clamp(38px, 10.5vw, 210px) !important;
   line-height: 0.85;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   word-spacing: 0.25em !important;
   color: rgba(23, 20, 17, 0.12);
   text-shadow: 
@@ -609,12 +620,14 @@ body.ai-page.page-work-pattern::before {
   overflow: hidden;
   user-select: none;
   pointer-events: none;
+  text-align: center;
 }
 
 .footer-parallax-copy {
   position: absolute;
   top: 30px;
-  left: 40px;
+  left: 3vw;
+  right: 3vw;
   z-index: 3;
   color: rgba(23, 20, 17, 0.65);
   font-family: 'DM Sans', sans-serif;
@@ -622,6 +635,11 @@ body.ai-page.page-work-pattern::before {
   letter-spacing: 0.06em;
   line-height: 1.7;
   pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 @media (max-width: 1440px) {
