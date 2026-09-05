@@ -520,8 +520,6 @@
 
     #webgl-container {
 
-      display: none !important;
-
       position: absolute;
 
       top: 0;
