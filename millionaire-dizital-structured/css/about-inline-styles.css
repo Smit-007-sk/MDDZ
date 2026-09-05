@@ -3795,16 +3795,13 @@
 
 
     .footer-main-content {
-
-      display: grid;
-
-      grid-template-columns: 1.4fr 1fr;
-
-      gap: 40px;
-
+      display: block;
+      width: 100%;
     }
 
-
+    .footer-right-panel {
+      display: none !important;
+    }
 
     .footer-description {
 
