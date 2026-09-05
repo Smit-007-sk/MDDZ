@@ -150,6 +150,8 @@
 }
 .top-header .small-tag {
   color: var(--color-emerald);
+  padding-left: clamp(50px, 4vw, 80px);
+  margin-left: clamp(10px, 1.5vw, 25px);
 }
 .services-list li {
   color: var(--color-text-secondary);
@@ -166,7 +168,8 @@
   letter-spacing: var(--tracking-ui);
   color: var(--color-text);
   mix-blend-mode: normal;
-  padding-left: 15px;
+  padding-left: clamp(50px, 4vw, 80px);
+  margin-left: clamp(10px, 1.5vw, 25px);
 }
 
 .overlay-ui,
