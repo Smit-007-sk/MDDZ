@@ -228,147 +228,107 @@ body.shared-nav-page #nav_scroll_container.is-menu-open #nav_scroll {
 
 
 body.shared-nav-page #nav_scroll .ns-icon {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 32px;
-
   height: 32px;
-
-  background: none;
-
+  background: transparent;
   border: none;
-
+  outline: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
   color: inherit;
-
   cursor: pointer;
-
   text-decoration: none;
-
 }
 
-
+body.shared-nav-page #nav_scroll .ns-hamburger,
+body.shared-nav-page #nav_scroll button.ns-icon {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  width: 32px !important;
+  height: 32px !important;
+}
 
 body.shared-nav-page #nav_scroll .ns-icon svg {
-
   width: 25px;
-
   height: 25px;
-
   stroke: #ffffff;
-
   fill: none;
-
   stroke-width: 2;
-
   stroke-linecap: round;
-
   stroke-linejoin: round;
-
   transition: stroke 0.3s ease;
-
 }
-
-
 
 body.shared-nav-page #nav_scroll .ns-icon:hover {
-
   opacity: 0.72;
-
 }
-
-
 
 body.shared-nav-page #nav_scroll_container.is-menu-open #nav_scroll .ns-icon svg {
-
   stroke: var(--ns-menu-text);
-
 }
-
-
 
 body.shared-nav-page #nav_scroll .ns-logo {
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
 }
-
-
 
 body.shared-nav-page #nav_scroll .ns-logo img {
-
   height: 22px;
-
   width: auto;
-
   display: block;
-
   filter: brightness(0) invert(1);
-
   transition: filter 0.3s ease;
-
 }
-
-
 
 body.shared-nav-page #nav_scroll_container.is-menu-open #nav_scroll .ns-logo img {
-
   filter: brightness(0);
-
 }
-
-
 
 body.shared-nav-page .ns-ham-svg {
-
+  display: block;
+  width: 24px;
+  height: 24px;
   overflow: visible;
-
 }
-
-
 
 body.shared-nav-page .ns-ham-svg line {
-
-  transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1);
-
-  transform-origin: 9px 12px;
-
-  transform-box: view-box;
-
+  stroke: #ffffff !important;
+  stroke-width: 2px !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  vector-effect: non-scaling-stroke;
+  transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
 }
-
-
 
 body.shared-nav-page #nav_scroll_container.is-menu-open .ns-ham-svg line {
-
+  stroke: var(--ns-menu-text, #171411) !important;
   transition-duration: 0.42s;
-
   transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
-
 }
-
-
 
 body.shared-nav-page #nav_scroll_container.is-menu-open .ns-ham-l1 {
-
   transform: rotate(45deg);
-
 }
 
-
-
 body.shared-nav-page #nav_scroll_container.is-menu-open .ns-ham-l2 {
-
   transform: rotate(-45deg);
-
 }
 
 
