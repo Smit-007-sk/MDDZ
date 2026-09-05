@@ -405,24 +405,17 @@ const NEXT = 1;
 
         if (/\.(mp4|webm|ogg|m3u8)$/i.test(url)) {
           this.texturePromises[index] = new Promise((resolve) => {
-            // 🎯 index=0  prewarm video element（ decode，readyState  >= 2）
-            //     →  decode，uTexReady  1，。
-            let vid;
+            // 🎯 index=0  prewarm video element
             const prewarm = window._prewarmVideo;
-            const canReuse = index === 0 && prewarm && prewarm.el && prewarm.src === url && !/\.m3u8/i.test(url);
+            const cleanUrl = url.replace(/^\.\//, '');
+            const canReuse = index === 0 && prewarm && prewarm.el && (prewarm.src === url || prewarm.src.indexOf(cleanUrl) !== -1) && !/\.m3u8/i.test(url);
+            let vid;
             if (canReuse) {
               vid = prewarm.el;
-              window._prewarmVideo = null; // ， 8s timer 
+              window._prewarmVideo = null;
               vid.loop = true;
-              // ⚠️ ： 1×1！
-              //     texture  ready（readyState < 2，）
-              //     promotePrwarmToHeroBg  → hero  #000 ，
-              //    「」。
-              //    ： hero ， resolveTexture（uTexReady=1）
-              //     2  RAF（ WebGL canvas ） container。
             } else {
               vid = document.createElement('video');
-              // ， src / HLS， iOS Safari autoplay policy 
               vid.loop = true;
               vid.muted = true;
               vid.playsInline = true;
@@ -430,12 +423,8 @@ const NEXT = 1;
               vid.setAttribute('muted', '');
               vid.setAttribute('playsinline', '');
               vid.setAttribute('webkit-playsinline', '');
-              //  autoplay， iOS / Android 
-              if (window.matchMedia && window.matchMedia('(max-width: 767px)').matches) {
-                vid.autoplay = true;
-                vid.setAttribute('autoplay', '');
-              }
-              //  src：HLS (.m3u8)  attachHLSToVideo()， src
+              vid.autoplay = true;
+              vid.setAttribute('autoplay', '');
               if (/\.m3u8(\?.*)?$/i.test(url)) {
                 attachHLSToVideo(vid, url);
               } else {
@@ -443,7 +432,9 @@ const NEXT = 1;
               }
               this.container.appendChild(vid);
               vid.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;';
-            } // end else (new video element)
+              vid.load();
+              this._safePlay(vid);
+            }
             this.videoEls[index] = vid;
             const texture = new THREE.VideoTexture(vid);
             texture.minFilter = THREE.LinearFilter;
