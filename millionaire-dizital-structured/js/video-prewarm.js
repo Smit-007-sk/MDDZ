@@ -6,8 +6,8 @@
 (function () {
   var isDesktop = !!(window.matchMedia && window.matchMedia('(min-width: 768px)').matches);
   var src = isDesktop
-    ? 'images/home/slider1/slider01.mp4'
-    : 'images/home/slider1/slider01_s.mp4';
+    ? 'images/home/slider2/slider02pro.mp4'
+    : 'images/home/slider2/slider02_s.mp4';
   var v = document.createElement('video');
   v.src = src;
   v.preload = 'auto';
