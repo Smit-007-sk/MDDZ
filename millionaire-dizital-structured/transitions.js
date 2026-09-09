@@ -711,7 +711,7 @@
                         height: '100vh',
                         borderRadius: '0px',
                         transform: 'none',
-                        backgroundColor: '#efe6d8'
+                        backgroundColor: '#ffffff'
                     });
                 }, 250);
             }, 220);
