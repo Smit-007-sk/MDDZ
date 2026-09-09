@@ -14,7 +14,18 @@
 
 
 
-  <script src="js/about-inline-script-1.js"></script>
+  <script>
+    (function () {
+      try {
+        var raw = sessionStorage.getItem('mdz:page-transition');
+        if (!raw) return;
+        var payload = JSON.parse(raw);
+        if (payload && payload.at && Date.now() - payload.at < 12000) {
+          document.documentElement.classList.add('has-pending-page-transition');
+        }
+      } catch (error) { }
+    })();
+  </script>
 
   <!-- Google Analytics 4 (GA4) -->
 
@@ -128,30 +139,22 @@
 
 
 
-  <link rel="stylesheet" href="css/cursor-shared.css?v=5">
-  <link rel="stylesheet" href="css/nav-menu-shared.css?v=5">
-  <link rel="stylesheet" href="css/page-transitions.css?v=5">
+  <link rel="stylesheet" href="css/cursor-shared.css?v=8">
+  <link rel="stylesheet" href="css/nav-menu-shared.css?v=8">
+  <link rel="stylesheet" href="css/page-transitions.css?v=8">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="images/fav.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/CustomEase.min.js"></script>
-
-  <!-- Lenis 1.0.42: Fix 1.0.29 ScrollTrigger.update timing bug to avoid pin boundary bounce -->
-
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/CustomEase.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
   <script src="js/smooth-scroll.js" defer></script>
-
   <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.min.js" defer></script>
-
-  <script src="transitions.js?v=5" defer></script>
-
-  <script src="js/main-script.js?v=5" defer></script>
+  <script src="transitions.js?v=8" defer></script>
 
 
 
@@ -423,31 +426,18 @@
                   <span class="ns-showcase-row__index" data-text="( CONTACT )"></span>
 
                   <span class="ns-showcase-row__thumb is-left" aria-hidden="true">
-
-                    <img src="images/main-images/Copy of TO,JS,CW COVER PAGE.png" data-nav-src="images/main-images/Copy of TO,JS,CW COVER PAGE.png" alt="" width="300" height="200"
-
+                    <img src="images/main-images/Copy of TO,JS,CW COVER PAGE.jpg" data-nav-src="images/main-images/Copy of TO,JS,CW COVER PAGE.jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
-
                   </span>
-
                   <span class="ns-showcase-row__title">
-
                     <span class="ns-showcase-row__title-track">
-
                       <span class="ns-showcase-row__title-layer is-primary" data-text="CONTACT"></span>
-
                       <span class="ns-showcase-row__title-layer is-accent" aria-hidden="true" data-text="CONTACT"></span>
-
                     </span>
-
                   </span>
-
                   <span class="ns-showcase-row__thumb is-right" aria-hidden="true">
-
-                    <img src="images/main-images/Copy of Untitled (1080 x 1920 px).png" data-nav-src="images/main-images/Copy of Untitled (1080 x 1920 px).png" alt="" width="300" height="200"
-
+                    <img src="images/main-images/Copy of Untitled (1080 x 1920 px).jpg" data-nav-src="images/main-images/Copy of Untitled (1080 x 1920 px).jpg" alt="" width="300" height="200"
                       loading="lazy" decoding="async">
-
                   </span>
 
                 </a>
@@ -516,45 +506,25 @@
 
                 <div class="marquee-inner">
 
-                  <span class="marquee-item">MILLIOANER DIZITAL CREATIVE STUDIO</span><span class="marquee-sep"><img
+                  <span class="marquee-item">MILLIOANER DIZITAL CREATIVE STUDIO</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item">BRAND STRATEGY</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">BRAND STRATEGY</span><span class="marquee-sep"><img
+                  <span class="marquee-item">DIGITAL EXPERIENCE</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item">MOTION DESIGN</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">DIGITAL EXPERIENCE</span><span class="marquee-sep"><img
+                  <span class="marquee-item">AI VISUALS</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">MILLIOANER DIZITAL CREATIVE STUDIO</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">MOTION DESIGN</span><span class="marquee-sep"><img
+                  <span class="marquee-item" aria-hidden="true">BRAND STRATEGY</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">DIGITAL EXPERIENCE</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">AI VISUALS</span><span class="marquee-sep"><img
+                  <span class="marquee-item" aria-hidden="true">MOTION DESIGN</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">MILLIOANER DIZITAL CREATIVE STUDIO</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">BRAND STRATEGY</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">DIGITAL EXPERIENCE</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">MOTION DESIGN</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">AI VISUALS</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">AI VISUALS</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
                 </div>
 
@@ -566,45 +536,25 @@
 
                 <div class="marquee-inner">
 
-                  <span class="marquee-item">WEB DESIGN</span><span class="marquee-sep"><img
+                  <span class="marquee-item">WEB DESIGN</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item">VISUAL IDENTITY</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">VISUAL IDENTITY</span><span class="marquee-sep"><img
+                  <span class="marquee-item">UI / UX</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item">COMMERCIAL IMAGERY</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">UI / UX</span><span class="marquee-sep"><img src="images/about/box/s1.svg"
+                  <span class="marquee-item">CREATIVE DIRECTION</span><span class="marquee-sep"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">WEB DESIGN</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">COMMERCIAL IMAGERY</span><span class="marquee-sep"><img
+                  <span class="marquee-item" aria-hidden="true">VISUAL IDENTITY</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">UI / UX</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                  <span class="marquee-item">CREATIVE DIRECTION</span><span class="marquee-sep"><img
+                  <span class="marquee-item" aria-hidden="true">COMMERCIAL IMAGERY</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
-                      src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">WEB DESIGN</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">VISUAL IDENTITY</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">UI / UX</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">COMMERCIAL IMAGERY</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
-
-                  <span class="marquee-item" aria-hidden="true">CREATIVE DIRECTION</span><span class="marquee-sep"
-
-                    aria-hidden="true"><img src="images/about/box/s1.svg" alt=""></span>
+                  <span class="marquee-item" aria-hidden="true">CREATIVE DIRECTION</span><span class="marquee-sep" aria-hidden="true"><img src="images/about/box/s1.svg" alt="" width="16" height="16" loading="lazy"></span>
 
                 </div>
 
@@ -661,13 +611,9 @@
 
 
             <div class="expansion-layer" id="videoLayer">
-
-              <video autoplay muted loop playsinline preload="auto" disableremoteplayback>
-
+              <video autoplay muted loop playsinline preload="auto" disableremoteplayback aria-hidden="true" title="Decorative background video">
                 <source src="images/about/about.mp4" type="video/mp4">
-
               </video>
-
             </div>
 
 
@@ -704,19 +650,19 @@
 
             
       <!-- Founding Story & Philosophy -->
-      <section class="founding-philosophy-section" style="background-color: #0A0A0A; border-top: 1px solid rgba(200, 154, 69, 0.15);">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 6vw 2.5vw;">
-          <div>
-            <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// FOUNDING STORY</span>
-            <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; text-transform: uppercase; margin-bottom: 24px; color: var(--color-text, #F5F3EE);">Rajkot-built.<br>Globally deployed.</h3>
-            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary, rgba(245, 243, 238, 0.7)); max-width: 520px;">
+      <section class="founding-philosophy-section">
+        <div class="founding-philosophy-grid">
+          <div class="founding-philosophy-card">
+            <span class="founding-tag">// FOUNDING STORY</span>
+            <h2 class="founding-title">Rajkot-built.<br>Globally deployed.</h2>
+            <p class="founding-desc">
               Three friends, ₹599 a piece, Rajkot businesses that needed to look world-class on a real budget. Now a full studio — content, AI, websites, performance, owned event IPs. Every service still passes the same test: does it make the client money?
             </p>
           </div>
-          <div>
-            <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// OUR PHILOSOPHY</span>
-            <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; text-transform: uppercase; margin-bottom: 24px; color: var(--color-text, #F5F3EE);">Growth-anchored.<br>Zero vanity metrics.</h3>
-            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary, rgba(245, 243, 238, 0.7)); max-width: 520px;">
+          <div class="founding-philosophy-card">
+            <span class="founding-tag">// OUR PHILOSOPHY</span>
+            <h2 class="founding-title">Growth-anchored.<br>Zero vanity metrics.</h2>
+            <p class="founding-desc">
               We split our services into two families: ON-GROUND (high-fidelity video/photo shoots on request across India) and BUILT ANYWHERE (SMM, Meta ads, SEO/AEO, and custom UI design managed globally). No fluff, no inflated claims — just pure conversion engineering.
             </p>
           </div>
@@ -732,7 +678,7 @@
         <div class="awp-grid">
           <div class="awp-item-1">
             <div class="awp-lens-1">
-              <img src="images/main-images/Beeblend pool party.png" alt="" style="width:100%;height:100%;display:block;object-fit:cover;">
+              <img src="images/main-images/Beeblend pool party.jpg" alt="Content Engine Work Preview" width="600" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;display:block;object-fit:cover;">
               <div class="yr-cursor-circle" aria-hidden="true"></div>
               <div class="yr-content">
                 <div class="yr-subtitle">Distilling Over</div>
@@ -750,7 +696,7 @@
 
           <div class="awp-item-2">
             <div class="awp-lens-2">
-              <img src="images/main-images/Teal and Brown Lifestyle Carousel Scrapbook Instagram Post.png" alt="" style="width:100%;height:100%;display:block;object-fit:cover;">
+              <img src="images/main-images/Teal and Brown Lifestyle Carousel Scrapbook Instagram Post.jpg" alt="Growth Engine Work Preview" width="600" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;display:block;object-fit:cover;">
               <div class="yr-cursor-circle" aria-hidden="true"></div>
             </div>
             <div class="project-info">
@@ -762,7 +708,7 @@
 
           <div class="awp-item-3">
             <div class="awp-lens-3">
-              <img src="images/main-images/Intermission end carousal Post.png" alt="" style="width:100%;height:100%;display:block;object-fit:cover;">
+              <img src="images/main-images/Intermission end carousal Post.jpg" alt="AI Engine Work Preview" width="600" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;display:block;object-fit:cover;">
               <div class="yr-cursor-circle" aria-hidden="true"></div>
             </div>
             <div class="project-info">
@@ -774,7 +720,7 @@
 
           <div class="awp-item-4">
             <div class="awp-lens-4">
-              <img src="images/main-images/The climax is yours.png" alt="" style="width:100%;height:100%;display:block;object-fit:cover;">
+              <img src="images/main-images/The climax is yours.jpg" alt="Brand Engine Work Preview" width="600" height="400" loading="lazy" decoding="async" style="width:100%;height:100%;display:block;object-fit:cover;">
               <div class="yr-cursor-circle" aria-hidden="true"></div>
             </div>
             <div class="project-info">
@@ -1311,7 +1257,7 @@
           <!-- Vikram -->
           <div class="team-member">
             <div class="team-photo-wrap">
-              <img src="images/about/team/vikram.webp" alt="Vikram" onerror="this.src='images/about/box2.webp'">
+              <img src="images/about/team/vikram.webp" alt="Vikram - Founder &amp; Director" width="300" height="360" loading="lazy" decoding="async">
             </div>
             <div class="team-info">
               <span class="team-name">Vikram</span>
@@ -1322,7 +1268,7 @@
           <!-- Kishan -->
           <div class="team-member">
             <div class="team-photo-wrap">
-              <img src="images/about/team/kishan.webp" alt="Kishan" onerror="this.src='images/about/box3.webp'">
+              <img src="images/about/team/kishan.webp" alt="Kishan - Co-Founder &amp; Tech Lead" width="300" height="360" loading="lazy" decoding="async">
             </div>
             <div class="team-info">
               <span class="team-name">Kishan</span>
@@ -1333,7 +1279,7 @@
           <!-- Zainab -->
           <div class="team-member">
             <div class="team-photo-wrap">
-              <img src="images/about/team/zainab.webp" alt="Zainab" onerror="this.src='images/about/box4.webp'">
+              <img src="images/about/team/zainab.webp" alt="Zainab - Head of Content Engine" width="300" height="360" loading="lazy" decoding="async">
             </div>
             <div class="team-info">
               <span class="team-name">Zainab</span>
@@ -1344,7 +1290,7 @@
           <!-- Himanshu -->
           <div class="team-member">
             <div class="team-photo-wrap">
-              <img src="images/about/team/himanshu.webp" alt="Himanshu" onerror="this.src='images/about/box2.webp'">
+              <img src="images/about/team/himanshu.webp" alt="Himanshu - Growth Engine Strategist" width="300" height="360" loading="lazy" decoding="async">
             </div>
             <div class="team-info">
               <span class="team-name">Himanshu</span>
@@ -1355,7 +1301,7 @@
           <!-- Hemangi -->
           <div class="team-member">
             <div class="team-photo-wrap">
-              <img src="images/about/team/hemangi.webp" alt="Hemangi" onerror="this.src='images/about/box3.webp'">
+              <img src="images/about/team/hemangi.webp" alt="Hemangi - Lead UI/UX &amp; Brand Designer" width="300" height="360" loading="lazy" decoding="async">
             </div>
             <div class="team-info">
               <span class="team-name">Hemangi</span>
@@ -1748,138 +1694,60 @@
 
 
   <!-- Hide grid-overlay when core-capabilities enters viewport -->
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/about-inline-script-2.js"></script>
-
-
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/about-inline-script-2.js" defer></script>
 
   <!-- ============================================================
-
        AWP GRID — Scroll-triggered reveal + parallax
-
   ============================================================ -->
-
-  <script src="js/about-inline-script-3.js"></script>
-
-
+  <script src="js/about-inline-script-3.js" defer></script>
 
   <!-- ============================================================
-
        CORE CAPABILITIES -- 3D Cube Gallery
-
   ============================================================ -->
-
-  <script src="js/about-inline-script-4.js"></script>
-
-
+  <script src="js/about-inline-script-4.js" defer></script>
 
   <!-- Mobile carousel scroll sync + bg ticker generation -->
-
-  <script src="js/about-inline-script-5.js"></script>
-
-
+  <script src="js/about-inline-script-5.js" defer></script>
 
   <!-- ============================================================
-
        BOTTOM ROSTER -- entrance + cursor-following image
-
   ============================================================ -->
-
-  <script src="js/about-inline-script-6.js"></script>
-
-
+  <script src="js/about-inline-script-6.js" defer></script>
 
   <!-- ============================================================
-
        FILM GRAIN
-
   ============================================================ -->
-
   <canvas id="film-grain-canvas" aria-hidden="true"></canvas>
-
-  <script src="noise.js"></script>
-
+  <script src="noise.js" defer></script>
   <!-- Google Analytics 4 (GA4) -->
-
   <!-- Google tag (gtag.js) -->
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N53QVZL8TL"></script>
-
   <script>
-
     window.dataLayer = window.dataLayer || [];
-
     function gtag() { dataLayer.push(arguments); }
-
     gtag('js', new Date());
-
     gtag('config', 'G-N53QVZL8TL');
-
   </script>
 
-
-
   <!-- ============================================================
-
        CURSOR
-
   ============================================================ -->
-
   <div id="cursor-dot" aria-hidden="true"></div>
-
   <div id="cursor-ring" aria-hidden="true" data-cursor-label="EXPLORE" data-cursor-side="right"></div>
 
-
-
   <!-- ============================================================
-
        PAGE ANIMATIONS
-
   ============================================================ -->
+  <script src="js/about-inline-script-7.js" defer></script>
 
-  <script src="js/about-inline-script-7.js"></script>
-
-
-
-  <script src="js/about-inline-script-8.js"></script>
-
-
-
-
+  <script src="js/about-inline-script-8.js" defer></script>
 
 
 
   <!-- WebGL Inversion Lens (work preview) -->
-
-  <script src="js/about-inline-script-9.js"></script>
-
+  <script type="module" src="js/about-inline-script-9.js"></script>
   <!-- Footer Reveal -->
-
-  
-
-  <script src="js/about-inline-script-10.js"></script>
-
-
-
-  <!-- Google Analytics 4 (GA4) -->
-
-  <!-- Google tag (gtag.js) -->
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N53QVZL8TL"></script>
-
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() { dataLayer.push(arguments); }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-N53QVZL8TL');
-
-  </script>
-
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"d4b157dbd1fd4977bad7e3a062761f49","r":1}' crossorigin="anonymous"></script>
+  <script src="js/about-inline-script-10.js" defer></script>
 </body>
 
 

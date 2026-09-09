@@ -1,11 +1,12 @@
-/* =============================================================
-   PAGE TRANSITIONS — Curtain wipe between pages
-   Source: extracted from index.html lines 146-248
-   ============================================================= */
+:root {
+  --pt-bg: var(--color-bg, #FDFAF6);
+  --pt-gold: #c89a45;
+  --pt-gold-gradient: linear-gradient(90deg, #c89a45 0%, #dfba6b 50%, #c89a45 100%);
+}
 
 html.is-page-transitioning,
 html.is-page-transitioning body {
-  cursor: progress
+  cursor: wait;
 }
 
 .page-transition-shell {
@@ -14,68 +15,91 @@ html.is-page-transitioning body {
   z-index: 300000;
   pointer-events: none;
   opacity: 0;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .page-transition-shell.is-active {
   opacity: 1;
-  visibility: visible
+  visibility: visible;
+  pointer-events: auto;
 }
 
 html.has-pending-page-transition .page-transition-shell {
   opacity: 1;
-  visibility: visible
+  visibility: visible;
+  pointer-events: auto;
 }
 
-.page-transition-curtain {
+/* Luxury Fade Scrim */
+.page-transition-scrim {
   position: absolute;
   inset: 0;
+  background: var(--pt-bg, #FDFAF6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
-  --pt-top: -102%;
-  --pt-bottom: 102%
+  will-change: opacity;
 }
 
-.page-transition-curtain::before,
-.page-transition-curtain::after {
-  content: '';
+/* Top Gold Progress Indicator Line */
+.page-transition-progress {
   position: absolute;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 60vh;
-  background: var(--pt-bg);
-  will-change: transform
+  height: 3px;
+  background: var(--pt-gold-gradient);
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 10;
+  box-shadow: 0 0 14px rgba(200, 154, 69, 0.5);
+  will-change: transform;
 }
 
-.page-transition-curtain::before {
-  top: 0;
-  transform: translateY(var(--pt-top))
+/* Minimal Luxury Center Badge */
+.page-transition-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: transform, opacity;
 }
 
-.page-transition-curtain::after {
-  bottom: 0;
-  transform: translateY(var(--pt-bottom))
+.page-transition-badge__logo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #171411;
 }
 
-html.has-pending-page-transition .page-transition-curtain {
-  opacity: 1;
-  --pt-top: 0%;
-  --pt-bottom: 0%
+.page-transition-badge__line {
+  width: 28px;
+  height: 1.5px;
+  background: var(--pt-gold);
+  border-radius: 1px;
 }
 
+.page-transition-badge__label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #046A38;
+}
+
+/* Hide legacy elements */
+.page-transition-curtain,
 .page-transition-frame,
-html.has-pending-page-transition .page-transition-frame,
 .page-transition-loader,
-html.has-pending-page-transition .page-transition-loader,
 .page-transition-counter,
-.page-transition-counter span,
 .page-transition-panel,
-html.has-pending-page-transition .page-transition-panel {
-  display: none !important
-}
-
-@media (max-width:767px) {
-  .page-transition-curtain::before,
-  .page-transition-curtain::after {
-    height: 58vh
-  }
+.page-transition-pixels {
+  display: none !important;
 }

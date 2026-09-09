@@ -255,12 +255,15 @@
   width: 120px;
   position: relative;
   clip-path: inset(100% 0 0 0);
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
   background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-#core-capabilities .center-video-box video {
-  mix-blend-mode: lighten;
+#core-capabilities .center-video-box video,
+#core-capabilities .center-video-box img {
+  mix-blend-mode: normal;
   background: transparent;
 }
 

@@ -166,7 +166,9 @@ body.ai-page.page-work-pattern::before {
 .ai-marquee-strip {
   overflow: hidden;
   padding: 22px 0;
-  background: var(--ai-text);
+  background: #F4EFE6;
+  border-top: 1px solid var(--ai-border);
+  border-bottom: 1px solid var(--ai-border);
   white-space: nowrap;
 }
 
@@ -182,13 +184,14 @@ body.ai-page.page-work-pattern::before {
   font-size: clamp(11px, 1.1vw, 13px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ai-gold);
+  color: var(--ai-text);
+  font-weight: 700;
   padding: 0 36px;
 }
 
 .ai-marquee-sep {
-  color: rgba(200,154,69,0.4);
-  font-size: 8px;
+  color: var(--ai-gold);
+  font-size: 10px;
   flex-shrink: 0;
 }
 
@@ -310,7 +313,7 @@ body.ai-page.page-work-pattern::before {
 
 .ai-process-item {
   display: grid;
-  grid-template-columns: 64px 1fr auto;
+  grid-template-columns: 80px 1fr auto;
   gap: 40px;
   align-items: start;
   padding: 40px 0;
@@ -323,14 +326,16 @@ body.ai-page.page-work-pattern::before {
 }
 
 .ai-process-item__num {
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(40px, 4.5vw, 68px);
   font-weight: 700;
   line-height: 1;
   background: linear-gradient(135deg, var(--ai-gold), var(--ai-gold-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  display: block;
 }
 
 .ai-process-item__body {
@@ -368,12 +373,13 @@ body.ai-page.page-work-pattern::before {
 .ai-cases-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 16px;
 }
 
 .ai-case-card {
   padding: 40px 32px;
-  background: var(--ai-text);
+  background: #ffffff;
+  border: 1px solid var(--ai-border);
   position: relative;
   overflow: hidden;
   min-height: 260px;
@@ -381,11 +387,13 @@ body.ai-page.page-work-pattern::before {
   flex-direction: column;
   justify-content: flex-end;
   cursor: default;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .ai-case-card:hover {
-  transform: scale(1.012);
+  transform: translateY(-4px);
+  border-color: var(--ai-gold);
+  box-shadow: 0 16px 36px rgba(200, 154, 69, 0.12);
   z-index: 2;
 }
 
@@ -393,36 +401,37 @@ body.ai-page.page-work-pattern::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 30%, rgba(200,154,69,0.12) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(200,154,69,0.06) 100%);
   pointer-events: none;
 }
 
 .ai-case-card__cat {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ai-gold);
+  font-weight: 700;
   margin-bottom: 16px;
   position: relative;
   z-index: 1;
 }
 
 .ai-case-card__title {
-  font-size: clamp(18px, 2vw, 26px);
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  color: #ffffff;
-  line-height: 1.05;
+  color: var(--ai-text);
+  line-height: 1.15;
   position: relative;
   z-index: 1;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .ai-case-card__desc {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.55);
+  color: var(--ai-text-muted);
   position: relative;
   z-index: 1;
 }
@@ -467,7 +476,9 @@ body.ai-page.page-work-pattern::before {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: var(--ai-text);
+  background: #F4EFE6;
+  border-top: 1px solid var(--ai-border);
+  border-bottom: 1px solid var(--ai-border);
 }
 
 .ai-cta::before {
@@ -478,7 +489,7 @@ body.ai-page.page-work-pattern::before {
   transform: translate(-50%, -50%);
   font-size: 36vw;
   font-weight: 800;
-  color: rgba(200,154,69,0.04);
+  color: rgba(200,154,69,0.08);
   letter-spacing: -0.08em;
   pointer-events: none;
   line-height: 1;
@@ -489,22 +500,23 @@ body.ai-page.page-work-pattern::before {
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ai-gold);
-  margin-bottom: 32px;
+  color: #046A38;
+  font-weight: 700;
+  margin-bottom: 24px;
   display: block;
   position: relative;
   z-index: 1;
 }
 
 .ai-cta__title {
-  font-size: clamp(40px, 7vw, 110px);
-  font-weight: 700;
-  line-height: 0.9;
+  font-size: clamp(38px, 6.5vw, 90px);
+  font-weight: 800;
+  line-height: 0.95;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--ai-text);
   margin: 0 auto 48px;
-  max-width: 16ch;
+  max-width: 18ch;
   position: relative;
   z-index: 1;
 }
@@ -521,23 +533,27 @@ body.ai-page.page-work-pattern::before {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  border: 1px solid var(--ai-gold);
-  color: var(--ai-gold);
+  border: 1.5px solid var(--ai-gold);
+  color: #171411;
+  background: #FDFAF6;
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 18px 48px;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.25s ease;
   position: relative;
   z-index: 1;
   font-family: var(--ai-font-sans);
+  box-shadow: 0 4px 16px rgba(200, 154, 69, 0.12);
 }
 
 .ai-cta__btn:hover {
   background: var(--ai-gold);
-  color: #0f0f0f;
+  color: #ffffff;
+  box-shadow: 0 8px 28px rgba(200, 154, 69, 0.35);
+  transform: translateY(-2px);
 }
 
 /* ── Site Footer (Gold & Ivory Theme matching About page) ── */
@@ -703,7 +719,8 @@ body.ai-page.page-work-pattern::before {
     grid-template-columns: repeat(2, 1fr);
   }
   .ai-process-item {
-    grid-template-columns: 48px 1fr;
+    grid-template-columns: 68px 1fr;
+    gap: 28px;
   }
   .ai-process-item__tag {
     display: none;
@@ -715,7 +732,7 @@ body.ai-page.page-work-pattern::before {
     padding: 0 24px 60px;
   }
   .ai-section {
-    padding: 80px 24px;
+    padding: 64px 20px;
   }
   .ai-cases-grid {
     grid-template-columns: 1fr;
@@ -724,8 +741,14 @@ body.ai-page.page-work-pattern::before {
     grid-template-columns: 1fr 1fr;
   }
   .ai-process-item {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 64px 1fr;
     gap: 20px;
+    padding: 32px 0;
+  }
+  .ai-process-item__num {
+    font-size: clamp(34px, 8vw, 44px);
+    line-height: 1;
+    min-width: 56px;
   }
   .ai-services-grid {
     grid-template-columns: 1fr;

@@ -4688,29 +4688,19 @@
 
 
     #core-capabilities .center-video-box {
-
-      /* width: clamp(82px, 7vw, 124px); */
-
       width: 120px;
-
       position: relative;
-
       clip-path: inset(100% 0 0 0);
-
-      mix-blend-mode: lighten;
-
+      mix-blend-mode: normal;
       background: transparent;
-
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-
-
-    #core-capabilities .center-video-box video {
-
-      mix-blend-mode: lighten;
-
+    #core-capabilities .center-video-box video,
+    #core-capabilities .center-video-box img {
+      mix-blend-mode: normal;
       background: transparent;
-
     }
 
 
@@ -7792,39 +7782,28 @@
 
 
       #nav_scroll_container {
-
         position: fixed;
-
         top: 16px;
-
-        width: calc(100vw - 24px);
-
+        left: 50% !important;
+        right: auto !important;
+        width: min(500px, calc(100vw - 32px)) !important;
+        max-width: calc(100vw - 32px) !important;
+        margin: 0 !important;
         opacity: 1 !important;
-
         pointer-events: auto !important;
-
         animation: none !important;
-
         transform: translateX(-50%) !important;
-
         transition: none !important;
-
         will-change: auto;
-
       }
 
-
-
       #nav_scroll_container.ns-enter,
-
       #nav_scroll_container.ns-exit {
-
+        left: 50% !important;
+        margin: 0 !important;
         opacity: 1 !important;
-
         animation: none !important;
-
         transform: translateX(-50%) !important;
-
       }
 
 
@@ -8981,10 +8960,14 @@
 
 /* ── Theme Custom Overrides for Black Navbar / White Menu Page ── */
 
-/* Closed State: Black Navbar */
+/* Closed State: Frosted Glass Dark Navbar */
 #nav_scroll_container {
-  background-color: #171411 !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  background: rgba(18, 18, 18, 0.78) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
   --ns-menu-bg: #ffffff; /* Set menu bg variable to white/ivory theme */
   --ns-menu-text: #171411;
   --ns-menu-accent: #c89a45;
@@ -9001,7 +8984,9 @@
 
 /* Open State: White fullscreen menu page */
 #nav_scroll_container.is-menu-open {
-  background-color: var(--color-bg) !important;
+  background-color: var(--color-bg, #ffffff) !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Open State: Change header icons and close button to dark charcoal for contrast on white background */
