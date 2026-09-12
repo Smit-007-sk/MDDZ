@@ -290,25 +290,32 @@ html.lenis, html.lenis body {
       display: block;
     }
 
+    .site-footer { position: relative !important; overflow: visible !important; }
+    .footer-top { position: relative !important; overflow: visible !important; }
+
     .footer-copyright-bridge {
-      position: absolute;
-      bottom: 0;
-      right: 6%;
-      width: clamp(90px, 10vw, 148px);
-      height: clamp(90px, 10vw, 148px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(50%);
-      z-index: 20;
+      position: absolute !important;
+      bottom: 0 !important;
+      right: 6% !important;
+      width: auto !important;
+      height: auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transform: translateY(50%) !important;
+      z-index: 25 !important;
+      pointer-events: none !important;
+      user-select: none !important;
     }
 
     .footer-copyright-bridge span {
-      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif;
-      font-size: 180px;
-      font-weight: 600;
-      color: var(--color-text, #171411);
-      line-height: 1;
+      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif !important;
+      font-size: clamp(84px, 11vw, 160px) !important;
+      font-weight: 700 !important;
+      color: #171411 !important;
+      line-height: 0.8 !important;
+      display: block !important;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
     }
 
    .footer-parallax-section {
