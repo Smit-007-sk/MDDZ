@@ -2277,7 +2277,7 @@
 
       transform: translateZ(calc(var(--s)/2));
 
-      background: #171717 url('../images/home/list/02.webp') center/cover no-repeat;
+      background: #171717 url('../images/home/web_planning.jpg') center/cover no-repeat;
 
     }
 
@@ -2327,7 +2327,7 @@
 
       transform: rotateX(90deg) translateZ(calc(var(--s)/2));
 
-      background: #111111 url('../images/home/list/06.webp') center/cover no-repeat;
+      background: #111111 url('../images/home/digital_consultant.jpg') center/cover no-repeat;
 
     }
 
