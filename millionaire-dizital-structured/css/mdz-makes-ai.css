@@ -239,9 +239,9 @@ body.ai-page.page-work-pattern::before {
 
 /* ── Services Grid ──────────────────────────────────────────── */
 .ai-services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1px !important;
   background: var(--ai-border);
   border: 1px solid var(--ai-border);
   width: 100%;
