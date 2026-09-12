@@ -15,6 +15,11 @@
         var panels = gsap.utils.toArray('.cc-panel');
         var dots = gsap.utils.toArray('.cc-dot');
         var iconBtns = gsap.utils.toArray('.cc-icon-btn');
+        var topRow1 = document.querySelector('.cc-ticker-rows-top .marquee-track:nth-child(1) .marquee-inner');
+        var topRow2 = document.querySelector('.cc-ticker-rows-top .marquee-track:nth-child(2) .marquee-inner');
+        var centerRow = document.querySelector('.cc-ticker-center .marquee-inner');
+        var bottomRow1 = document.querySelector('.cc-ticker-rows-bottom .marquee-track:nth-child(1) .marquee-inner');
+        var bottomRow2 = document.querySelector('.cc-ticker-rows-bottom .marquee-track:nth-child(2) .marquee-inner');
         if (!cubeEl || !panels.length) return;
 
         var N = panels.length; // 6
@@ -44,6 +49,23 @@
           var ry = stops[i].ry + (stops[i + 1].ry - stops[i].ry) * f;
           cubeEl.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
           if (miniCubeEl) miniCubeEl.style.transform = 'rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+
+          // Move 5 background text rows fluidly on cube scroll in alternating directions
+          if (topRow1) {
+            topRow1.style.transform = 'translate3d(' + (-progress * 650) + 'px, 0, 0)';
+          }
+          if (topRow2) {
+            topRow2.style.transform = 'translate3d(' + (-450 + progress * 650) + 'px, 0, 0)';
+          }
+          if (centerRow) {
+            centerRow.style.transform = 'translate3d(' + (-progress * 950) + 'px, 0, 0)';
+          }
+          if (bottomRow1) {
+            bottomRow1.style.transform = 'translate3d(' + (-450 + progress * 650) + 'px, 0, 0)';
+          }
+          if (bottomRow2) {
+            bottomRow2.style.transform = 'translate3d(' + (-progress * 650) + 'px, 0, 0)';
+          }
 
           var si = Math.max(0, Math.min(N - 1, Math.round(progress * (N - 1))));
           if (si !== lastIdx) {

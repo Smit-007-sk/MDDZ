@@ -2535,28 +2535,16 @@
       align-items: center;
       border-bottom: solid 1px var(--color-gold-line, rgba(200, 154, 69, 0.2));
       border-top: solid 1px var(--color-gold-line, rgba(200, 154, 69, 0.2));
+      animation: none !important;
+      will-change: transform;
     }
 
-    .cc-ticker-rows-top .marquee-track:nth-child(1) .marquee-inner {
-      animation-duration: 28s;
-      animation-delay: -3s;
-    }
-
-    .cc-ticker-rows-top .marquee-track:nth-child(2) .marquee-inner {
-      animation-name: marquee-right;
-      animation-duration: 38s;
-      animation-delay: -11s;
-    }
-
-    .cc-ticker-rows-bottom .marquee-track:nth-child(1) .marquee-inner {
-      animation-name: marquee-right;
-      animation-duration: 44s;
-      animation-delay: -18s;
-    }
-
+    .cc-ticker-rows-top .marquee-track:nth-child(1) .marquee-inner,
+    .cc-ticker-rows-top .marquee-track:nth-child(2) .marquee-inner,
+    .cc-ticker-rows-bottom .marquee-track:nth-child(1) .marquee-inner,
     .cc-ticker-rows-bottom .marquee-track:nth-child(2) .marquee-inner {
-      animation-duration: 26s;
-      animation-delay: -2s;
+      animation: none !important;
+      will-change: transform;
     }
 
     .cc-ticker-center {
@@ -2570,8 +2558,8 @@
       display: flex;
       align-items: center;
       height: 100%;
-      animation: marquee-left 50s linear infinite;
-      animation-delay: -8s;
+      animation: none !important;
+      will-change: transform;
     }
 
     .cc-ticker-main-text {
