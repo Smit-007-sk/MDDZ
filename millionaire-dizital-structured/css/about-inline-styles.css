@@ -2277,7 +2277,7 @@
 
       transform: translateZ(calc(var(--s)/2));
 
-      background: #262626 url('../images/main-images/Silver Leaf final (1).png') center/cover no-repeat;
+      background: #171717 url('../images/home/list/02.webp') center/cover no-repeat;
 
     }
 
@@ -2287,7 +2287,7 @@
 
       transform: rotateY(180deg) translateZ(calc(var(--s)/2));
 
-      background: #1A1A1A url('../images/main-images/Silver Leaf final (2).png') center/cover no-repeat;
+      background: #1A1A1A url('../images/home/list/04.webp') center/cover no-repeat;
 
     }
 
@@ -2297,7 +2297,7 @@
 
       transform: rotateY(90deg) translateZ(calc(var(--s)/2));
 
-      background: #0D0D0D url('../images/main-images/Silver Leaf final (3).png') center/cover no-repeat;
+      background: #0D0D0D url('../images/home/list/03.webp') center/cover no-repeat;
 
     }
 
@@ -2307,7 +2307,7 @@
 
       transform: rotateY(-90deg) translateZ(calc(var(--s)/2));
 
-      background: #171717 url('../images/main-images/Js 1.png') center/cover no-repeat;
+      background: #171717 url('../images/home/list/05.webp') center/cover no-repeat;
 
     }
 
@@ -2317,7 +2317,7 @@
 
       transform: rotateX(-90deg) translateZ(calc(var(--s)/2));
 
-      background: #404040 url('../images/main-images/Gold Neutral Modern Jewellery Instagram Post.png') center/cover no-repeat;
+      background: #1a1a1a url('../images/home/list/01.webp') center/cover no-repeat;
 
     }
 
@@ -2327,7 +2327,7 @@
 
       transform: rotateX(90deg) translateZ(calc(var(--s)/2));
 
-      background: #000000 url('../images/main-images/Pink Vibrant Gradient Weekend Special Promo Smoothie Instagram Post.png') center/cover no-repeat;
+      background: #111111 url('../images/home/list/06.webp') center/cover no-repeat;
 
     }
 
