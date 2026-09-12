@@ -339,7 +339,7 @@
 /* ── Grid Section ── */
 .grid-section {
   position: relative;
-  margin-bottom: 30vh;
+  margin-bottom: 22vh;
 }
 
 /* ── Hero Quick Links ── */
@@ -501,7 +501,7 @@
 /* ── Bottom Slideshow Controls ── */
 .bottom-ui-container {
   position: absolute;
-  bottom: 12vh;
+  bottom: 4vh;
   left: 50%;
   transform: translateX(-50%);
   width: 720px;
