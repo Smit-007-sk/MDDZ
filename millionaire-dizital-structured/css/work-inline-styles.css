@@ -35,18 +35,16 @@ html.lenis, html.lenis body {
       transform: translate3d(-50%, -50%, 0) scale(0.94);
     }
 
-    /* Remove transform from cover’s CSS transition — GSAP drives scale */
     .work-box {
       position: relative !important;
       width: 100% !important;
-      aspect-ratio: 16 / 10 !important;
+      aspect-ratio: 1.63 !important;
       overflow: hidden !important;
       cursor: pointer !important;
-      background: #0a0a0a !important;
-      border-radius: 4px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
+      background: #171411 !important;
+      border-radius: 0 !important;
+      transform: translateZ(0) !important;
+      isolation: isolate !important;
     }
 
     .work-cover {
@@ -58,19 +56,23 @@ html.lenis, html.lenis body {
       bottom: 0 !important;
       width: 100% !important;
       height: 100% !important;
-      max-width: 100% !important;
-      max-height: 100% !important;
-      object-fit: contain !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: cover !important;
       object-position: center center !important;
       z-index: 1 !important;
-      filter: brightness(0.98) saturate(1) !important;
-      transform: none !important;
-      transition: opacity 0.72s var(--work-ease), filter 0.72s var(--work-ease) !important;
+      filter: brightness(0.92) saturate(0.96) !important;
+      transform: translate3d(0, 0, 0) scale(1) !important;
+      transition: opacity 0.72s var(--work-ease), filter 0.72s var(--work-ease), transform 0.8s var(--work-ease) !important;
+    }
+
+    .work-card:hover .work-cover {
+      filter: brightness(1) saturate(1.04) !important;
+      transform: translate3d(0, 0, 0) scale(1.04) !important;
     }
 
     .work-video video {
-      object-fit: contain !important;
-      background: #000 !important;
+      object-fit: cover !important;
     }
 
     /* ── Frosted-glass blur overlay ──────────────────────────────── */
