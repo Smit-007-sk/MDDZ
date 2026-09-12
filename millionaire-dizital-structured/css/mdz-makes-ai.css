@@ -240,19 +240,21 @@ body.ai-page.page-work-pattern::before {
 /* ── Services Grid ──────────────────────────────────────────── */
 .ai-services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ai-border);
   border: 1px solid var(--ai-border);
+  width: 100%;
 }
 
 .ai-service-card {
   padding: 48px 36px;
-  border-right: 1px solid var(--ai-border);
-  border-bottom: 1px solid var(--ai-border);
   position: relative;
   overflow: hidden;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
   background: var(--ai-bg);
+  display: flex;
+  flex-direction: column;
 }
 
 .ai-service-card:hover {
@@ -712,6 +714,12 @@ body.ai-page.page-work-pattern::before {
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .ai-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ai-service-card {
+    padding: 40px 30px;
+  }
   .ai-cases-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -752,6 +760,9 @@ body.ai-page.page-work-pattern::before {
   }
   .ai-services-grid {
     grid-template-columns: 1fr;
+  }
+  .ai-service-card {
+    padding: 36px 24px;
   }
   .ai-hero__sub {
     flex-direction: column;
