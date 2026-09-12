@@ -235,6 +235,46 @@
         </div>
       </div>
 
+      <!-- Scoped image containment rules -->
+      <style>
+        .work-box {
+          position: relative !important;
+          width: 100% !important;
+          aspect-ratio: 16 / 10 !important;
+          overflow: hidden !important;
+          cursor: pointer !important;
+          background: #0a0a0a !important;
+          border-radius: 4px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        .work-cover {
+          position: absolute !important;
+          inset: 0 !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          max-width: 100% !important;
+          max-height: 100% !important;
+          object-fit: contain !important;
+          object-position: center center !important;
+          z-index: 1 !important;
+          filter: brightness(0.98) saturate(1) !important;
+          transform: none !important;
+        }
+        .work-card:hover .work-cover {
+          filter: brightness(1) saturate(1.02) !important;
+        }
+        .work-video video {
+          object-fit: contain !important;
+          background: #000 !important;
+        }
+      </style>
+
       <main class="work-archive" id="project-top">
         <header class="work-hero work-reveal">
 

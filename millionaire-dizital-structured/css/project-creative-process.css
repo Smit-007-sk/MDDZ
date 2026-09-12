@@ -886,13 +886,16 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
   aspect-ratio: 1.63;
   overflow: hidden;
   cursor: pointer;
-  background: #d9d9d9;
-  border-radius: 0;
+  background: #0a0a0a;
+  border-radius: 4px;
   transform: translateZ(0);
   will-change: transform;
   isolation: isolate;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-card--small-left .work-box,
@@ -905,17 +908,6 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
   outline-offset: 0;
 }
 
-/* .work-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  opacity: 0.7;
-  transition: opacity 0.7s var(--work-ease);
-} */
-
 .work-cover,
 .work-video,
 .work-video video {
@@ -924,12 +916,17 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
 }
 
 .work-cover {
-  inset: -10%;
+  inset: 0;
+  top: 0;
+  left: 0;
   z-index: 1;
-  width: 120%;
-  height: 120%;
-  object-fit: cover;
-  filter: brightness(0.9) saturate(0.94);
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  filter: brightness(0.98) saturate(1);
   transform: translate3d(0, 0px, 0) scale(1);
   transition:
     opacity 0.72s var(--work-ease),
@@ -948,7 +945,7 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
   height: auto;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: var(--color-bg, #FDFAF6);
+  background: #000;
   opacity: 0;
   transform: translate3d(-50%, -46%, 0) scale(0.94);
   transition:
@@ -963,7 +960,8 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #000;
   filter: saturate(0.92) contrast(1.05);
 }
 
@@ -971,11 +969,10 @@ body.page-work-pattern::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-
 .work-card:hover .work-cover {
   opacity: 1;
-  filter: brightness(0.9) saturate(0.94);
-  transform: translate3d(0, 0px, 0) scale(1);
+  filter: brightness(1) saturate(1.02);
+  transform: translate3d(0, 0px, 0) scale(1.02);
 }
 
 .work-card:hover .work-video {
