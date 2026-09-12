@@ -8597,17 +8597,19 @@
 
     .footer-nav-links a {
 
-      color: var(--color-text);
+      color: var(--color-gold, #c89a45);
 
       text-decoration: none;
 
-      font-size: 16px;
+      font-size: 15px;
+
+      font-weight: 600;
 
       text-transform: uppercase;
 
       letter-spacing: 1.5px;
 
-      transition: opacity 0.2s;
+      transition: color 0.25s ease, opacity 0.25s ease;
 
     }
 
@@ -8615,7 +8617,13 @@
 
     .footer-nav-links a:hover {
 
-      opacity: 0.5;
+      color: #171411;
+
+      text-decoration: underline;
+
+      text-underline-offset: 4px;
+
+      opacity: 1;
 
     }
 
@@ -8871,21 +8879,12 @@
 
       word-spacing: 0.25em !important;
 
-      color: rgba(23, 20, 17, 0.12); /* Recess fill color */
+      color: rgba(70, 48, 14, 0.28); /* Deep rich warm bronze-gold matching gold background */
 
-      
-
-      /* 3D Physical Pressed / Engraved Bevel Effect */
-
+      /* 3D Warm Luxury Pressed / Engraved Gold Foil Effect */
       text-shadow: 
-
-        -1px -1px 0px rgba(0, 0, 0, 0.25),
-
-        -2px -2px 2px rgba(0, 0, 0, 0.12),
-
-        1px 1px 0px rgba(255, 255, 255, 0.85),
-
-        2px 2px 2px rgba(255, 255, 255, 0.5);
+        -1px -1px 0px rgba(60, 40, 10, 0.4),
+        1px 1px 1px rgba(255, 245, 210, 0.8);
 
         
 

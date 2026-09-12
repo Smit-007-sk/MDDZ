@@ -618,13 +618,13 @@ body.ai-page.page-work-pattern::before {
 }
 
 .footer-nav-links a {
-  color: #046A38;
-  font-size: 16px;
+  color: var(--color-gold, #c89a45);
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
 .footer-nav-links a:hover {

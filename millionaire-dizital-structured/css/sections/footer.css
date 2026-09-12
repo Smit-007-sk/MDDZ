@@ -85,21 +85,20 @@
 
 .footer-nav-links { display: flex; gap: 28px; margin-top: 38px; }
 .footer-nav-links a {
-  color: var(--color-emerald);
+  color: var(--color-gold, #c89a45);
   font-weight: 600;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 .footer-nav-links a:hover {
-  background: var(--color-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #171411;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   opacity: 1;
 }
-.footer-nav-links a:hover { opacity: 0.5; }
 
 .footer-right-panel { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; }
 
