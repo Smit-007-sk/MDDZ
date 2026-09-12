@@ -24,47 +24,6 @@
             row.style.transform = 'none';
           }
         });
-
-        var isTouchOnly = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-        if (isTouchOnly) return;
-
-        var hoverEl = document.getElementById('roster-cursor-img');
-        if (!hoverEl) return;
-        var imgEl = hoverEl.querySelector('img');
-
-        var mx = 0, my = 0, ix = 0, iy = 0, raf = null, visible = false;
-
-        document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; }, { passive: true });
-
-        function tick() {
-          ix += (mx - ix) * 0.1;
-          iy += (my - iy) * 0.1;
-          hoverEl.style.transform = 'translate(' + (ix + 24) + 'px,' + (iy - 190) + 'px)';
-          raf = requestAnimationFrame(tick);
-        }
-
-        function showImg(src) {
-          if (imgEl && imgEl.getAttribute('src') !== src) imgEl.src = src;
-          if (!visible) {
-            visible = true; ix = mx; iy = my;
-            hoverEl.classList.add('is-visible');
-            if (!raf) raf = requestAnimationFrame(tick);
-          }
-        }
-
-        function hideImg() {
-          visible = false;
-          hoverEl.classList.remove('is-visible');
-          if (raf) { cancelAnimationFrame(raf); raf = null; }
-        }
-
-        rows.forEach(function (row) {
-          row.addEventListener('mouseenter', function () {
-            var src = row.getAttribute('data-img');
-            if (src) showImg(src);
-          });
-          row.addEventListener('mouseleave', hideImg);
-        });
       }
 
       if (document.readyState === 'loading') {
