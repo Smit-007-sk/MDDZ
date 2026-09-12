@@ -8846,17 +8846,17 @@
 
 
     .footer-copyright-bridge span {
-
-      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif;
-
-      font-size: 180px;
-
-      font-weight: 600;
-
-      color: var(--color-text);
-
-      line-height: 1;
-
+      font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif !important;
+      font-size: clamp(84px, 11vw, 160px) !important;
+      font-weight: 700 !important;
+      background: linear-gradient(135deg, #ffffff 0%, #fffbf0 25%, #f4d48a 52%, #c89a45 78%, #8d621b 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      line-height: 0.8 !important;
+      display: block !important;
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28)) drop-shadow(0 1px 3px rgba(255, 255, 255, 0.5)) !important;
+      -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.4);
     }
 
 
