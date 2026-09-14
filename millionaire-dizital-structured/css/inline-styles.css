@@ -607,7 +607,7 @@
 
       inset: 0;
 
-      padding: 2.5vw 3vw;
+      padding: clamp(16px, 2vw, 32px) 3vw clamp(16px, 1.8vw, 24px) 3vw;
 
       display: flex;
 
@@ -671,7 +671,7 @@
 
       width: 100%;
 
-      margin-bottom: 6vh;
+      margin-bottom: clamp(16px, 3vh, 32px);
 
       position: relative;
 
@@ -1047,7 +1047,7 @@
 
       position: relative;
 
-      margin-bottom: 22vh;
+      margin-bottom: clamp(20px, 5vh, 48px);
 
     }
 
@@ -1268,13 +1268,25 @@
 
       font-size: var(--text-2xs);
 
-      line-height: 1.6;
+      line-height: 1.5;
 
       color: rgba(255, 255, 255, 0.85);
 
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
 
-      align-items: end;
+      align-items: flex-end;
+
+      position: relative;
+
+      z-index: 25;
+
+      padding-bottom: clamp(6px, 1vh, 16px);
+
+    }
+
+    .footer-col {
+
+      white-space: nowrap;
 
     }
 
@@ -1371,15 +1383,15 @@
 
       position: absolute;
 
-      bottom: 4vh;
+      bottom: clamp(16px, 3vh, 32px);
 
       left: 50%;
 
       transform: translateX(-50%);
 
-      width: 720px;
+      width: clamp(280px, 34vw, 520px);
 
-      max-width: 100%;
+      max-width: 90%;
 
       z-index: 20;
 
@@ -1648,9 +1660,11 @@
 
     .slide-thumb {
 
-      width: var(--thumb-width);
+      flex: 1;
 
-      height: 60px;
+      width: calc(100% / 4);
+
+      height: clamp(44px, 4vw, 56px);
 
       background-size: cover;
 
