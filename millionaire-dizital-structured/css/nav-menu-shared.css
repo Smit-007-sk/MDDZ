@@ -13,23 +13,40 @@
 
 
 body.shared-nav-page {
-
   --ns-menu-bg: #ffffff;
-
   --ns-menu-text: #171411;
-
   --ns-menu-accent: #c89a45;
-
   --ns-menu-line: rgba(23, 20, 17, 0.14);
-
 }
 
-
-
 body.shared-nav-page.nav-menu-open {
-
   overflow: hidden;
+}
 
+/* ── Hide browser and menu scrollbars across all browsers ── */
+html,
+body,
+html.lenis,
+body.shared-nav-page,
+#nav_scroll_container,
+.ns-dropdown,
+.ns-menu-stage,
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+body.shared-nav-page::-webkit-scrollbar,
+#nav_scroll_container::-webkit-scrollbar,
+.ns-dropdown::-webkit-scrollbar,
+.ns-menu-stage::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 
