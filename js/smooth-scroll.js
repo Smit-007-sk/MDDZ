@@ -1,5 +1,5 @@
-/**
- * MDZ Smooth Scroll Manager
+﻿/**
+ * MILLIONAIRE Smooth Scroll Manager
  * Centralized, buttery-smooth scrolling engine powered by Lenis and GSAP.
  */
 (function (global) {

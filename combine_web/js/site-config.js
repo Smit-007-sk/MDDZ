@@ -1,4 +1,4 @@
-/* =============================================================
+﻿/* =============================================================
    SITE CONFIGURATION — Editable text content and asset metadata
    ============================================================= */
 
@@ -28,7 +28,7 @@ window.MDZ_SITE_CONFIG = {
     { label: "Home", zhLabel: "HOME", link: "index" },
     { label: "About", zhLabel: "ABOUT", link: "about" },
     { label: "Work", zhLabel: "WORK", link: "work" },
-    { label: "MDZ Makes AI", zhLabel: "MDZ MAKES AI", link: "mdz-makes-ai" },
+    { label: "Millionaire Makes AI", zhLabel: "MILLIONAIRE MAKES AI", link: "mdz-makes-ai" },
     { label: "Contact", zhLabel: "CONTACT", link: "contact" }
   ],
 

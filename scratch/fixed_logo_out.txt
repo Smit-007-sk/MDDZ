@@ -1,4 +1,4 @@
-
+﻿
 
 
 
@@ -14,9 +14,9 @@
 
       <div id="nav">
 
-        <a id="fixed-logo" href="#nav" data-cursor="HOME" aria-label="MDZ home">
+        <a id="fixed-logo" href="#nav" data-cursor="HOME" aria-label="Millionaire home">
 
-          <img src="https://nudot.com.tw/images/pc_logo.svg" alt="MDZ " width="45" height="35" fetchpriority="high" decoding="async">
+          <img src="https://nudot.com.tw/images/pc_logo.svg" alt="Millionaire " width="45" height="35" fetchpriority="high" decoding="async">
 
         </a>
 

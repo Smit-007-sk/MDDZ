@@ -1,4 +1,4 @@
-=== SEARCH: Globally deployed ===
+﻿=== SEARCH: Globally deployed ===
 play: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 6vw 2.5vw;">
           <div>
             <span style="font-size: 14px; letter-spacing: 2px; color: var(--color-emerald, #1A7A4C); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 16px;">// FOUNDING STORY</span>
@@ -80,7 +80,7 @@ me test: does it make the client money?
       <section class="about-work-preview">
         <div class="awp-header">
           <div class="awp-header-meta">
-            <span class="awp-header-meta__tag">MILLIOANER DIZITAL CREATIVE STUDIO</span>
+            <span class="awp-header-meta__tag">MILLIONAIRE DIZITAL CREATIVE STUDIO</span>
             <p class="awp-header-meta__copy">Master of absolute precision and the art of subtraction.</p>
           </div>
         </div>
