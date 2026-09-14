@@ -506,7 +506,7 @@ html.lenis, html.lenis body {
 .footer-contact-info a,
 .footer-contact-info span {
   display: block;
-  color: #c89a45;
+  color: #000000 !important;
   text-decoration: none;
   font-size: clamp(24px, 4.2vw, 56px);
   font-weight: 400;
@@ -519,6 +519,7 @@ html.lenis, html.lenis body {
 }
 
 .footer-contact-info span {
+  color: #000000 !important;
   font-size: clamp(18px, 2.8vw, 34px);
 }
 

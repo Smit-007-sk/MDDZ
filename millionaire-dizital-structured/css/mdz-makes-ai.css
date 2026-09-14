@@ -599,7 +599,7 @@ body.ai-page.page-work-pattern::before {
   display: block;
   font-size: clamp(24px, 4vw, 50px);
   font-weight: 400;
-  color: #171411;
+  color: #000000 !important;
   text-decoration: none;
   line-height: 1.15;
   margin-bottom: 4px;
@@ -613,7 +613,7 @@ body.ai-page.page-work-pattern::before {
 .footer-contact-info span {
   display: block;
   font-size: clamp(18px, 2.5vw, 30px);
-  color: #171411;
+  color: #000000 !important;
   font-weight: 400;
 }
 

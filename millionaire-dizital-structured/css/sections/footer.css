@@ -68,10 +68,10 @@
 .footer-contact-info a,
 .footer-contact-info span {
   display: block;
-  background: var(--color-gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #c89a45;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: initial !important;
+  color: #000000 !important;
   text-decoration: none;
   font-size: clamp(20px, 3.5vw, 50px);
   font-weight: 600;
@@ -79,7 +79,7 @@
   transition: opacity 0.2s;
 }
 .footer-contact-info a:hover { opacity: 0.6; }
-.footer-contact-info span { color: #c89a45; font-size: clamp(18px, 2.5vw, 30px); }
+.footer-contact-info span { color: #000000 !important; font-size: clamp(18px, 2.5vw, 30px); }
 
 .web_add { color: var(--color-text-secondary); }
 

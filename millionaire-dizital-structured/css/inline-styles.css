@@ -8663,7 +8663,7 @@
 
       display: block;
 
-      color: var(--color-text);
+      color: #000000 !important;
 
       text-decoration: none;
 
@@ -8689,7 +8689,7 @@
 
     .footer-contact-info span {
 
-      color: var(--color-text);
+      color: #000000 !important;
 
       font-size: clamp(18px, 2.5vw, 30px);
 

@@ -3680,7 +3680,7 @@
 
       display: block;
 
-      color: var(--color-gold, #c89a45);
+      color: #000000 !important;
 
       text-decoration: none;
 
@@ -3706,7 +3706,7 @@
 
     .footer-contact-info span {
 
-      color: var(--color-gold, #c89a45);
+      color: #000000 !important;
 
       font-size: clamp(14px, 2.5vw, 30px);
 
