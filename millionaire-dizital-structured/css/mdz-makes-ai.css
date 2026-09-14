@@ -597,9 +597,9 @@ body.ai-page.page-work-pattern::before {
 
 .footer-contact-info a {
   display: block;
-  font-size: clamp(24px, 4.2vw, 56px);
+  font-size: clamp(24px, 4vw, 50px);
   font-weight: 400;
-  color: #c89a45;
+  color: #171411;
   text-decoration: none;
   line-height: 1.15;
   margin-bottom: 4px;
@@ -612,16 +612,16 @@ body.ai-page.page-work-pattern::before {
 
 .footer-contact-info span {
   display: block;
-  font-size: clamp(18px, 2.8vw, 34px);
-  color: #c89a45;
+  font-size: clamp(18px, 2.5vw, 30px);
+  color: #171411;
   font-weight: 400;
 }
 
 .footer-nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
-  margin-top: 36px;
+  gap: 28px;
+  margin-top: 38px;
   width: 100%;
 }
 
@@ -636,7 +636,35 @@ body.ai-page.page-work-pattern::before {
 }
 
 .footer-nav-links a:hover {
-  opacity: 0.5;
+  color: #171411;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 1;
+}
+
+.footer-copyright-bridge {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 6% !important;
+  width: clamp(90px, 10vw, 148px) !important;
+  height: clamp(90px, 10vw, 148px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: translateY(50%) !important;
+  z-index: 25 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.footer-copyright-bridge span {
+  font-family: 'Zalando Sans SemiExpanded', 'DM Sans', sans-serif !important;
+  font-size: clamp(84px, 11vw, 160px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 0.8 !important;
+  display: block !important;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.22)) drop-shadow(0 1px 4px rgba(0, 0, 0, 0.12)) !important;
 }
 
 .footer-parallax-section {
@@ -688,8 +716,7 @@ body.ai-page.page-work-pattern::before {
 .footer-parallax-copy {
   position: absolute;
   top: 30px;
-  left: 3vw;
-  right: 3vw;
+  left: 40px;
   z-index: 3;
   color: rgba(23, 20, 17, 0.65);
   font-family: 'DM Sans', sans-serif;
@@ -698,15 +725,19 @@ body.ai-page.page-work-pattern::before {
   line-height: 1.7;
   pointer-events: none;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 4px;
 }
 
 @media (max-width: 1440px) {
   .footer-parallax-section {
     height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-copyright-bridge {
+    display: none !important;
   }
 }
 
