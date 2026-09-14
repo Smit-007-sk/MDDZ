@@ -1,4 +1,4 @@
-﻿/* ══════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════════
    MILLIONAIRE MAKES AI — Page Styles
    Theme: White bg / Black text / Gold headings
    ══════════════════════════════════════════════════════════════ */
@@ -241,24 +241,30 @@ body.ai-page.page-work-pattern::before {
 .ai-services-grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 1px !important;
-  background: var(--ai-border);
-  border: 1px solid var(--ai-border);
+  gap: 24px !important;
+  background: transparent !important;
+  border: none !important;
   width: 100%;
 }
 
 .ai-service-card {
-  padding: 48px 36px;
+  padding: 44px 34px;
   position: relative;
   overflow: hidden;
-  transition: background 0.3s ease, transform 0.3s ease;
-  background: var(--ai-bg);
+  border-radius: 20px !important;
+  border: 1px solid rgba(23, 20, 17, 0.08) !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease, background-color 0.35s ease;
 }
 
 .ai-service-card:hover {
-  background: #fffdf9;
+  transform: translateY(-6px);
+  background: #ffffff !important;
+  border-color: rgba(200, 154, 69, 0.45) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.07), 0 6px 18px rgba(200, 154, 69, 0.1);
 }
 
 .ai-service-card__num {
@@ -715,10 +721,12 @@ body.ai-page.page-work-pattern::before {
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .ai-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
   }
   .ai-service-card {
-    padding: 40px 30px;
+    padding: 38px 28px;
+    border-radius: 18px !important;
   }
   .ai-cases-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -759,10 +767,12 @@ body.ai-page.page-work-pattern::before {
     min-width: 56px;
   }
   .ai-services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
   .ai-service-card {
-    padding: 36px 24px;
+    padding: 32px 24px;
+    border-radius: 16px !important;
   }
   .ai-hero__sub {
     flex-direction: column;
