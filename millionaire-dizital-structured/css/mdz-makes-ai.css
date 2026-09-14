@@ -380,14 +380,16 @@ body.ai-page.page-work-pattern::before {
 /* ── Use Cases ──────────────────────────────────────────────── */
 .ai-cases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .ai-case-card {
-  padding: 40px 32px;
-  background: #ffffff;
-  border: 1px solid var(--ai-border);
+  padding: 44px 34px;
+  background: #ffffff !important;
+  border: 1px solid rgba(23, 20, 17, 0.08) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
   position: relative;
   overflow: hidden;
   min-height: 260px;
@@ -395,13 +397,13 @@ body.ai-page.page-work-pattern::before {
   flex-direction: column;
   justify-content: flex-end;
   cursor: default;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease, background-color 0.35s ease;
 }
 
 .ai-case-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--ai-gold);
-  box-shadow: 0 16px 36px rgba(200, 154, 69, 0.12);
+  transform: translateY(-6px);
+  border-color: rgba(200, 154, 69, 0.45) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.07), 0 6px 18px rgba(200, 154, 69, 0.1);
   z-index: 2;
 }
 
@@ -729,7 +731,12 @@ body.ai-page.page-work-pattern::before {
     border-radius: 18px !important;
   }
   .ai-cases-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+  .ai-case-card {
+    padding: 38px 28px;
+    border-radius: 18px !important;
   }
   .ai-stats-row {
     grid-template-columns: repeat(2, 1fr);
@@ -751,7 +758,12 @@ body.ai-page.page-work-pattern::before {
     padding: 64px 20px;
   }
   .ai-cases-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .ai-case-card {
+    padding: 32px 24px;
+    border-radius: 16px !important;
   }
   .ai-stats-row {
     grid-template-columns: 1fr 1fr;
