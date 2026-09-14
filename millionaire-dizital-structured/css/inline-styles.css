@@ -1294,15 +1294,23 @@
 
     .footer-col:nth-child(1) {
 
-      grid-column: 1;
+      grid-column: 1 !important;
 
     }
 
+    .footer-col.col-right,
+    .footer-col.footer-links,
+    .footer-links {
 
+      grid-column: 4 !important;
 
-    .footer-col:nth-child(2) {
+      display: flex !important;
 
-      grid-column: 2;
+      flex-direction: column !important;
+
+      align-items: flex-end !important;
+
+      text-align: right !important;
 
     }
 
@@ -3872,31 +3880,16 @@
 
 
 
-      /* hide "Strategy, Design..." tagline on mobile */
-
       .bottom-footer .footer-col:nth-child(1) {
 
-        display: none !important;
+        grid-column: 1 !important;
 
       }
 
+      .bottom-footer .footer-links,
+      .bottom-footer .footer-col.col-right {
 
-
-      /* shift remaining cols to fill the gap */
-
-      .bottom-footer .footer-col:nth-child(2) {
-
-        grid-column: 1;
-
-        overflow: visible !important;
-
-      }
-
-
-
-      .bottom-footer .footer-col:nth-child(3) {
-
-        grid-column: 4;
+        grid-column: 4 !important;
 
       }
 
