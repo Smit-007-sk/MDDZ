@@ -471,12 +471,7 @@
 .ns-showcase-row:focus-visible { background: rgba(23, 20, 17, 0.035); outline: none; }
 
 .ns-showcase-row__index {
-  position: absolute;
-  bottom: 15%;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  display: none !important;
 }
 
 .ns-showcase-row__title {

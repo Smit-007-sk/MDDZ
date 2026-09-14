@@ -1441,10 +1441,12 @@ body.index-nav-sync #nav_scroll_container.is-menu-phase-line {
 
 /* SEO Cloak Utility for rendering data-text content */
 
-.ns-showcase-row__index::before,
-
 .ns-showcase-row__title-layer::before {
 
   content: attr(data-text);
 
 }
+
+.ns-showcase-row__index {
+  display: none !important;
+}
