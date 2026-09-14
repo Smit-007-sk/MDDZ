@@ -1047,7 +1047,7 @@
 
       position: relative;
 
-      margin-bottom: clamp(20px, 5vh, 48px);
+      margin-bottom: clamp(140px, 20vh, 200px);
 
     }
 
