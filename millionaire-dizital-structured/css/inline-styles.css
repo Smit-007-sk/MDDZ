@@ -716,8 +716,8 @@
 }
 .top-header .small-tag {
   color: #dfbe84;
-  padding-left: clamp(50px, 4vw, 80px);
-  margin-left: clamp(10px, 1.5vw, 25px);
+  padding-left: 0;
+  margin-left: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 .services-list li {
@@ -744,9 +744,9 @@
 
       mix-blend-mode: normal;
 
-      padding-left: clamp(50px, 4vw, 80px);
+      padding-left: 0;
 
-      margin-left: clamp(10px, 1.5vw, 25px);
+      margin-left: 0;
 
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 
@@ -6123,37 +6123,7 @@
 
 
     #fixed-logo {
-
-      position: fixed;
-
-      top: 70px;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      transform-origin: center center;
-
-      z-index: 9999;
-
-      pointer-events: auto;
-
-      mix-blend-mode: normal;
-
-      opacity: 0;
-
-    }
-
-
-
-    #fixed-logo img {
-
-      height: clamp(20px, 2.2vw, 25px);
-
-      width: auto;
-
-      display: block;
-
+      display: none !important;
     }
 
 

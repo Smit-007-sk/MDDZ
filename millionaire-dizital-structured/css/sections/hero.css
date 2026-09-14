@@ -176,8 +176,8 @@
 }
 .top-header .small-tag {
   color: #dfbe84;
-  padding-left: clamp(50px, 4vw, 80px);
-  margin-left: clamp(10px, 1.5vw, 25px);
+  padding-left: 0;
+  margin-left: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
@@ -188,8 +188,8 @@
   letter-spacing: var(--tracking-ui);
   color: #dfbe84;
   mix-blend-mode: normal;
-  padding-left: clamp(50px, 4vw, 80px);
-  margin-left: clamp(10px, 1.5vw, 25px);
+  padding-left: 0;
+  margin-left: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
