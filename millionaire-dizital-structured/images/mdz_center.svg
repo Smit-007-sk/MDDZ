@@ -1,4 +1,4 @@
-<svg width="120" height="68" viewBox="0 0 120 68" xmlns="http://www.w3.org/2000/svg">
+<svg width="180" height="68" viewBox="0 0 180 68" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#dfba6b"/>
@@ -6,6 +6,6 @@
       <stop offset="100%" stop-color="#9e7225"/>
     </linearGradient>
   </defs>
-  <rect width="120" height="68" rx="8" fill="url(#goldGrad)" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5"/>
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#171411" font-family="Outfit, sans-serif" font-weight="900" font-size="27" letter-spacing="2.5">MDZ</text>
+  <rect width="180" height="68" rx="8" fill="url(#goldGrad)" stroke="rgba(255, 255, 255, 0.35)" stroke-width="1.5"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#171411" font-family="Outfit, sans-serif" font-weight="900" font-size="16" letter-spacing="1.5">MILLIONAIRE</text>
 </svg>

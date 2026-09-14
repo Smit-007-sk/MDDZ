@@ -6,7 +6,7 @@
 
     "@type": "Organization",
 
-    "name": "MDZ ",
+    "name": "MILLIONAIRE DIZITAL",
 
     "url": "https://millionairedizital.com/",
 

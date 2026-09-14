@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
     'use strict';
 
     var TRANSITION_KEY = 'mdz:page-transition';
@@ -116,7 +116,7 @@
         if (!badge) {
             badge = document.createElement('div');
             badge.className = 'page-transition-badge js-page-transition-badge';
-            badge.innerHTML = '<span class="page-transition-badge__logo">MDZ</span><div class="page-transition-badge__line"></div><span class="page-transition-badge__label js-page-transition-badge-label">STUDIO</span>';
+            badge.innerHTML = '<span class="page-transition-badge__logo">MILLIONAIRE</span><div class="page-transition-badge__line"></div><span class="page-transition-badge__label js-page-transition-badge-label">STUDIO</span>';
             scrim.appendChild(badge);
         }
 

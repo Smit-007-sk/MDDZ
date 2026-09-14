@@ -1,5 +1,5 @@
-/* ============================================================================
-   Unified film-grain / noise  —  shared across all MDZ pages
+﻿/* ============================================================================
+   Unified film-grain / noise  —  shared across all MILLIONAIRE pages
    Performance-optimized: 256x256 tiled pattern with idle initialization
    ========================================================================== */
 (function () {
