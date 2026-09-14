@@ -106,14 +106,14 @@
   z-index: 10000;
   display: flex;
   flex-direction: column;
-  width: min(500px, calc(100vw - 80px));
+  width: min(540px, calc(100vw - 60px));
   height: 64px;
-  background: rgba(18, 18, 18, 0.78);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 8px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   overflow: hidden;
   opacity: 0;
   transform: translateX(-50%);
@@ -241,10 +241,10 @@
 }
 
 #nav_scroll .ns-logo img {
-  height: 22px;
+  height: 28px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 /* ── Hamburger → X morph ── */
@@ -711,22 +711,33 @@
 }
 
 
-/* Closed State: Black Navbar */
+/* Closed State: White Glass Navbar */
 #nav_scroll_container:not(.is-menu-open) {
-  background-color: #171411 !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
   --ns-menu-bg: #ffffff; /* Set menu bg variable to white/ivory theme */
   --ns-menu-text: #171411;
   --ns-menu-accent: #c89a45;
-  --ns-menu-line: rgba(200, 154, 69, 0.2);
+  --ns-menu-line: rgba(23, 20, 17, 0.12);
 }
 
-/* Ensure white icons/hamburger on black minimized navbar */
+/* Crisp dark icons/hamburger on white glass minimized navbar */
 #nav_scroll_container:not(.is-menu-open) #nav_scroll .ns-icon svg {
-  stroke: #ffffff !important;
+  stroke: #171411 !important;
 }
 #nav_scroll_container:not(.is-menu-open) .ns-hamburger {
-  color: #ffffff !important;
+  color: #171411 !important;
+}
+#nav_scroll_container:not(.is-menu-open) #nav_scroll .ns-ham-svg line {
+  stroke: #171411 !important;
+}
+#nav_scroll_container:not(.is-menu-open) #nav_scroll .ns-logo img {
+  filter: none !important;
+  height: 28px !important;
 }
 
 /* Open State: White fullscreen menu page */
