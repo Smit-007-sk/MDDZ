@@ -8997,12 +8997,9 @@
 
       word-spacing: 0.18em !important;
 
-      color: rgba(70, 48, 14, 0.28) !important; /* Deep rich warm bronze-gold matching gold background */
+      color: #ffffff !important;
 
-      /* 3D Warm Luxury Pressed / Engraved Gold Foil Effect */
-      text-shadow: 
-        -1px -1px 0px rgba(60, 40, 10, 0.4),
-        1px 1px 1px rgba(255, 245, 210, 0.8) !important;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
 
         
 

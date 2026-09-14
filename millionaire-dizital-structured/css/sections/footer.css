@@ -182,12 +182,8 @@
   line-height: 0.85 !important;
   letter-spacing: -0.04em !important;
   word-spacing: 0.25em !important;
-  color: rgba(70, 48, 14, 0.28) !important;
-  text-shadow: 
-    -1px -1px 0px rgba(60, 40, 10, 0.45),
-    -2px -2px 2px rgba(60, 40, 10, 0.2),
-    1px 1px 0px rgba(255, 245, 210, 0.85),
-    2px 2px 2px rgba(255, 245, 210, 0.5) !important;
+  color: #ffffff !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   user-select: none !important;
