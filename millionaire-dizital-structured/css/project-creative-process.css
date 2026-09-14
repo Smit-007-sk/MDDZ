@@ -753,17 +753,15 @@ body.page-work-pattern {
   overscroll-behavior-y: none;
 }
 
+body.page-work-pattern {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
 body.page-work-pattern::-webkit-scrollbar {
-  width: 6px;
-}
-
-body.page-work-pattern::-webkit-scrollbar-track {
-  background: var(--color-bg, #FDFAF6);
-}
-
-body.page-work-pattern::-webkit-scrollbar-thumb {
-  background: var(--color-gold-line, rgba(200, 154, 69, 0.35));
-  border-radius: 3px;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .page-work-pattern .work-archive {
