@@ -1145,35 +1145,9 @@ const NEXT = 1;
           }
         };
       })() : { update() { } };
-      // 🎯 ip-wave-wrapper  DOM ，
+      // Wave text clean styling
       if (!isMobileInit) (function () {
-        const zhMap = {
-          'Core-Site': '（）', 'Gen-AI Visual': '（ AI ）',
-          'Motion Flow': '（）', 'WebGL Realm': '（WebGL ）',
-          '3D Matrix': '（3D ）', 'Interaction': '（）',
-          'Pixel Perfect': '（）', 'Logic Build': '（）',
-          'Fluid UI': '（）', 'Aero Design': '（）',
-          'Pure Code': '（）', 'Digital Art': '（）',
-          'Strategy': '（）', 'Design': '（）', 'Tech': '（）',
-          'Creative': '（）', 'Motion': '（）', 'Brand': '（）',
-          'Future': '（）', 'Vision': '（）', 'System': '（）',
-          'Labs': '（）', 'Core': '（）', 'Craft': '（）',
-        };
-        document.querySelectorAll('#ip-wave-wrapper .animated-text').forEach(el => {
-          const en = el.textContent.trim();
-          const zh = zhMap[en];
-          if (!zh) return;
-          el.innerHTML = '';
-          const wrap = document.createElement('span');
-          wrap.className = 'flip-wrap';
-          const enS = document.createElement('span');
-          enS.className = 'at-en'; enS.textContent = en;
-          const zhS = document.createElement('span');
-          zhS.className = 'at-zh'; zhS.textContent = zh;
-          wrap.appendChild(enS);
-          wrap.appendChild(zhS);
-          el.appendChild(wrap);
-        });
+        // No flip-wrap needed; clean service labels
       })();
 
       let baseRotY = -45;
