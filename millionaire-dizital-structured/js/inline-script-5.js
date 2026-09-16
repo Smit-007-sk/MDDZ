@@ -1,124 +1,123 @@
 
 
-        // ── Image Sequence Loader Animation ────────────────────────
-        (function() {
-          var images = [
-            "./images/main-images/Silver Leaf final.png",
-            "./images/main-images/MTV Post 3.jpg",
-            "./images/main-images/CF 1.png",
-            "./images/main-images/CF Post.png",
-            "./images/main-images/CF STORY.png",
-            "./images/after_cube/Untitled design (33).png",
-            "./images/main-images/ARB X HS 1.png",
-            "./images/after_cube/Untitled design (32).png",
-            "./images/main-images/Gold Neutral Modern Jewellery Instagram Post.png"
-          ];
-          
-          // Preload images to prevent flickering
-          images.forEach(function(src) {
-            var img = new Image();
-            img.src = src;
-          });
+// ── Image Sequence Loader Animation ────────────────────────
+(function () {
+  var images = [
+    "./images/main-images/Silver Leaf final.png",
+    "./images/main-images/MTV Post 3.jpg",
+    "./images/main-images/CF 1.png",
+    "./images/main-images/CF Post.png",
+    "./images/main-images/CF STORY.png",
+    "./images/after_cube/Untitled design (33).png",
+    "./images/main-images/ARB X HS 1.png",
+    "./images/after_cube/Untitled design (32).jpg",
+    "./images/main-images/Gold Neutral Modern Jewellery Instagram Post.png"
+  ];
 
-          var imgEl = document.getElementById('loader-sequence-img');
-          if (!imgEl) return;
-          var index = 0;
-          var interval = setInterval(function() {
-            if (window._mdzLoaderDismissed) {
-              clearInterval(interval);
-              return;
-            }
-            index = (index + 1) % images.length;
-            imgEl.src = images[index];
-          }, 120);
-        })();
+  // Preload images to prevent flickering
+  images.forEach(function (src) {
+    var img = new Image();
+    img.src = src;
+  });
 
-        // Anchor hero reveal to page-load time using performance.now()
+  var imgEl = document.getElementById('loader-sequence-img');
+  if (!imgEl) return;
+  var index = 0;
+  var interval = setInterval(function () {
+    if (window._mdzLoaderDismissed) {
+      clearInterval(interval);
+      return;
+    }
+    index = (index + 1) % images.length;
+    imgEl.src = images[index];
+  }, 120);
+})();
 
-        // DOMContentLoaded fires AFTER all defer scripts → _heroTl is guaranteed to exist
+// Anchor hero reveal to page-load time using performance.now()
 
-        var _loaderTarget = 2700; // ms from navigation start
+// DOMContentLoaded fires AFTER all defer scripts → _heroTl is guaranteed to exist
 
-        var _loaderDismissTarget = 3200; // release click shield shortly after loader exit
+var _loaderTarget = 2700; // ms from navigation start
 
-
-
-        function dismissMDZLoader() {
-
-          var el = document.getElementById('mdz-loader');
-
-          if (!el || el.dataset.dismissed === 'true') return;
-
-          el.dataset.dismissed = 'true';
-
-          window._mdzLoaderDismissed = true;
-
-          el.style.pointerEvents = 'none';
-
-          el.style.opacity = '0';
-
-          el.style.visibility = 'hidden';
-
-          document.dispatchEvent(new Event('mdz:loader-dismissed'));
-
-          window.setTimeout(function () {
-
-            if (el && el.parentNode) el.remove();
-
-          }, 220);
-
-        }
+var _loaderDismissTarget = 3200; // release click shield shortly after loader exit
 
 
 
-        document.addEventListener('DOMContentLoaded', function () {
+function dismissMDZLoader() {
 
-          var remaining = Math.max(0, _loaderTarget - performance.now());
+  var el = document.getElementById('mdz-loader');
 
-          var dismissRemaining = Math.max(0, _loaderDismissTarget - performance.now());
+  if (!el || el.dataset.dismissed === 'true') return;
 
-          setTimeout(function () {
+  el.dataset.dismissed = 'true';
 
-            if (window._heroTl) window._heroTl.play();
+  window._mdzLoaderDismissed = true;
 
-          }, remaining);
+  el.style.pointerEvents = 'none';
 
-          setTimeout(dismissMDZLoader, dismissRemaining);
+  el.style.opacity = '0';
 
-        });
+  el.style.visibility = 'hidden';
 
-        // bfcache restore: pageshow with persisted=true doesn't re-run scripts
+  document.dispatchEvent(new Event('mdz:loader-dismissed'));
 
-        window.addEventListener('pageshow', function (e) {
+  window.setTimeout(function () {
 
-          if (e.persisted) {
+    if (el && el.parentNode) el.remove();
 
-            // Force full reload to avoid stale GSAP/Lenis state from bfcache
+  }, 220);
 
-            window.location.reload();
+}
 
-          }
 
-        });
 
-        // Hard fallback: if GSAP never loaded (CDN fail, network block), make everything visible
+document.addEventListener('DOMContentLoaded', function () {
 
-        setTimeout(function () {
+  var remaining = Math.max(0, _loaderTarget - performance.now());
 
-          dismissMDZLoader();
+  var dismissRemaining = Math.max(0, _loaderDismissTarget - performance.now());
 
-          if (!window._heroTl) {
+  setTimeout(function () {
 
-            // GSAP didn't load — remove all inline visibility overrides
+    if (window._heroTl) window._heroTl.play();
 
-            var style = document.createElement('style');
+  }, remaining);
 
-            style.textContent = '*{visibility:visible!important;opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}';
+  setTimeout(dismissMDZLoader, dismissRemaining);
 
-            document.head.appendChild(style);
+});
 
-          }
+// bfcache restore: pageshow with persisted=true doesn't re-run scripts
 
-        }, 5500);
+window.addEventListener('pageshow', function (e) {
 
-      
+  if (e.persisted) {
+
+    // Force full reload to avoid stale GSAP/Lenis state from bfcache
+
+    window.location.reload();
+
+  }
+
+});
+
+// Hard fallback: if GSAP never loaded (CDN fail, network block), make everything visible
+
+setTimeout(function () {
+
+  dismissMDZLoader();
+
+  if (!window._heroTl) {
+
+    // GSAP didn't load — remove all inline visibility overrides
+
+    var style = document.createElement('style');
+
+    style.textContent = '*{visibility:visible!important;opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}';
+
+    document.head.appendChild(style);
+
+  }
+
+}, 5500);
+
