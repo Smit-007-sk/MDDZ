@@ -8,7 +8,7 @@
             "./images/main-images/CF 1.png",
             "./images/main-images/CF Post.png",
             "./images/main-images/CF STORY.png",
-            "./images/main-images/opsi.png",
+            "./images/after_cube/Untitled design (33).png",
             "./images/main-images/ARB X HS 1.png",
             "./images/after_cube/Untitled design (32).png",
             "./images/main-images/Gold Neutral Modern Jewellery Instagram Post.png"
