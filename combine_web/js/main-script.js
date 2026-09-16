@@ -1064,67 +1064,71 @@ const NEXT = 1;
       const introTopTitle = introTopHeader?.querySelector('.ip-top-title');
       const introBottomTitle = introBottomLetter?.querySelector('.ip-top-title');
 
-      // 🎯 _ipWave  intro-panel（dark-wrapper ）， display:none，
+      // 🎯 _ipWave wave animation with organic fluctuation on scroll
       const _ipWave = !isMobileInit ? (function () {
         const wrapper = document.getElementById('ip-wave-wrapper');
-        const leftCol = wrapper.querySelector('.wave-column-left');
-        const rightCol = wrapper.querySelector('.wave-column-right');
+        const leftCol = wrapper?.querySelector('.wave-column-left');
+        const rightCol = wrapper?.querySelector('.wave-column-right');
         const thumb = document.getElementById('ip-wave-thumb');
+        if (!wrapper || !leftCol || !rightCol) return { update() { } };
+
         const leftTexts = gsap.utils.toArray(leftCol.querySelectorAll('.animated-text'));
         const rightTexts = gsap.utils.toArray(rightCol.querySelectorAll('.animated-text'));
-        const WAVE_NUM = 12;
-        const WAVE_SPD = 1;
+        const totalItems = Math.max(leftTexts.length, rightTexts.length);
+        if (totalItems === 0) return { update() { } };
+
+        const WAVE_FREQ = 0.9;
+        const WAVE_SPD = 3.2;
         let currentSrc = '';
-        let _ranges = null;
-        let _lastFocused = -1; // ， DOM
-        let _wrapperH = 0; // 🎯 : offsetHeight, layout 
+        let _amp = 140;
+        let _lastFocused = -1;
+        let _wrapperH = 0;
         let _initialized = false;
 
-        const lqx = leftTexts.map(t => gsap.quickTo(t, 'x', { duration: 0.6, ease: 'power4.out' }));
-        const rqx = rightTexts.map(t => gsap.quickTo(t, 'x', { duration: 0.6, ease: 'power4.out' }));
+        const lqx = leftTexts.map(t => gsap.quickTo(t, 'x', { duration: 0.5, ease: 'power2.out' }));
+        const rqx = rightTexts.map(t => gsap.quickTo(t, 'x', { duration: 0.5, ease: 'power2.out' }));
 
-        function calcRanges() {
-          const maxLW = Math.max(...leftTexts.map(t => t.offsetWidth));
-          const maxRW = Math.max(...rightTexts.map(t => t.offsetWidth));
-          return {
-            l: { min: 0, max: Math.max(0, leftCol.offsetWidth - maxLW) },
-            r: { min: 0, max: Math.max(0, rightCol.offsetWidth - maxRW) },
-          };
+        function calcAmp() {
+          const lW = leftCol.offsetWidth || (window.innerWidth * 0.35);
+          return Math.min(180, Math.max(70, lW * 0.38));
         }
 
-        function waveX(index, progress, range) {
-          const phase = WAVE_NUM * index + WAVE_SPD * progress * Math.PI * 2 - Math.PI / 2;
-          return range.min + ((Math.sin(phase) + 1) / 2) * (range.max - range.min);
+        function waveXLeft(index, progress) {
+          const phase = (index * WAVE_FREQ) + (progress * Math.PI * WAVE_SPD) - (Math.PI / 2);
+          return ((Math.sin(phase) + 1) / 2) * _amp;
+        }
+
+        function waveXRight(index, progress) {
+          const phase = (index * WAVE_FREQ) + (progress * Math.PI * WAVE_SPD) + (Math.PI / 3);
+          return -(((Math.sin(phase) + 1) / 2) * _amp);
         }
 
         function closestToCenter(progress) {
-          const total = leftTexts.length;
-          if (total === 0) return 0;
-          let index = Math.round(progress * (total - 1));
-          return Math.max(0, Math.min(total - 1, index));
+          let index = Math.round(progress * (totalItems - 1));
+          return Math.max(0, Math.min(totalItems - 1, index));
         }
 
         function ensureInit() {
           if (_initialized) return;
-          _ranges = calcRanges();
-          _wrapperH = wrapper.offsetHeight; // 🎯 
-          leftTexts.forEach((t, i) => gsap.set(t, { x: waveX(i, 0, _ranges.l) }));
-          rightTexts.forEach((t, i) => gsap.set(t, { x: -waveX(i, 0, _ranges.r) }));
+          _amp = calcAmp();
+          _wrapperH = wrapper.offsetHeight;
+          leftTexts.forEach((t, i) => gsap.set(t, { x: waveXLeft(i, 0) }));
+          rightTexts.forEach((t, i) => gsap.set(t, { x: waveXRight(i, 0) }));
           _initialized = true;
         }
+
         window.addEventListener('resize', () => {
           if (!_initialized) return;
-          _ranges = calcRanges();
-          _wrapperH = wrapper.offsetHeight; // 🎯 resize 
+          _amp = calcAmp();
+          _wrapperH = wrapper.offsetHeight;
         }, { passive: true });
 
         return {
           update(progress) {
             ensureInit();
-            if (!_ranges) _ranges = calcRanges();
+            if (!_amp) _amp = calcAmp();
             if (!_wrapperH) _wrapperH = wrapper.offsetHeight;
 
-            // 🎯 , layout thrashing
             const centerBias = winW <= 768 ? 0.36 : 0.5;
             gsap.set(wrapper, { y: _wrapperH * (centerBias - progress) });
 
@@ -1132,16 +1136,17 @@ const NEXT = 1;
             const focusChanged = focused !== _lastFocused;
 
             leftTexts.forEach((t, i) => {
-              lqx[i](waveX(i, progress, _ranges.l));
+              lqx[i](waveXLeft(i, progress));
               if (focusChanged) t.classList.toggle('focused', i === focused);
             });
             rightTexts.forEach((t, i) => {
-              rqx[i](-waveX(i, progress, _ranges.r));
+              rqx[i](waveXRight(i, progress));
               if (focusChanged) t.classList.toggle('focused', i === focused);
             });
 
-            if (focusChanged) {
-              const src = leftTexts[focused] && leftTexts[focused].dataset.image;
+            if (focusChanged && thumb) {
+              const src = (leftTexts[focused] && leftTexts[focused].dataset.image) ||
+                          (rightTexts[focused] && rightTexts[focused].dataset.image);
               if (src && src !== currentSrc) { currentSrc = src; thumb.src = src; }
               _lastFocused = focused;
             }
