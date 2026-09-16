@@ -10,7 +10,7 @@
             "./images/main-images/CF STORY.png",
             "./images/main-images/opsi.png",
             "./images/main-images/ARB X HS 1.png",
-            "./images/main-images/lust emergency hoodie.png",
+            "./images/after_cube/Untitled design (32).png",
             "./images/main-images/Gold Neutral Modern Jewellery Instagram Post.png"
           ];
           
