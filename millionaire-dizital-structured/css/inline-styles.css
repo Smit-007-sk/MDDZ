@@ -714,27 +714,10 @@
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 16px rgba(0, 0, 0, 0.9));
 }
-.top-header .small-tag {
-  color: #dfbe84;
-  padding-left: 0;
-  margin-left: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+.top-header .small-tag,
+.small-tag {
+  display: none !important;
 }
-.services-list li {
-  color: rgba(255, 255, 255, 0.9);
-}
-.services-list li:hover {
-  color: #dfba6b;
-}
-
-
-
-
-    .small-tag {
-
-      font-size: var(--text-xs);
-
-      font-weight: 500;
 
       white-space: nowrap;
 
