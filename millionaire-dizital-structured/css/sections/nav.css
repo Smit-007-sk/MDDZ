@@ -687,6 +687,11 @@
     text-align: center !important;
     width: 100% !important;
   }
+  .ns-showcase-row__title-layer::before {
+    text-align: center !important;
+    display: inline-block !important;
+    width: 100% !important;
+  }
   .ns-showcase-row__index { bottom: 20%; }
   .ns-showcase-row__thumb { display: none !important; }
   .ns-menu-preview { display: none !important; }

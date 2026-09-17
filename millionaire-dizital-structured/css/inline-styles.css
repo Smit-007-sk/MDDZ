@@ -9304,11 +9304,11 @@
 
 
     .ns-showcase-row__index::before,
-
     .ns-showcase-row__title-layer::before {
-
       content: attr(data-text);
-
+      text-align: center !important;
+      display: inline-block;
+      width: 100%;
     }
 
   

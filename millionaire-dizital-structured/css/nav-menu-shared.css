@@ -951,6 +951,12 @@ body.shared-nav-page .ns-showcase-row__thumb,
     width: 100% !important;
   }
 
+  body.shared-nav-page .ns-showcase-row__title-layer::before {
+    text-align: center !important;
+    display: inline-block !important;
+    width: 100% !important;
+  }
+
   body.shared-nav-page .ns-showcase-row__index {
     bottom: 20%;
   }
