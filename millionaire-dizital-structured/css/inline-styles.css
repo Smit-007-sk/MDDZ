@@ -8899,17 +8899,22 @@
 
 
       .footer-copyright-bridge {
-
-        display: none !important;
-
+        display: flex !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        right: 6% !important;
+        transform: translateY(50%) !important;
+        z-index: 25 !important;
       }
 
-
+      .footer-copyright-bridge span {
+        font-size: clamp(64px, 14vw, 110px) !important;
+        color: #ffffff !important;
+        display: block !important;
+      }
 
       .footer-parallax-section {
-
         display: block !important;
-
       }
 
 
