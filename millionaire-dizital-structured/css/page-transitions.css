@@ -22,12 +22,19 @@ html.is-page-transitioning body {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  animation: autoHideTransitionShell 1s ease-out 0.8s forwards;
 }
 
 html.has-pending-page-transition .page-transition-shell {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  animation: autoHideTransitionShell 1s ease-out 0.8s forwards;
+}
+
+@keyframes autoHideTransitionShell {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; display: none; }
 }
 
 /* Luxury Fade Scrim */
