@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
     'use strict';
 
     var TRANSITION_KEY = 'mdz:page-transition';
@@ -153,25 +153,36 @@
             state.entryCleanupTimer = null;
         }
 
-        if (!refs || !refs.shell) {
-            document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
-            startLenis();
-            return;
-        }
+        var g = window.gsap || gsap;
 
-        refs.shell.classList.remove('is-active');
+        if (refs) {
+            if (refs.shell) {
+                refs.shell.classList.remove('is-active');
+                refs.shell.style.opacity = '0';
+                refs.shell.style.visibility = 'hidden';
+                refs.shell.style.pointerEvents = 'none';
+            }
+            if (refs.scrim) {
+                refs.scrim.style.opacity = '0';
+                refs.scrim.style.pointerEvents = 'none';
+            }
+            if (refs.progress) {
+                refs.progress.style.opacity = '0';
+            }
 
-        if (gsap) {
-            if (refs.scrim) gsap.killTweensOf(refs.scrim);
-            if (refs.progress) gsap.killTweensOf(refs.progress);
-            if (refs.badge) gsap.killTweensOf(refs.badge);
-            gsap.killTweensOf(refs.shell);
-            if (refs.scrim) gsap.set(refs.scrim, { opacity: 0 });
-            if (refs.progress) gsap.set(refs.progress, { scaleX: 0, opacity: 0 });
-            gsap.set(refs.shell, { autoAlpha: 0 });
+            if (g) {
+                if (refs.scrim) g.killTweensOf(refs.scrim);
+                if (refs.progress) g.killTweensOf(refs.progress);
+                if (refs.badge) g.killTweensOf(refs.badge);
+                if (refs.shell) g.killTweensOf(refs.shell);
+                if (refs.scrim) g.set(refs.scrim, { opacity: 0 });
+                if (refs.progress) g.set(refs.progress, { scaleX: 0, opacity: 0 });
+                if (refs.shell) g.set(refs.shell, { autoAlpha: 0 });
+            }
         }
 
         document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+        document.body && document.body.classList.remove('has-pending-page-transition', 'is-page-transitioning');
         startLenis();
         if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
             try { window.ScrollTrigger.refresh(); } catch (e) {}
@@ -180,8 +191,14 @@
 
     function playEntryTransition(payload) {
         var refs = getShellRefs();
-        if (!payload || !refs.shell) {
-            document.documentElement.classList.remove('has-pending-page-transition');
+        if (!refs.shell) {
+            document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+            startLenis();
+            return;
+        }
+
+        if (!payload) {
+            finalizeEntryTransition(refs);
             return;
         }
 
@@ -193,7 +210,8 @@
 
         refs.shell.classList.add('is-active');
 
-        if (!gsap) {
+        var g = window.gsap || gsap;
+        if (!g) {
             finalizeEntryTransition(refs);
             return;
         }
@@ -209,7 +227,7 @@
 
         var mainEl = document.querySelector('main') || document.querySelector('.site-wrapper') || document.body;
 
-        var tl = gsap.timeline({
+        var tl = g.timeline({
             onComplete: function() {
                 finalizeEntryTransition(refs);
             }
@@ -254,20 +272,11 @@
     }
 
     function armEntryFailSafe(payload) {
-        if (!payload) return;
-
         function finalizeIfStuck() {
             state.entryFailSafeTimer = null;
             if (state.leaving) return;
             var refs = getShellRefs();
-            if (!refs.shell) {
-                document.documentElement.classList.remove('has-pending-page-transition');
-                return;
-            }
-
-            if (refs.shell.classList.contains('is-active') || document.documentElement.classList.contains('has-pending-page-transition')) {
-                finalizeEntryTransition(refs);
-            }
+            finalizeEntryTransition(refs);
         }
 
         function schedule(delay) {
@@ -277,12 +286,12 @@
             state.entryFailSafeTimer = window.setTimeout(finalizeIfStuck, delay);
         }
 
-        schedule(2400);
+        schedule(800);
         window.addEventListener('load', function() {
-            schedule(1600);
+            schedule(300);
         }, { once: true });
         window.addEventListener('pageshow', function() {
-            schedule(1600);
+            schedule(300);
         }, { once: true });
     }
 

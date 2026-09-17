@@ -67,6 +67,14 @@
         } catch (error) {}
     }
 
+    function startLenis() {
+        var lenis = getLenis();
+        if (!lenis || typeof lenis.start !== 'function') return;
+        try {
+            lenis.start();
+        } catch (error) {}
+    }
+
     function scrollToTarget(target) {
         if (!target) return;
         var lenis = getLenis();
@@ -86,119 +94,41 @@
     }
 
     function getShellRefs() {
-        return {
-            shell: document.querySelector('.js-page-transition-shell'),
-            curtain: document.querySelector('.js-page-transition-curtain'),
-            frame: document.querySelector('.js-page-transition-frame'),
-            loader: document.querySelector('.js-page-transition-loader'),
-            counter: document.querySelector('.js-page-transition-counter'),
-            counterNum: document.querySelector('.js-page-transition-counter-num'),
-            panel: document.querySelector('.js-page-transition-panel'),
-            eyebrow: document.querySelector('.js-page-transition-eyebrow'),
-            title: document.querySelector('.js-page-transition-title'),
-            subtitle: document.querySelector('.js-page-transition-subtitle'),
-            metaTo: document.querySelector('.js-page-transition-meta-to'),
-        };
-    }
+        var shell = document.querySelector('.js-page-transition-shell');
+        if (!shell) return { shell: null };
 
-    // ── Pixel （ curtain ， PixelTransition demo2）──
-    var pixelGrid = {
-        el: null,
-        cells: [],
-        rows: 9,
-        columns: 17,
-        built: false
-    };
-
-    function buildPixelGrid(shell) {
-        if (!shell) return null;
-        if (pixelGrid.built && pixelGrid.el && pixelGrid.el.isConnected) return pixelGrid;
-
-        var el = document.createElement('div');
-        el.className = 'page-transition-pixels';
-        el.setAttribute('aria-hidden', 'true');
-        el.style.position = 'absolute';
-        el.style.inset = '0';
-        el.style.display = 'grid';
-        el.style.gridTemplateColumns = 'repeat(' + pixelGrid.columns + ', 1fr)';
-        el.style.gridTemplateRows = 'repeat(' + pixelGrid.rows + ', 1fr)';
-        el.style.opacity = '0';
-        el.style.pointerEvents = 'none';
-
-        var cells = [];
-        var total = pixelGrid.rows * pixelGrid.columns;
-        for (var i = 0; i < total; i++) {
-            var cell = document.createElement('div');
-            cell.style.background = 'var(--pt-bg, var(--color-bg))';
-            cell.style.willChange = 'transform, opacity';
-            el.appendChild(cell);
-            cells.push(cell);
+        var scrim = shell.querySelector('.page-transition-scrim');
+        if (!scrim) {
+            scrim = document.createElement('div');
+            scrim.className = 'page-transition-scrim js-page-transition-scrim';
+            scrim.setAttribute('aria-hidden', 'true');
+            shell.appendChild(scrim);
         }
 
-        shell.appendChild(el);
-        pixelGrid.el = el;
-        pixelGrid.cells = cells;
-        pixelGrid.built = true;
-        return pixelGrid;
-    }
+        var progress = shell.querySelector('.page-transition-progress');
+        if (!progress) {
+            progress = document.createElement('div');
+            progress.className = 'page-transition-progress js-page-transition-progress';
+            shell.appendChild(progress);
+        }
 
-    function pixelStagger(from, each) {
+        var badge = shell.querySelector('.page-transition-badge');
+        if (!badge) {
+            badge = document.createElement('div');
+            badge.className = 'page-transition-badge js-page-transition-badge';
+            badge.innerHTML = '<span class="page-transition-badge__logo">MILLIONAIRE</span><div class="page-transition-badge__line"></div><span class="page-transition-badge__label js-page-transition-badge-label">STUDIO</span>';
+            scrim.appendChild(badge);
+        }
+
+        var badgeLabel = shell.querySelector('.js-page-transition-badge-label');
+
         return {
-            grid: [pixelGrid.rows, pixelGrid.columns],
-            from: from,
-            each: each
+            shell: shell,
+            scrim: scrim,
+            progress: progress,
+            badge: badge,
+            badgeLabel: badgeLabel
         };
-    }
-
-    //  overlay：cell  0 
-    function pixelShow(config) {
-        return new Promise(function(resolve) {
-            if (!gsap || !pixelGrid.el) {
-                resolve();
-                return;
-            }
-            gsap.set(pixelGrid.el, {
-                opacity: 1
-            });
-            gsap.fromTo(pixelGrid.cells, {
-                scale: 0,
-                opacity: 0,
-                transformOrigin: '50% 50%'
-            }, {
-                duration: config.duration,
-                ease: config.ease,
-                scale: 1.03,
-                opacity: 1,
-                stagger: config.stagger,
-                overwrite: 'auto',
-                onComplete: resolve
-            });
-        });
-    }
-
-    //  overlay：cell  0 
-    function pixelHide(config) {
-        return new Promise(function(resolve) {
-            if (!gsap || !pixelGrid.el) {
-                resolve();
-                return;
-            }
-            gsap.to(pixelGrid.cells, {
-                duration: config.duration,
-                ease: config.ease,
-                scale: 0,
-                opacity: 0,
-                transformOrigin: '50% 50%',
-                stagger: config.stagger,
-                overwrite: 'auto',
-                onComplete: function() {
-                    gsap.set(pixelGrid.el, {
-                        opacity: 0
-                    });
-                    resolve();
-                }
-            });
-        });
     }
 
     function deriveLabel(url, fallback) {
@@ -209,39 +139,12 @@
         var pathname = url.pathname.toLowerCase();
         if (pathname.endsWith('/work.html') || pathname.endsWith('work.html')) return 'WORK';
         if (pathname.endsWith('/project.html') || pathname.endsWith('project.html')) return 'WORK';
+        if (pathname.endsWith('/about.html') || pathname.endsWith('about.html')) return 'ABOUT';
+        if (pathname.endsWith('/contact.html') || pathname.endsWith('contact.html')) return 'CONTACT';
+        if (pathname.endsWith('/mdz-makes-ai.html') || pathname.endsWith('mdz-makes-ai.html')) return 'AI AUTOMATION';
         if (pathname.endsWith('/index.html') || pathname === '/' || pathname === '') return 'HOME';
         var last = pathname.split('/').filter(Boolean).pop() || 'PAGE';
         return last.replace(/\.html$/i, '').replace(/[-_]+/g, ' ').trim().toUpperCase();
-    }
-
-    function updateOverlayContent(refs, url, label) {
-        var targetLabel = deriveLabel(url, label);
-        if (refs.eyebrow) refs.eyebrow.textContent = 'MILLIONAIRE DIZITAL LLP';
-        if (refs.title) refs.title.textContent = targetLabel;
-        if (refs.subtitle) {
-            refs.subtitle.textContent = url.hash ?
-                'Scrolling into the selected section with a shared transition shell.' :
-                'Shared page-transition layer for the home page and work archive.';
-        }
-        if (refs.metaTo) refs.metaTo.textContent = url.pathname.split('/').pop() || 'index.html';
-    }
-
-    function updateProgress(refs, value) {
-        var rounded = Math.max(0, Math.min(100, Math.round(value)));
-        if (refs.counterNum) refs.counterNum.textContent = String(rounded).padStart(2, '0');
-        if (refs.loader) refs.loader.style.width = rounded + '%';
-    }
-
-    function resetReveal(refs) {
-        if (!refs.shell || !refs.curtain || !gsap) return;
-        gsap.set(refs.shell, {
-            autoAlpha: 1
-        });
-        gsap.set(refs.curtain, {
-            autoAlpha: 1,
-            '--pt-top': '-102%',
-            '--pt-bottom': '102%'
-        });
     }
 
     function finalizeEntryTransition(refs) {
@@ -250,56 +153,66 @@
             state.entryCleanupTimer = null;
         }
 
-        if (!refs || !refs.shell) {
-            document.documentElement.classList.remove('has-pending-page-transition');
-            return;
-        }
+        var g = window.gsap || gsap;
 
-        refs.shell.classList.remove('is-active');
+        if (refs) {
+            if (refs.shell) {
+                refs.shell.classList.remove('is-active');
+                refs.shell.style.opacity = '0';
+                refs.shell.style.visibility = 'hidden';
+                refs.shell.style.pointerEvents = 'none';
+            }
+            if (refs.scrim) {
+                refs.scrim.style.opacity = '0';
+                refs.scrim.style.pointerEvents = 'none';
+            }
+            if (refs.progress) {
+                refs.progress.style.opacity = '0';
+            }
 
-        if (gsap && refs.curtain) {
-            gsap.killTweensOf(refs.curtain);
-            gsap.killTweensOf(refs.shell);
-            gsap.set(refs.curtain, {
-                clearProps: 'all'
-            });
-            gsap.set(refs.shell, {
-                clearProps: 'all'
-            });
-        } else {
-            refs.curtain && refs.curtain.removeAttribute('style');
-            refs.shell.removeAttribute('style');
-        }
-
-        if (pixelGrid.el) {
-            if (gsap) {
-                gsap.killTweensOf(pixelGrid.cells);
-                gsap.set(pixelGrid.el, {
-                    opacity: 0
-                });
-            } else {
-                pixelGrid.el.style.opacity = '0';
+            if (g) {
+                if (refs.scrim) g.killTweensOf(refs.scrim);
+                if (refs.progress) g.killTweensOf(refs.progress);
+                if (refs.badge) g.killTweensOf(refs.badge);
+                if (refs.shell) g.killTweensOf(refs.shell);
+                if (refs.scrim) g.set(refs.scrim, { opacity: 0 });
+                if (refs.progress) g.set(refs.progress, { scaleX: 0, opacity: 0 });
+                if (refs.shell) g.set(refs.shell, { autoAlpha: 0 });
             }
         }
 
-        document.documentElement.classList.remove('has-pending-page-transition');
+        document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+        document.body && document.body.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+        startLenis();
+        if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
+            try { window.ScrollTrigger.refresh(); } catch (e) {}
+        }
     }
 
     function playEntryTransition(payload) {
         var refs = getShellRefs();
-        if (!payload || !refs.shell) {
-            document.documentElement.classList.remove('has-pending-page-transition');
+        if (!refs.shell) {
+            document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+            startLenis();
+            return;
+        }
+
+        if (!payload) {
+            finalizeEntryTransition(refs);
             return;
         }
 
         var destination = new URL(payload.href || window.location.href, window.location.href);
-        updateOverlayContent(refs, destination, payload.label || '');
+        var targetLabel = deriveLabel(destination, payload.label || '');
+        if (refs.badgeLabel) {
+            refs.badgeLabel.textContent = targetLabel || 'STUDIO';
+        }
 
         refs.shell.classList.add('is-active');
 
-        if (!gsap) {
-            refs.shell.classList.remove('is-active');
-            document.documentElement.classList.remove('has-pending-page-transition');
+        var g = window.gsap || gsap;
+        if (!g) {
+            finalizeEntryTransition(refs);
             return;
         }
 
@@ -308,56 +221,62 @@
             state.entryCleanupTimer = null;
         }
 
-        //  pixel grid，「」， curtain 
-        buildPixelGrid(refs.shell);
-        gsap.set(refs.shell, {
-            autoAlpha: 1
-        });
-        if (pixelGrid.el) {
-            gsap.set(pixelGrid.el, {
-                opacity: 1
-            });
-            gsap.set(pixelGrid.cells, {
-                scale: 1.03,
-                opacity: 1,
-                transformOrigin: '50% 50%'
-            });
-        }
-        //  curtain （pixel grid ）
-        if (refs.curtain) gsap.set(refs.curtain, {
-            autoAlpha: 0
-        });
-
         state.entryCleanupTimer = window.setTimeout(function() {
             finalizeEntryTransition(refs);
-        }, 1500);
+        }, 1200);
 
-        // pixel grid ，
-        pixelHide({
-            duration: 0.3,
-            ease: 'power1',
-            stagger: pixelStagger('center', 0.022)
-        }).then(function() {
-            finalizeEntryTransition(refs);
+        var mainEl = document.querySelector('main') || document.querySelector('.site-wrapper') || document.body;
+
+        var tl = g.timeline({
+            onComplete: function() {
+                finalizeEntryTransition(refs);
+            }
         });
+
+        // 1. Progress bar completes to 100% then fades
+        tl.fromTo(refs.progress, {
+            scaleX: 0.85,
+            opacity: 1
+        }, {
+            scaleX: 1,
+            duration: 0.22,
+            ease: 'power2.out'
+        }, 0);
+
+        // 2. Scrim and badge smoothly fade out
+        tl.to(refs.scrim, {
+            opacity: 0,
+            duration: 0.38,
+            ease: 'power2.out'
+        }, 0.06);
+
+        tl.to(refs.progress, {
+            opacity: 0,
+            duration: 0.2,
+            ease: 'power1.out'
+        }, 0.2);
+
+        // 3. New page content slides up smoothly from y: 20 to 0
+        if (mainEl) {
+            tl.fromTo(mainEl, {
+                opacity: 0,
+                y: 18
+            }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.44,
+                ease: 'power3.out',
+                clearProps: 'transform'
+            }, 0.04);
+        }
     }
 
     function armEntryFailSafe(payload) {
-        if (!payload) return;
-
         function finalizeIfStuck() {
             state.entryFailSafeTimer = null;
-            // ： load/pageshow  fail-safe  cover 
             if (state.leaving) return;
             var refs = getShellRefs();
-            if (!refs.shell) {
-                document.documentElement.classList.remove('has-pending-page-transition');
-                return;
-            }
-
-            if (refs.shell.classList.contains('is-active') || document.documentElement.classList.contains('has-pending-page-transition')) {
-                finalizeEntryTransition(refs);
-            }
+            finalizeEntryTransition(refs);
         }
 
         function schedule(delay) {
@@ -367,25 +286,19 @@
             state.entryFailSafeTimer = window.setTimeout(finalizeIfStuck, delay);
         }
 
-        schedule(2400);
+        schedule(800);
         window.addEventListener('load', function() {
-            schedule(1600);
-        }, {
-            once: true
-        });
+            schedule(300);
+        }, { once: true });
         window.addEventListener('pageshow', function() {
-            schedule(1600);
-        }, {
-            once: true
-        });
+            schedule(300);
+        }, { once: true });
     }
 
     function navigateWithTransition(href, label) {
         if (state.leaving) return;
         state.leaving = true;
 
-        // ， cover  finalizeEntryTransition，
-        //  pixel （）。
         if (state.entryCleanupTimer) {
             window.clearTimeout(state.entryCleanupTimer);
             state.entryCleanupTimer = null;
@@ -397,11 +310,12 @@
 
         var refs = getShellRefs();
         var destination = new URL(href, window.location.href);
+        var targetLabel = deriveLabel(destination, label || '');
 
         try {
             window.sessionStorage.setItem(TRANSITION_KEY, JSON.stringify({
                 href: destination.href,
-                label: label || '',
+                label: targetLabel,
                 at: Date.now()
             }));
         } catch (error) {}
@@ -414,37 +328,68 @@
             return;
         }
 
-        updateOverlayContent(refs, destination, label || '');
-        buildPixelGrid(refs.shell);
-        // ， kill ，
-        if (pixelGrid.cells.length) gsap.killTweensOf(pixelGrid.cells);
-        if (pixelGrid.el) gsap.set(pixelGrid.el, {
-            opacity: 1
-        });
+        if (refs.badgeLabel) {
+            refs.badgeLabel.textContent = targetLabel || 'STUDIO';
+        }
+
         refs.shell.classList.add('is-active');
-        if (refs.curtain) gsap.set(refs.curtain, {
-            autoAlpha: 0
-        });
+        gsap.set(refs.shell, { autoAlpha: 1 });
 
         var navigated = false;
-
         function go() {
             if (navigated) return;
             navigated = true;
             window.location.href = destination.href;
         }
 
-        var fallbackTimer = window.setTimeout(go, 1000);
+        var fallbackTimer = window.setTimeout(go, 750);
 
-        // pixel grid ，
-        pixelShow({
-            duration: 0.28,
-            ease: 'power1.in',
-            stagger: pixelStagger('center', 0.022)
-        }).then(function() {
-            window.clearTimeout(fallbackTimer);
-            go();
+        var tl = gsap.timeline({
+            onComplete: function() {
+                window.clearTimeout(fallbackTimer);
+                go();
+            }
         });
+
+        // 1. Top gold progress bar sweep
+        tl.fromTo(refs.progress, {
+            scaleX: 0,
+            opacity: 1
+        }, {
+            scaleX: 0.85,
+            duration: 0.3,
+            ease: 'power2.inOut'
+        }, 0);
+
+        // 2. Smooth luxury fade & subtle upward slide of scrim
+        tl.fromTo(refs.scrim, {
+            opacity: 0
+        }, {
+            opacity: 1,
+            duration: 0.28,
+            ease: 'power2.inOut'
+        }, 0);
+
+        tl.fromTo(refs.badge, {
+            opacity: 0,
+            y: 10
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.26,
+            ease: 'power3.out'
+        }, 0.04);
+
+        // 3. Subtle page content fade out
+        var mainEl = document.querySelector('main') || document.querySelector('.site-wrapper') || document.body;
+        if (mainEl) {
+            tl.to(mainEl, {
+                opacity: 0.35,
+                y: -10,
+                duration: 0.26,
+                ease: 'power2.in'
+            }, 0);
+        }
     }
 
     window._mdzNavigate = navigateWithTransition;
@@ -571,6 +516,7 @@
         container.style.removeProperty('top');
         container.style.removeProperty('left');
         container.style.removeProperty('width');
+        container.style.removeProperty('max-width');
         container.style.removeProperty('height');
         container.style.removeProperty('border-radius');
         container.style.removeProperty('transform');
@@ -688,6 +634,8 @@
         container.classList.add('is-menu-animating');
         container.classList.remove('ns-enter', 'ns-exit');
 
+        startLenis();
+
         if (skipAnimation) {
             killSharedMenuTimeline('closeTl');
             finishSharedMenuClosed(container, dropdown, items);
@@ -753,8 +701,9 @@
             container.classList.add('is-menu-animating');
             container.classList.remove('ns-enter', 'ns-exit');
             setMenuExpanded(container, true);
-
             container.classList.add('is-menu-phase-compact');
+
+            stopLenis();
             container.classList.remove('is-menu-phase-line');
 
             scheduleSharedMenuPhase(function() {
@@ -765,12 +714,13 @@
                     container.classList.remove('is-menu-phase-line');
                     setSharedMenuShellStyles(container, {
                         top: '0px',
-                        left: '50%',
+                        left: '0px',
                         width: '100vw',
+                        maxWidth: '100vw',
                         height: '100vh',
                         borderRadius: '0px',
-                        transform: 'translateX(-50%)',
-                        backgroundColor: '#efe6d8'
+                        transform: 'none',
+                        backgroundColor: '#ffffff'
                     });
                 }, 250);
             }, 220);
@@ -938,10 +888,15 @@
         window.addEventListener('resize', scheduleSync, {
             passive: true
         });
+        hookLenis();
         window.setTimeout(function() {
             hookLenis();
             scheduleSync();
-        }, 250);
+        }, 100);
+        window.setTimeout(function() {
+            hookLenis();
+            scheduleSync();
+        }, 300);
         window.setTimeout(function() {
             hookLenis();
             scheduleSync();
