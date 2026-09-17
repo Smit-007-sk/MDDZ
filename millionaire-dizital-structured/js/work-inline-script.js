@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────────
        Hover Reveal — GSAP-driven overlay animations
-       5 layers: image scale • blur fade • desaturate • video scale-in • text slide-up
+       Clean hover state: actual image zoom + elegant 'VIEW PROJECT' tag
     ───────────────────────────────────────────────────────────────── */
     (function () {
       function initHoverReveal() {
@@ -16,16 +16,6 @@
           if (!box || box.dataset.hoverReveal) return;
           box.dataset.hoverReveal = '1';
 
-          /* Frosted-glass layer */
-          var blur = document.createElement('div');
-          blur.className = 'work-blur';
-          blur.setAttribute('aria-hidden', 'true');
-
-          /* Desaturation blend layer */
-          var blend = document.createElement('div');
-          blend.className = 'work-color-blend';
-          blend.setAttribute('aria-hidden', 'true');
-
           /* Slide-up text */
           var text = document.createElement('div');
           text.className = 'work-text-bottom';
@@ -33,34 +23,19 @@
           var metaIdx = card.querySelector('.work-meta span:first-child');
           text.innerHTML =
             '<span class="work-text-bottom__index">' + (metaIdx ? metaIdx.textContent.trim() : '') + '</span>' +
-            '<span class="work-text-bottom__action">VIEW PROJECT </span>';
+            '<span class="work-text-bottom__action">VIEW PROJECT ↗</span>';
 
-          /* Insert blur + blend after the cover image, before the video */
-          var cover = box.querySelector('.work-cover');
-          var videoWrap = box.querySelector('.work-video');
-          if (cover) {
-            cover.after(blur, blend);
-          } else {
-            box.prepend(blur, blend);
-          }
           box.appendChild(text);
         });
 
         /* ─ 2. GSAP initial states ─────────────────────────────── */
-        gsap.set('.work-blur', { opacity: 0 });
-        gsap.set('.work-color-blend', { opacity: 0 });
-        gsap.set('.work-text-bottom', { opacity: 0, y: 30 });
-        gsap.set('.work-video video', { scale: 0.5 });
+        gsap.set('.work-text-bottom', { opacity: 0, y: 20 });
 
         /* ─ 3. Per-card hover timelines ─────────────────────────── */
         document.querySelectorAll('.work-card').forEach(function (card) {
           var box = card.querySelector('.work-box');
           if (!box) return;
           var cover = box.querySelector('.work-cover');
-          var blur = box.querySelector('.work-blur');
-          var blend = box.querySelector('.work-color-blend');
-          var videoWrap = box.querySelector('.work-video');
-          var videoEl = videoWrap ? videoWrap.querySelector('video') : null;
           var text = box.querySelector('.work-text-bottom');
 
           var tl = null;
@@ -69,33 +44,19 @@
             if (tl) tl.kill();
             tl = gsap.timeline();
 
-            /* 1. 背景圖微放大 */
-            if (cover) tl.to(cover, { scale: 1.05, duration: 0.6, ease: 'power1.inOut' }, 0);
+            /* 1. Actual project image zooms smoothly and stays vibrant */
+            if (cover) tl.to(cover, { scale: 1.05, filter: 'brightness(1.05) saturate(1.05)', duration: 0.5, ease: 'power2.out' }, 0);
 
-            /* 2. 毛玻璃遂即顯現 */
-            if (blur) tl.to(blur, { opacity: 1, duration: 0.1, ease: 'power1.in' }, 0);
-
-            /* 3. 去色滾鸡層 */
-            if (blend) tl.to(blend, { opacity: 1, duration: 0.6, ease: 'power1.inOut' }, 0);
-
-            /* 4. 影片 scale-in + 淡入 */
-            if (videoWrap) tl.to(videoWrap, { opacity: 1, duration: 0.4, ease: 'power2.inOut' }, 0);
-            if (videoEl) tl.to(videoEl, { scale: 1, duration: 0.4, ease: 'power2.inOut' }, 0);
-
-            /* 5. 文字上滑顯現 */
-            if (text) tl.to(text, { opacity: 1, y: 0, duration: 0.5, ease: 'power1.inOut' }, 0.05);
+            /* 2. Text badge slides up */
+            if (text) tl.to(text, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }, 0.05);
           });
 
           card.addEventListener('mouseleave', function () {
             if (tl) tl.kill();
             tl = gsap.timeline();
 
-            if (cover) tl.to(cover, { scale: 1, duration: 0.5, ease: 'power1.inOut' }, 0);
-            if (blur) tl.to(blur, { opacity: 0, duration: 0.35, ease: 'power1.out' }, 0);
-            if (blend) tl.to(blend, { opacity: 0, duration: 0.45, ease: 'power1.inOut' }, 0);
-            if (videoWrap) tl.to(videoWrap, { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, 0);
-            if (videoEl) tl.to(videoEl, { scale: 0.5, duration: 0.35, ease: 'power2.inOut' }, 0);
-            if (text) tl.to(text, { opacity: 0, y: 30, duration: 0.3, ease: 'power1.inOut' }, 0);
+            if (cover) tl.to(cover, { scale: 1, filter: 'brightness(0.96) saturate(0.98)', duration: 0.45, ease: 'power2.out' }, 0);
+            if (text) tl.to(text, { opacity: 0, y: 20, duration: 0.3, ease: 'power2.in' }, 0);
           });
 
           /* Navigate on click if card has data-href */
@@ -115,26 +76,12 @@
         });
       }
 
-      /* ─ work-card 影片：桌機才載入 ────────────────────────────
-         手機 / 平板 / 觸控裝置上 .work-video 是 display:none、且沒有 hover，
-         影片完全用不到。原本 <source src> + preload="metadata" 會在這些裝置
-         一載入就把 ~3MB 影片抓下來，餓死 lazy 封面圖（第二塊以後要等 ~2 秒）。
-         改用 data-src，只有桌機（可 hover、精細指標、寬度 > 1024）才還原 src 載入。 */
       function hydrateWorkVideosForDesktop() {
-        var isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 1024;
-        if (!isDesktop) return; // 手機/觸控：完全不載，封面圖立即取得頻寬
-        document.querySelectorAll('.work-video video').forEach(function (v) {
-          var hydrated = false;
-          v.querySelectorAll('source[data-src]').forEach(function (s) {
-            if (!s.getAttribute('src')) { s.src = s.dataset.src; hydrated = true; }
-          });
-          if (hydrated) v.load();
-        });
+        // Videos removed in favor of actual high-res project artwork
       }
 
-      /* ─ 連結點擊邏輯：所有裝置都需要，獨立於 hover reveal ─── */
       function initCardLinks() {
-        /* 已由 HTML <a> 標籤處理，無需 JS */
+        /* Handled by standard anchor tags */
       }
 
       /* Init as soon as the DOM is parsed — GSAP is loaded synchronously in

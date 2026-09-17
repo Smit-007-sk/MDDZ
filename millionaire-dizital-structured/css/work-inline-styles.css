@@ -19,20 +19,13 @@ html.lenis, html.lenis body {
 }
 
 /* ═══════════════════════════════════════════════════════════
-       Hover Reveal — Frosted Glass + Desaturation Blend
-       Layer order (z-index): image(1) → blur(4) → blend(8) → video(9) → text(12)
+       Hover Reveal — Pure Vibrant Image Focus
        ═══════════════════════════════════════════════════════════ */
 
-    /* Lift .work-video above blur/blend so it renders in full colour */
-    .work-video {
-      z-index: 9 !important;
-      background: transparent !important;
-    }
-
-    /* Neutralise CSS hover state on video — GSAP manages opacity */
-    .work-box:hover .work-video {
-      opacity: 0;
-      transform: translate3d(-50%, -50%, 0) scale(0.94);
+    .work-video,
+    .work-blur,
+    .work-color-blend {
+      display: none !important;
     }
 
     .work-box {
@@ -61,41 +54,14 @@ html.lenis, html.lenis body {
       object-fit: cover !important;
       object-position: center center !important;
       z-index: 1 !important;
-      filter: brightness(0.92) saturate(0.96) !important;
+      filter: brightness(0.96) saturate(0.98) !important;
       transform: translate3d(0, 0, 0) scale(1) !important;
-      transition: opacity 0.72s var(--work-ease), filter 0.72s var(--work-ease), transform 0.8s var(--work-ease) !important;
+      transition: filter 0.5s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
     }
 
     .work-card:hover .work-cover {
-      filter: brightness(1) saturate(1.04) !important;
-      transform: translate3d(0, 0, 0) scale(1.04) !important;
-    }
-
-    .work-video video {
-      object-fit: cover !important;
-    }
-
-    /* ── Frosted-glass blur overlay ──────────────────────────────── */
-    .work-blur {
-      position: absolute;
-      inset: 0;
-      z-index: 4;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      background: rgba(23, 20, 17, 0.06);
-      pointer-events: none;
-      will-change: opacity;
-    }
-
-    /* ── Desaturation blend layer (mix-blend-mode: color) ──────────── */
-    .work-color-blend {
-      position: absolute;
-      inset: 0;
-      z-index: 8;
-      background: var(--color-bg, #FDFAF6);
-      mix-blend-mode: color;
-      pointer-events: none;
-      will-change: opacity;
+      filter: brightness(1.04) saturate(1.04) !important;
+      transform: translate3d(0, 0, 0) scale(1.05) !important;
     }
 
     /* ── Slide-up text ──────────────────────────────────────── */

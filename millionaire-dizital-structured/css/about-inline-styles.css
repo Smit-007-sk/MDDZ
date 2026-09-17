@@ -4271,3 +4271,385 @@
   }
 }
 
+/* ============================================================
+   AGENCY PHILOSOPHY & POSITIONING SECTION
+============================================================ */
+.agency-philosophy-section {
+  padding: 8vw 3.5vw;
+  background-color: var(--color-bg-secondary, #F4EFE6);
+  border-top: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  border-bottom: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  position: relative;
+  overflow: hidden;
+}
+
+.ap-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ap-header {
+  margin-bottom: 3vw;
+}
+
+.ap-tag {
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--color-emerald, #046A38);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ap-title {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-text, #171411);
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+
+.ap-lead-quote {
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  line-height: 1.45;
+  color: #171411;
+  font-weight: 600;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.ap-body-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text-secondary, #5a544d);
+  max-width: 820px;
+  margin-bottom: 36px;
+}
+
+.ap-purpose-pill-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.3));
+  border-radius: 12px;
+  max-width: 900px;
+}
+
+.ap-purpose-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gold, #c89a45);
+}
+
+.ap-purpose-tokens {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ap-token {
+  font-size: 14px;
+  font-weight: 700;
+  color: #171411;
+  background: #FDFAF6;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(200, 154, 69, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   CONTENT & PRODUCTION PIPELINE SECTION
+============================================================ */
+.content-production-pipeline-section {
+  padding: 8vw 3.5vw 7vw;
+  background-color: var(--color-bg, #FDFAF6);
+  border-top: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  position: relative;
+  overflow: hidden;
+}
+
+.cpp-header {
+  margin-bottom: 4vw;
+}
+
+.cpp-tag {
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--color-emerald, #046A38);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.cpp-title {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-text, #171411);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.cpp-subhead {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--color-text-secondary, #5a544d);
+  max-width: 600px;
+}
+
+.cpp-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.cpp-step-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.2));
+  border-radius: 10px;
+  padding: 22px 20px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.cpp-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold, #c89a45);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(200, 154, 69, 0.1);
+}
+
+.cpp-step-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gold, #c89a45);
+  font-family: monospace;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cpp-step-arrow {
+  font-size: 14px;
+  color: rgba(200, 154, 69, 0.6);
+}
+
+.cpp-step-name {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text, #171411);
+  margin-bottom: 6px;
+}
+
+.cpp-footer-banner {
+  padding: 20px 28px;
+  background: linear-gradient(135deg, rgba(200, 154, 69, 0.08) 0%, rgba(4, 106, 56, 0.05) 100%);
+  border: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cpp-banner-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #171411;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   WHY MILLIONAIRE DIZITAL? SECTION (6 Value Pillars)
+============================================================ */
+.why-mddz-section {
+  padding: 8vw 3.5vw 7vw;
+  background-color: var(--color-bg-secondary, #F4EFE6);
+  border-top: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  position: relative;
+  overflow: hidden;
+}
+
+.why-header {
+  margin-bottom: 4vw;
+}
+
+.why-tag {
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--color-emerald, #046A38);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.why-title {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-text, #171411);
+  line-height: 1.12;
+  margin-bottom: 16px;
+  max-width: 960px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.22));
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold, #c89a45);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 32px rgba(200, 154, 69, 0.12);
+}
+
+.why-card-num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold, #c89a45);
+  font-family: monospace;
+  margin-bottom: 14px;
+}
+
+.why-card-title {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text, #171411);
+  margin-bottom: 10px;
+}
+
+.why-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #5a544d);
+}
+
+/* ============================================================
+   INDUSTRIES MATRIX SECTION
+============================================================ */
+.industries-matrix-section {
+  padding: 8vw 3.5vw 7vw;
+  background-color: var(--color-bg, #FDFAF6);
+  border-top: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.25));
+  position: relative;
+  overflow: hidden;
+}
+
+.ind-header {
+  margin-bottom: 3.5vw;
+}
+
+.ind-tag {
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  color: var(--color-emerald, #046A38);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.ind-title {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-text, #171411);
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+
+.ind-subhead {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--color-text-secondary, #5a544d);
+  max-width: 640px;
+}
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.ind-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-gold-line, rgba(200, 154, 69, 0.2));
+  border-radius: 10px;
+  padding: 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.ind-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold, #c89a45);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(200, 154, 69, 0.1);
+}
+
+.ind-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(200, 154, 69, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold, #c89a45);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ind-name {
+  font-family: var(--font-family-display, 'Zalando Sans SemiExpanded', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text, #171411);
+  line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+  .why-grid, .ind-grid, .cpp-pipeline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
