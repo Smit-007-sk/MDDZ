@@ -3677,39 +3677,31 @@
 
 
     .footer-contact-info a {
-
       display: block;
-
       color: #000000 !important;
-
       text-decoration: none;
-
       font-size: clamp(14px, 3.5vw, 50px);
-
       font-weight: 400;
-
       margin-bottom: 4px;
-
-      transition: opacity 0.2s;
-
+      transition: color 0.3s ease, opacity 0.3s ease;
     }
-
-
 
     .footer-contact-info a:hover {
-
-      opacity: 0.6;
-
+      color: var(--color-gold, #c89a45) !important;
+      opacity: 1;
     }
 
-
-
     .footer-contact-info span {
-
+      display: inline-block;
       color: #000000 !important;
-
       font-size: clamp(14px, 2.5vw, 30px);
+      transition: color 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
 
+    .footer-contact-info span:hover {
+      color: var(--color-gold, #c89a45) !important;
+      opacity: 1;
     }
 
 

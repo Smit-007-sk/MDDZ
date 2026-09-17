@@ -511,15 +511,17 @@ html.lenis, html.lenis body {
   font-size: clamp(24px, 4.2vw, 56px);
   font-weight: 400;
   margin-bottom: 4px;
-  transition: opacity 0.2s;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-.footer-contact-info a:hover {
-  opacity: 0.65;
+.footer-contact-info a:hover,
+.footer-contact-info span:hover {
+  color: var(--color-gold, #c89a45) !important;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .footer-contact-info span {
-  color: #000000 !important;
   font-size: clamp(18px, 2.8vw, 34px);
 }
 

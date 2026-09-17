@@ -603,11 +603,12 @@ body.ai-page.page-work-pattern::before {
   text-decoration: none;
   line-height: 1.15;
   margin-bottom: 4px;
-  transition: opacity 0.2s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .footer-contact-info a:hover {
-  opacity: 0.65;
+  color: var(--color-gold, #c89a45) !important;
+  opacity: 1;
 }
 
 .footer-contact-info span {
@@ -615,6 +616,13 @@ body.ai-page.page-work-pattern::before {
   font-size: clamp(18px, 2.5vw, 30px);
   color: #000000 !important;
   font-weight: 400;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-contact-info span:hover {
+  color: var(--color-gold, #c89a45) !important;
+  opacity: 1;
 }
 
 .footer-nav-links {

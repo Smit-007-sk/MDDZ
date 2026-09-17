@@ -135,6 +135,18 @@
   content: attr(data-text);
 }
 
+.footer-contact-info a,
+.footer-contact-info span {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-contact-info a:hover,
+.footer-contact-info span:hover {
+  color: var(--color-gold, #c89a45) !important;
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
 /* ── Universal Scrollbar Removal ── */
 html,
 body,

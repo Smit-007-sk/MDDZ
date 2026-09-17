@@ -76,10 +76,15 @@
   font-size: clamp(20px, 3.5vw, 50px);
   font-weight: 600;
   margin-bottom: 4px;
-  transition: opacity 0.2s;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
-.footer-contact-info a:hover { opacity: 0.6; }
-.footer-contact-info span { color: #000000 !important; font-size: clamp(18px, 2.5vw, 30px); }
+.footer-contact-info a:hover,
+.footer-contact-info span:hover {
+  color: var(--color-gold, #c89a45) !important;
+  opacity: 1;
+  cursor: pointer;
+}
+.footer-contact-info span { font-size: clamp(18px, 2.5vw, 30px); }
 
 .web_add { color: var(--color-text-secondary); }
 
