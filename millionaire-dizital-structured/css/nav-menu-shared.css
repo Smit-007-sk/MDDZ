@@ -570,9 +570,10 @@ body.shared-nav-page .ns-showcase-row.is-previewed .ns-showcase-row__index {
 
   color: rgba(23, 20, 17, 0.55);
 
+}body.shared-nav-page .ns-showcase-row {
+  justify-content: center !important;
+  text-align: center !important;
 }
-
-
 
 body.shared-nav-page .ns-showcase-row__title {
   position: relative;
@@ -581,74 +582,49 @@ body.shared-nav-page .ns-showcase-row__title {
   font-family: "Zalando Sans SemiExpanded", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: clamp(44px, 5.6vw, 84px);
-  line-height: 0.92;
+  line-height: 0.95;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   overflow: hidden;
+  text-align: center !important;
+  margin: 0 auto !important;
 }
-
-
 
 body.shared-nav-page .ns-showcase-row__title-track {
-
   position: relative;
-
   display: block;
-
   overflow: hidden;
-
   padding: 0 0.06em 0.1em;
-
+  text-align: center !important;
+  margin: 0 auto !important;
   will-change: transform;
-
   transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-
 }
-
-
 
 body.shared-nav-page .ns-showcase-row:hover .ns-showcase-row__title-track,
-
 body.shared-nav-page .ns-showcase-row:focus-visible .ns-showcase-row__title-track,
-
 body.shared-nav-page .ns-showcase-row.is-previewed .ns-showcase-row__title-track {
-
   transform: translateY(0);
-
 }
-
-
 
 body.shared-nav-page .ns-showcase-row__title-layer {
-
   display: block;
-
+  text-align: center !important;
   transition: transform 0.58s cubic-bezier(0.16, 1, 0.3, 1);
-
 }
-
-
 
 body.shared-nav-page .ns-showcase-row__title-layer.is-primary {
-
   position: relative;
-
   color: inherit;
-
+  text-align: center !important;
 }
 
-
-
 body.shared-nav-page .ns-showcase-row__title-layer.is-accent {
-
   position: absolute;
-
   inset: 0;
-
   color: var(--ns-menu-accent);
-
+  text-align: center !important;
   transform: translateY(104%);
-
 }
 
 
@@ -950,37 +926,38 @@ body.shared-nav-page .ns-showcase-row__thumb,
 
 
   body.shared-nav-page .ns-showcase-row {
-
     min-height: 76px;
-
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 16px;
   }
-
-
 
   body.shared-nav-page .ns-showcase-row__title {
-
-    font-size: clamp(38px, 11vw, 56px);
-
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
   }
 
+  body.shared-nav-page .ns-showcase-row__title-track {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
 
+  body.shared-nav-page .ns-showcase-row__title-layer {
+    text-align: center !important;
+    width: 100% !important;
+  }
 
   body.shared-nav-page .ns-showcase-row__index {
-
     bottom: 20%;
-
-    /* left: 18px; */
-
   }
-
-
 
   body.shared-nav-page .ns-showcase-row__thumb {
-
-    display: none;
-
+    display: none !important;
   }
-
 }
 
 

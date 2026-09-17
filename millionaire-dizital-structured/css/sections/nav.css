@@ -481,10 +481,12 @@
   font-family: "Zalando Sans SemiExpanded", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: clamp(44px, 5.6vw, 84px);
-  line-height: 0.92;
+  line-height: 0.95;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   overflow: hidden;
+  text-align: center !important;
+  margin: 0 auto !important;
   transition: color 0.58s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -493,12 +495,30 @@
   display: block;
   overflow: hidden;
   padding: 0 0.06em 0.1em;
+  text-align: center !important;
+  margin: 0 auto !important;
   will-change: transform;
 }
 
-.ns-showcase-row__title-layer { display: block; will-change: transform; }
-.ns-showcase-row__title-layer.is-primary { position: relative; color: inherit; }
-.ns-showcase-row__title-layer.is-accent { position: absolute; inset: 0; background: var(--color-gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: #c89a45; }
+.ns-showcase-row__title-layer {
+  display: block;
+  text-align: center !important;
+  will-change: transform;
+}
+.ns-showcase-row__title-layer.is-primary {
+  position: relative;
+  color: inherit;
+  text-align: center !important;
+}
+.ns-showcase-row__title-layer.is-accent {
+  position: absolute;
+  inset: 0;
+  background: var(--color-gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #c89a45;
+  text-align: center !important;
+}
 
 .ns-showcase-row.is-previewed { color: #c89a45; }
 .ns-showcase-row.is-previewed .ns-showcase-row__index { color: rgba(23, 20, 17, 0.55); }
@@ -645,11 +665,31 @@
   .ns-dropdown__inner { padding: 0; }
   .ns-menu-topline { padding: 0 18px; font-size: 11px; }
   .ns-menu-rows { grid-template-rows: repeat(5, minmax(76px, 1fr)); }
-  .ns-showcase-row { min-height: 76px; }
-  .ns-showcase-row__title { font-size: clamp(38px, 11vw, 56px); }
+  .ns-showcase-row {
+    min-height: 76px;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 16px;
+  }
+  .ns-showcase-row__title {
+    font-size: clamp(28px, 8vw, 48px) !important;
+    line-height: 1.05 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .ns-showcase-row__title-track {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .ns-showcase-row__title-layer {
+    text-align: center !important;
+    width: 100% !important;
+  }
   .ns-showcase-row__index { bottom: 20%; }
-  .ns-showcase-row__thumb { display: none; }
-  .ns-menu-preview { display: none; }
+  .ns-showcase-row__thumb { display: none !important; }
+  .ns-menu-preview { display: none !important; }
   .ns-dropdown__grid { grid-template-columns: 1fr; gap: 18px; }
   .ns-dropdown__headline { font-size: 16px; }
 }
