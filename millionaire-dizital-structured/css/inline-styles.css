@@ -3775,25 +3775,8 @@
 
 
 
-      .bottom-footer .footer-col:nth-child(1) {
-
-        grid-column: 1 !important;
-
-      }
-
-      .bottom-footer .footer-links,
-      .bottom-footer .footer-col.col-right {
-
-        grid-column: 4 !important;
-
-      }
-
-
-
       .bottom-footer {
-
-        align-items: start;
-
+        display: none !important;
       }
 
 
