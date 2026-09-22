@@ -190,6 +190,7 @@
     const counts = {
       all: allSlots.length,
       hero: allSlots.filter(s => s.category === 'hero').length,
+      capabilities: allSlots.filter(s => s.category === 'capabilities').length,
       work: allSlots.filter(s => s.category === 'work').length,
       showcase: allSlots.filter(s => s.category === 'showcase').length,
       about: allSlots.filter(s => s.category === 'about').length,

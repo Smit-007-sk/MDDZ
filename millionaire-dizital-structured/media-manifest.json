@@ -7,6 +7,12 @@
       "description": "The 4 interactive slideshow images and cinematic background video at the top of the home page."
     },
     {
+      "id": "capabilities",
+      "title": "Who We Are & Service Hover Section",
+      "badge": "Services Wave",
+      "description": "The interactive floating images that appear when hovering over services (Social Media, Performance Marketing, Live Music, Content Creation, etc.)."
+    },
+    {
       "id": "showcase",
       "title": "3D Cube & Showcase Section",
       "badge": "Section 02",
@@ -89,103 +95,137 @@
     },
 
     {
-      "id": "cube_img_1",
-      "section_id": "showcase",
-      "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 01 — Silver Leaf",
-      "category": "showcase",
+      "id": "intro_wave_livemusic",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — Live Music Party Night Poster",
+      "category": "capabilities",
       "type": "image",
-      "path": "images/main-images/Silver Leaf final.png",
-      "description": "Primary artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/after_hero_image/Black and Dark Brown Photo Modern Live Music Party Night Instagram Story.png",
+      "description": "Appears when hovering 'Performance Marketing' and 'UGC & Product Content' in the Who We Are section.",
+      "recommended": "PNG or WebP, 1080x1920 Story format"
     },
     {
-      "id": "cube_img_2",
-      "section_id": "showcase",
-      "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 02 — MTV Post",
-      "category": "showcase",
+      "id": "intro_wave_555",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — 555 P2 Artwork",
+      "category": "capabilities",
       "type": "image",
-      "path": "images/main-images/MTV Post 3.jpg",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "JPG, 1000x1000 square"
+      "path": "images/after_hero_image/555 P2.png",
+      "description": "Appears when hovering 'Social Media Management' and 'AI Content & Creative Production'.",
+      "recommended": "PNG or WebP, 1080x1920"
     },
     {
-      "id": "cube_img_3",
-      "section_id": "showcase",
-      "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 03 — CF 1",
-      "category": "showcase",
+      "id": "intro_wave_movie",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — Movie Night Collage",
+      "category": "capabilities",
       "type": "image",
-      "path": "images/main-images/CF 1.png",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/after_hero_image/Black Grunge Movie Night Collage Your Story.png",
+      "description": "Appears when hovering 'Content Creation' and 'Website Design & Development'.",
+      "recommended": "PNG or WebP, 1080x1920"
     },
     {
-      "id": "cube_img_4",
-      "section_id": "showcase",
-      "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 04 — CF Post",
-      "category": "showcase",
+      "id": "intro_wave_hoodie",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — Lust Emergency Hoodie",
+      "category": "capabilities",
       "type": "image",
-      "path": "images/main-images/CF Post.png",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/main-images/lust emergency hoodie.jpg",
+      "description": "Appears when hovering 'Video Production' and 'SEO & Digital Growth'.",
+      "recommended": "JPG or WebP, 1080x1920"
     },
     {
-      "id": "cube_img_5",
-      "section_id": "showcase",
-      "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 05 — CF Story",
-      "category": "showcase",
+      "id": "intro_wave_summer",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — Discount Summer Offer",
+      "category": "capabilities",
       "type": "image",
-      "path": "images/main-images/CF STORY.png",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/after_hero_image/Discount Summer Offer VCS final.jpg",
+      "description": "Appears when hovering 'Video Editing' and 'Product Photography & Videography'.",
+      "recommended": "JPG or WebP, 1080x1920"
     },
     {
-      "id": "cube_img_6",
+      "id": "intro_wave_powered",
+      "section_id": "capabilities",
+      "section_name": "Who We Are & Service Hover Section",
+      "name": "Service Hover — Powered By Graphic",
+      "category": "capabilities",
+      "type": "image",
+      "path": "images/after_hero_image/POWERED BY.png",
+      "description": "Appears when hovering 'Branding & Graphic Design' and 'Marketing Strategy & Consulting'.",
+      "recommended": "PNG or WebP, 1080x1920"
+    },
+
+    {
+      "id": "cube_face_front",
       "section_id": "showcase",
       "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 06 — Texture 33",
+      "name": "3D Cube — Front Face (555 P2)",
       "category": "showcase",
       "type": "image",
-      "path": "images/after_cube/Untitled design (33).png",
-      "description": "Showcase transition texture on 3D cube.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/cube/new_cube/555 P2.png",
+      "description": "Front face artwork on the interactive 3D spinning cube.",
+      "recommended": "PNG, 1200x1200 square"
     },
     {
-      "id": "cube_img_7",
+      "id": "cube_face_right",
       "section_id": "showcase",
       "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 07 — ARB X HS",
+      "name": "3D Cube — Right Face (Summer Offer)",
       "category": "showcase",
       "type": "image",
-      "path": "images/main-images/ARB X HS 1.png",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/cube/new_cube/Discount Summer Offer VCS final.jpg",
+      "description": "Right face artwork on the interactive 3D spinning cube.",
+      "recommended": "JPG, 1200x1200 square"
     },
     {
-      "id": "cube_img_8",
+      "id": "cube_face_back",
       "section_id": "showcase",
       "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 08 — Texture 32",
+      "name": "3D Cube — Back Face (Jewellery Post)",
       "category": "showcase",
       "type": "image",
-      "path": "images/after_cube/Untitled design (32).png",
-      "description": "Showcase transition texture on 3D cube.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/cube/new_cube/Gold Neutral Modern Jewellery Instagram Post.png",
+      "description": "Back face artwork on the interactive 3D spinning cube.",
+      "recommended": "PNG, 1200x1200 square"
     },
     {
-      "id": "cube_img_9",
+      "id": "cube_face_left",
       "section_id": "showcase",
       "section_name": "3D Cube & Showcase Section",
-      "name": "Cube Face 09 — Gold Jewellery",
+      "name": "3D Cube — Left Face (Storyslide 1)",
       "category": "showcase",
       "type": "image",
-      "path": "images/main-images/Gold Neutral Modern Jewellery Instagram Post.png",
-      "description": "Artwork on 3D spinning showcase cube face.",
-      "recommended": "PNG, 1000x1000 square"
+      "path": "images/cube/new_cube/Storyslide 1.jpg",
+      "description": "Left face artwork on the interactive 3D spinning cube.",
+      "recommended": "JPG, 1200x1200 square"
+    },
+    {
+      "id": "cube_face_top",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "3D Cube — Top Face (Design 32)",
+      "category": "showcase",
+      "type": "image",
+      "path": "images/cube/new_cube/Untitled design (32).png",
+      "description": "Top face artwork on the interactive 3D spinning cube.",
+      "recommended": "PNG, 1200x1200 square"
+    },
+    {
+      "id": "cube_face_bottom",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "3D Cube — Bottom Face (Design 33)",
+      "category": "showcase",
+      "type": "image",
+      "path": "images/cube/new_cube/Untitled design (33).png",
+      "description": "Bottom face artwork on the interactive 3D spinning cube.",
+      "recommended": "PNG, 1200x1200 square"
     },
     {
       "id": "showcase_bg_video",
