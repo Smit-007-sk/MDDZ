@@ -152,6 +152,7 @@
             window.clearTimeout(state.entryCleanupTimer);
             state.entryCleanupTimer = null;
         }
+        state.leaving = false;
 
         var g = window.gsap || gsap;
 
@@ -164,10 +165,12 @@
             }
             if (refs.scrim) {
                 refs.scrim.style.opacity = '0';
+                refs.scrim.style.visibility = 'hidden';
                 refs.scrim.style.pointerEvents = 'none';
             }
             if (refs.progress) {
                 refs.progress.style.opacity = '0';
+                refs.progress.style.transform = 'scaleX(0)';
             }
 
             if (g) {
@@ -181,8 +184,21 @@
             }
         }
 
+        var mainEl = document.querySelector('main') || document.querySelector('.site-wrapper') || document.querySelector('.work-archive') || document.body;
+        if (mainEl) {
+            mainEl.style.opacity = '1';
+            mainEl.style.visibility = 'visible';
+            if (g) {
+                g.killTweensOf(mainEl);
+                g.set(mainEl, { opacity: 1, y: 0, autoAlpha: 1, clearProps: 'transform' });
+            }
+        }
+
         document.documentElement.classList.remove('has-pending-page-transition', 'is-page-transitioning');
         document.body && document.body.classList.remove('has-pending-page-transition', 'is-page-transitioning');
+        document.body && (document.body.style.opacity = '1');
+        document.body && (document.body.style.visibility = 'visible');
+
         startLenis();
         if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
             try { window.ScrollTrigger.refresh(); } catch (e) {}
@@ -990,11 +1006,11 @@
     }
 
     window.addEventListener('pageshow', function(e) {
-        if (!e.persisted) return;
+        state.leaving = false;
         restoreFromBfcache();
-        // :bfcache ,( Safari) Lenis raf ,
-        //  rAF ,
         window.requestAnimationFrame(function() {
+            var refs = getShellRefs();
+            finalizeEntryTransition(refs);
             var lenis = getLenis();
             if (lenis && typeof lenis.start === 'function') {
                 try {
@@ -1005,21 +1021,14 @@
     });
 
     function cleanupStalePageShowTransition() {
-        if (state.leaving) return;
+        state.leaving = false;
         var refs = getShellRefs();
-        var hasStaleTransition = document.documentElement.classList.contains('has-pending-page-transition') ||
-            document.documentElement.classList.contains('is-page-transitioning') ||
-            !!(refs.shell && refs.shell.classList.contains('is-active'));
-        if (!hasStaleTransition) return;
-        restoreFromBfcache();
+        finalizeEntryTransition(refs);
     }
 
-    // （ Lenis）,bfcache  has-pending-page-transition
-    //  restoreFromBfcache ； persisted  pageshow 
     window.addEventListener('pageshow', function(e) {
-        if (e.persisted) return;
-        // ( bfcache): transitions ,
-        window.setTimeout(cleanupStalePageShowTransition, 1800);
+        window.setTimeout(cleanupStalePageShowTransition, 100);
+        window.setTimeout(cleanupStalePageShowTransition, 500);
     });
 
     function boot() {

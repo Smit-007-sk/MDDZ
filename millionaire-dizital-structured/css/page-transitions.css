@@ -18,6 +18,18 @@ html.is-page-transitioning body {
   visibility: hidden;
 }
 
+.page-transition-shell:not(.is-active) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.page-transition-shell:not(.is-active) .page-transition-scrim {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .page-transition-shell.is-active {
   opacity: 1;
   visibility: visible;
