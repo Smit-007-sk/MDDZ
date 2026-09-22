@@ -1,253 +1,207 @@
 {
+  "sections": [
+    {
+      "id": "hero",
+      "title": "Hero Section",
+      "badge": "Home Top",
+      "description": "The 4 interactive slideshow images and cinematic background video at the top of the home page."
+    },
+    {
+      "id": "showcase",
+      "title": "3D Cube & Showcase Section",
+      "badge": "Section 02",
+      "description": "Interactive 3D spinning cube face textures and cinematic showcase background video loops."
+    },
+    {
+      "id": "work",
+      "title": "Work Portfolio Section (10 Projects)",
+      "badge": "Portfolio",
+      "description": "Poster images and hover motion videos for all 10 client case studies."
+    },
+    {
+      "id": "about",
+      "title": "About & Studio Section",
+      "badge": "About Page",
+      "description": "Studio cinema reel video showcased on the about page."
+    },
+    {
+      "id": "footer",
+      "title": "Footer & Global Brand Section",
+      "badge": "Global",
+      "description": "Ambient footer video, gold footer banner, site pre-loader animation, and brand SVG logos."
+    }
+  ],
   "slots": [
     {
+      "id": "hero_slide_1",
+      "section_id": "hero",
+      "section_name": "Hero Section",
+      "name": "Hero Slide 01 Image",
+      "category": "hero",
+      "type": "image",
+      "path": "images/HeroFinal/Teal and Brown Lifestyle Carousel Scrapbook Instagram Post.png",
+      "description": "First visual card in the home page interactive hero slideshow carousel.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "hero_slide_2",
+      "section_id": "hero",
+      "section_name": "Hero Section",
+      "name": "Hero Slide 02 Image",
+      "category": "hero",
+      "type": "image",
+      "path": "images/HeroFinal/2 Dec.png",
+      "description": "Second visual card in the home page interactive hero slideshow carousel.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "hero_slide_3",
+      "section_id": "hero",
+      "section_name": "Hero Section",
+      "name": "Hero Slide 03 Image",
+      "category": "hero",
+      "type": "image",
+      "path": "images/HeroFinal/The climax is yours.png",
+      "description": "Third visual card in the home page interactive hero slideshow carousel.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "hero_slide_4",
+      "section_id": "hero",
+      "section_name": "Hero Section",
+      "name": "Hero Slide 04 Image",
+      "category": "hero",
+      "type": "image",
+      "path": "images/HeroFinal/3 (2).jpg",
+      "description": "Fourth visual card in the home page interactive hero slideshow carousel.",
+      "recommended": "JPG or WebP, 1080x1350"
+    },
+    {
       "id": "hero_video_bg",
+      "section_id": "hero",
+      "section_name": "Hero Section",
       "name": "Hero Background Video",
       "category": "hero",
       "type": "video",
       "path": "images/HeroFinal/1.mp4",
-      "alt_path": "images/HeroFinal/hero_video.mp4",
-      "description": "Primary looping background video in the top cinematic hero section.",
-      "recommended": "MP4 (H.264), 1920x1080 or 4K, optimized bitrate < 15MB"
-    },
-    {
-      "id": "hero_slide_1",
-      "name": "Hero Slideshow — Slide 01",
-      "category": "hero",
-      "type": "image",
-      "path": "images/HeroFinal/Teal and Brown Lifestyle Carousel Scrapbook Instagram Post.png",
-      "description": "First visual card in the home page interactive hero carousel.",
-      "recommended": "WebP or PNG, 1080x1350 or 1920x1080"
-    },
-    {
-      "id": "hero_slide_2",
-      "name": "Hero Slideshow — Slide 02",
-      "category": "hero",
-      "type": "image",
-      "path": "images/HeroFinal/2 Dec.png",
-      "description": "Second visual card in the home page interactive hero carousel.",
-      "recommended": "WebP or PNG, 1080x1350"
-    },
-    {
-      "id": "hero_slide_3",
-      "name": "Hero Slideshow — Slide 03",
-      "category": "hero",
-      "type": "image",
-      "path": "images/HeroFinal/The climax is yours.png",
-      "description": "Third visual card in the home page interactive hero carousel.",
-      "recommended": "WebP or PNG, 1080x1350"
-    },
-    {
-      "id": "hero_slide_4",
-      "name": "Hero Slideshow — Slide 04",
-      "category": "hero",
-      "type": "image",
-      "path": "images/HeroFinal/3 (2).jpg",
-      "description": "Fourth visual card in the home page interactive hero carousel.",
-      "recommended": "WebP or JPG, 1080x1350"
+      "description": "Cinematic looping video in the hero slideshow section.",
+      "recommended": "MP4 (H.264), 1920x1080"
     },
 
     {
-      "id": "work_01_poster",
-      "name": "01 High-End Skincare — Poster Image",
-      "category": "work",
+      "id": "cube_img_1",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 01 — Silver Leaf",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/1.webp",
-      "description": "Card thumbnail poster for project 01 in Work portfolio & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/Silver Leaf final.png",
+      "description": "Primary artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_01_video",
-      "name": "01 High-End Skincare — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/1.mp4",
-      "description": "Hover motion video clip for Skincare project card on Work page.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_02_poster",
-      "name": "02 METERSEVEN Streetwear — Poster Image",
-      "category": "work",
+      "id": "cube_img_2",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 02 — MTV Post",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/lust emergency hoodie.png",
-      "description": "Card thumbnail poster for project 02 Streetwear & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/MTV Post 3.jpg",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "JPG, 1000x1000 square"
     },
     {
-      "id": "work_02_video",
-      "name": "02 METERSEVEN Streetwear — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/LEBEL BHOHO.mp4",
-      "description": "Hover motion video clip for METERSEVEN project card on Work page.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_03_poster",
-      "name": "03 Country Camping — Poster Image",
-      "category": "work",
+      "id": "cube_img_3",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 03 — CF 1",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/3.webp",
-      "description": "Card thumbnail poster for project 03 Camping & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/CF 1.png",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_03_video",
-      "name": "03 Country Camping — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/3.mp4",
-      "description": "Hover motion video clip for Camping project card on Work page.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_04_poster",
-      "name": "04 Performance Fluids — Poster Image",
-      "category": "work",
+      "id": "cube_img_4",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 04 — CF Post",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/4.webp",
-      "description": "Card thumbnail poster for project 04 Fluids & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/CF Post.png",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_04_video",
-      "name": "04 Performance Fluids — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/4.mp4",
-      "description": "Hover motion video clip for Performance Fluids project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_05_poster",
-      "name": "05 OURATTAN Living — Poster Image",
-      "category": "work",
+      "id": "cube_img_5",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 05 — CF Story",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/5.webp",
-      "description": "Card thumbnail poster for project 05 OURATTAN Living & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/CF STORY.png",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_05_video",
-      "name": "05 OURATTAN Living — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/5.mp4",
-      "description": "Hover motion video clip for OURATTAN Living project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_06_poster",
-      "name": "06 Hand Pulled Noodle — Poster Image",
-      "category": "work",
+      "id": "cube_img_6",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 06 — Texture 33",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/6.webp",
-      "description": "Card thumbnail poster for project 06 Hand Pulled Noodle & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/after_cube/Untitled design (33).png",
+      "description": "Showcase transition texture on 3D cube.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_06_video",
-      "name": "06 Hand Pulled Noodle — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/6.mp4",
-      "description": "Hover motion video clip for Hand Pulled Noodle project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_07_poster",
-      "name": "07 Precision Machining — Poster Image",
-      "category": "work",
+      "id": "cube_img_7",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 07 — ARB X HS",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/7.webp",
-      "description": "Card thumbnail poster for project 07 CNC Precision Machining & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/ARB X HS 1.png",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_07_video",
-      "name": "07 Precision Machining — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/7.mp4",
-      "description": "Hover motion video clip for Precision Machining project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_08_poster",
-      "name": "08 Stellar Machining — Poster Image",
-      "category": "work",
+      "id": "cube_img_8",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 08 — Texture 32",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/8.webp",
-      "description": "Card thumbnail poster for project 08 Stellar Machining & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
+      "path": "images/after_cube/Untitled design (32).png",
+      "description": "Showcase transition texture on 3D cube.",
+      "recommended": "PNG, 1000x1000 square"
     },
     {
-      "id": "work_08_video",
-      "name": "08 Stellar Machining — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/8.mp4",
-      "description": "Hover motion video clip for Stellar Machining project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_09_poster",
-      "name": "09 Silver Leaf Dispensary — Poster Image",
-      "category": "work",
+      "id": "cube_img_9",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Cube Face 09 — Gold Jewellery",
+      "category": "showcase",
       "type": "image",
-      "path": "images/work/list/Silver Leaf final.jpg",
-      "description": "Card thumbnail poster for project 09 Silver Leaf & case study hero.",
-      "recommended": "WebP, JPG or PNG, 1200x800 or 1600x1000"
+      "path": "images/main-images/Gold Neutral Modern Jewellery Instagram Post.png",
+      "description": "Artwork on 3D spinning showcase cube face.",
+      "recommended": "PNG, 1000x1000 square"
     },
-    {
-      "id": "work_09_video",
-      "name": "09 Silver Leaf Dispensary — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/9.mp4",
-      "description": "Hover motion video clip for Silver Leaf project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_10_poster",
-      "name": "10 Solar Energy — Poster Image",
-      "category": "work",
-      "type": "image",
-      "path": "images/work/list/10.webp",
-      "description": "Card thumbnail poster for project 10 Solar Energy & case study hero.",
-      "recommended": "WebP or PNG, 1200x800 or 1600x1000"
-    },
-    {
-      "id": "work_10_video",
-      "name": "10 Solar Energy — Hover Video",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/list/10.mp4",
-      "description": "Hover motion video clip for Solar Energy project card.",
-      "recommended": "MP4 (H.264), 1080p, muted loop"
-    },
-    {
-      "id": "work_star_video",
-      "name": "Work Page Featured Video Clip",
-      "category": "work",
-      "type": "video",
-      "path": "images/work/star.mp4",
-      "description": "Featured header video accent on the main Work archive page.",
-      "recommended": "MP4 (H.264), 1080p"
-    },
-
     {
       "id": "showcase_bg_video",
-      "name": "Cinematic Showcase Background Video",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Showcase Background Video",
       "category": "showcase",
       "type": "video",
       "path": "images/bg.mp4",
-      "description": "Fullscreen atmospheric background loop for Cinematic Showcase (section 2).",
-      "recommended": "MP4 (H.264), 1920x1080, optimized bitrate < 10MB"
+      "description": "Cinematic atmosphere background video in showcase section.",
+      "recommended": "MP4 (H.264), 1920x1080"
     },
     {
-      "id": "showcase_wavebg_video",
+      "id": "showcase_wavebg",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
       "name": "Wave Ambient Video Loop",
       "category": "showcase",
       "type": "video",
@@ -256,99 +210,254 @@
       "recommended": "MP4 (H.264), 1920x1080"
     },
     {
-      "id": "showcase_mtv_video",
-      "name": "Showcase Spotlight Video (MTV)",
+      "id": "showcase_mtv_vdo",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Showcase Spotlight Video Reel",
       "category": "showcase",
       "type": "video",
       "path": "images/main-images/Mtv story .mp4",
-      "description": "Featured interactive video modal in the home showcase section.",
+      "description": "Spotlight motion video modal in home showcase section.",
       "recommended": "MP4 (H.264), 1080p"
     },
     {
-      "id": "showcase_sindhu_video",
-      "name": "Showcase Mobile Cube Video",
+      "id": "showcase_sindhu_vdo",
+      "section_id": "showcase",
+      "section_name": "3D Cube & Showcase Section",
+      "name": "Mobile Cube Video Reel",
       "category": "showcase",
       "type": "video",
       "path": "images/main-images/Sindhu by M.mp4",
       "description": "Video reel integrated into the mobile 3D showcase cube.",
-      "recommended": "MP4 (H.264), 1080p vertical or square"
-    },
-    {
-      "id": "cube_img_silverleaf",
-      "name": "3D Cube — Silver Leaf Artwork",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/Silver Leaf final.png",
-      "description": "Primary face artwork on the interactive 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_mtv",
-      "name": "3D Cube — MTV Creative Post",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/MTV Post 3.jpg",
-      "description": "Creative visual face on the interactive 3D showcase cube.",
-      "recommended": "JPG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_cf1",
-      "name": "3D Cube — CF Visual 01",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/CF 1.png",
-      "description": "Side face artwork on the interactive 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_cfpost",
-      "name": "3D Cube — CF Visual Post",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/CF Post.png",
-      "description": "Side face artwork on the interactive 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_cfstory",
-      "name": "3D Cube — CF Story Artwork",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/CF STORY.png",
-      "description": "Story visual artwork on the interactive 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_design33",
-      "name": "3D Cube — After Cube Feature 33",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/after_cube/Untitled design (33).png",
-      "description": "Visual texture used in after-cube showcase transitions.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_arbhs",
-      "name": "3D Cube — ARB X HS Artwork",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/ARB X HS 1.png",
-      "description": "Brand collaboration visual on 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
-    },
-    {
-      "id": "cube_img_jewellery",
-      "name": "3D Cube — Gold Jewellery Post",
-      "category": "showcase",
-      "type": "image",
-      "path": "images/main-images/Gold Neutral Modern Jewellery Instagram Post.png",
-      "description": "Jewellery creative visual on 3D showcase cube.",
-      "recommended": "PNG or WebP, 1000x1000 square"
+      "recommended": "MP4 (H.264), 1080p"
     },
 
     {
-      "id": "about_main_vdo",
-      "name": "About Page — Studio Reel Video",
+      "id": "work_01_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "01 High-End Skincare — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/1.webp",
+      "description": "Card thumbnail poster for project 01 Skincare & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_01_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "01 High-End Skincare — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/1.mp4",
+      "description": "Hover motion video clip for Skincare project card on Work page.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_02_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "02 METERSEVEN Streetwear — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/lust emergency hoodie.png",
+      "description": "Card thumbnail poster for project 02 Streetwear & case study hero.",
+      "recommended": "PNG or WebP, 1200x800"
+    },
+    {
+      "id": "work_02_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "02 METERSEVEN Streetwear — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/LEBEL BHOHO.mp4",
+      "description": "Hover motion video clip for METERSEVEN project card on Work page.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_03_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "03 Country Camping — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/3.webp",
+      "description": "Card thumbnail poster for project 03 Camping & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_03_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "03 Country Camping — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/3.mp4",
+      "description": "Hover motion video clip for Camping project card on Work page.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_04_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "04 Performance Fluids — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/4.webp",
+      "description": "Card thumbnail poster for project 04 Fluids & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_04_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "04 Performance Fluids — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/4.mp4",
+      "description": "Hover motion video clip for Performance Fluids project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_05_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "05 OURATTAN Living — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/5.webp",
+      "description": "Card thumbnail poster for project 05 OURATTAN & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_05_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "05 OURATTAN Living — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/5.mp4",
+      "description": "Hover motion video clip for OURATTAN Living project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_06_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "06 Hand Pulled Noodle — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/6.webp",
+      "description": "Card thumbnail poster for project 06 Noodles & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_06_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "06 Hand Pulled Noodle — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/6.mp4",
+      "description": "Hover motion video clip for Hand Pulled Noodle project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_07_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "07 Precision Machining — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/7.webp",
+      "description": "Card thumbnail poster for project 07 CNC & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_07_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "07 Precision Machining — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/7.mp4",
+      "description": "Hover motion video clip for Precision Machining project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_08_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "08 Stellar Machining — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/8.webp",
+      "description": "Card thumbnail poster for project 08 Stellar & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_08_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "08 Stellar Machining — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/8.mp4",
+      "description": "Hover motion video clip for Stellar Machining project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_09_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "09 Silver Leaf Dispensary — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/Silver Leaf final.jpg",
+      "description": "Card thumbnail poster for project 09 Silver Leaf & case study hero.",
+      "recommended": "JPG or PNG, 1200x800"
+    },
+    {
+      "id": "work_09_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "09 Silver Leaf Dispensary — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/9.mp4",
+      "description": "Hover motion video clip for Silver Leaf project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+    {
+      "id": "work_10_poster",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "10 Solar Energy — Poster Image",
+      "category": "work",
+      "type": "image",
+      "path": "images/work/list/10.webp",
+      "description": "Card thumbnail poster for project 10 Solar Energy & case study hero.",
+      "recommended": "WebP or PNG, 1200x800"
+    },
+    {
+      "id": "work_10_video",
+      "section_id": "work",
+      "section_name": "Work Portfolio Section",
+      "name": "10 Solar Energy — Hover Video",
+      "category": "work",
+      "type": "video",
+      "path": "images/work/list/10.mp4",
+      "description": "Hover motion video clip for Solar Energy project card.",
+      "recommended": "MP4 (H.264), 1080p"
+    },
+
+    {
+      "id": "about_main_video",
+      "section_id": "about",
+      "section_name": "About & Studio Section",
+      "name": "About Page Studio Cinema Reel",
       "category": "about",
       "type": "video",
       "path": "images/vdo.mp4",
@@ -357,76 +466,70 @@
     },
 
     {
-      "id": "footer_video_accent",
-      "name": "Footer Background Video",
+      "id": "footer_video",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
+      "name": "Footer Background Video Loop",
       "category": "footer",
       "type": "video",
       "path": "images/footer.mp4",
-      "description": "Ambient luxury video loop embedded in the global site footer.",
-      "recommended": "MP4 (H.264), 1920x1080, optimized bitrate < 5MB"
+      "description": "Ambient video loop in the global footer.",
+      "recommended": "MP4 (H.264), 1920x1080"
     },
     {
-      "id": "footer_banner_poster",
+      "id": "footer_banner",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
       "name": "Footer Parallax Poster Image",
       "category": "footer",
       "type": "image",
       "path": "images/footer.webp",
       "description": "Gold textured luxury banner image displayed in the footer parallax section.",
-      "recommended": "WebP or PNG, 2560x1440 or 1920x1080"
+      "recommended": "WebP or PNG, 1920x1080"
     },
     {
-      "id": "loader_video_stream",
-      "name": "Site Intro Loading Video",
+      "id": "loading_video",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
+      "name": "Site Intro Loading Screen Video",
       "category": "footer",
       "type": "video",
       "path": "images/loading.mp4",
       "description": "Pre-loader screen video playing while page assets initialize.",
-      "recommended": "MP4 (H.264), optimized for quick buffer"
+      "recommended": "MP4 (H.264), 1080p"
     },
     {
-      "id": "logo_pc_svg",
-      "name": "Global Desktop Header Logo",
-      "category": "branding",
+      "id": "logo_desktop_svg",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
+      "name": "Primary Desktop SVG Logo",
+      "category": "footer",
       "type": "image",
       "path": "images/pc_logo.svg",
       "description": "Primary SVG vector logo in navigation and branding bars.",
-      "recommended": "SVG Vector or transparent PNG"
+      "recommended": "SVG Vector"
     },
     {
-      "id": "logo_center_svg",
-      "name": "Floating Pill Center Logo",
-      "category": "branding",
+      "id": "logo_pill_center",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
+      "name": "Pill Navbar Monogram Logo",
+      "category": "footer",
       "type": "image",
       "path": "images/mdz_center.svg",
       "description": "MDZ monogram in the center of the floating pill navbar.",
       "recommended": "SVG Vector"
     },
     {
-      "id": "logo_text_svg",
-      "name": "Typography Wordmark Logo",
-      "category": "branding",
-      "type": "image",
-      "path": "images/textlogo.svg",
-      "description": "Typography wordmark used in luxury transitions and overlays.",
-      "recommended": "SVG Vector"
-    },
-    {
       "id": "favicon_browser",
-      "name": "Browser Tab Favicon",
-      "category": "branding",
+      "section_id": "footer",
+      "section_name": "Footer & Global Brand Section",
+      "name": "Browser Tab Favicon Icon",
+      "category": "footer",
       "type": "image",
       "path": "images/fav.png",
       "description": "Browser tab icon and bookmark thumbnail.",
       "recommended": "PNG or ICO, 32x32 to 512x512"
-    },
-    {
-      "id": "apple_touch_icon",
-      "name": "Apple Touch & Mobile App Icon",
-      "category": "branding",
-      "type": "image",
-      "path": "images/apple-touch-icon.png",
-      "description": "High resolution home-screen icon for iOS and mobile bookmarking.",
-      "recommended": "PNG, 180x180 square"
     }
   ]
 }

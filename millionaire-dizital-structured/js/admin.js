@@ -206,6 +206,8 @@
     });
   }
 
+  let allSections = [];
+
   function renderSlots() {
     if (!slotsContainer) return;
 
@@ -222,7 +224,8 @@
       filtered = filtered.filter(s =>
         s.name.toLowerCase().includes(q) ||
         s.path.toLowerCase().includes(q) ||
-        s.description.toLowerCase().includes(q) ||
+        (s.description && s.description.toLowerCase().includes(q)) ||
+        (s.section_name && s.section_name.toLowerCase().includes(q)) ||
         s.id.toLowerCase().includes(q)
       );
     }
@@ -240,7 +243,34 @@
       return;
     }
 
-    slotsContainer.innerHTML = filtered.map(slot => createSlotCardHTML(slot)).join('');
+    // Group by section if in "All Media" view and no active search query
+    if (currentTab === 'all' && !searchQuery) {
+      const sectionsMap = {};
+      filtered.forEach(s => {
+        const sec = s.section_name || 'Other Media';
+        if (!sectionsMap[sec]) sectionsMap[sec] = [];
+        sectionsMap[sec].push(s);
+      });
+
+      let html = '';
+      for (const [secName, secSlots] of Object.entries(sectionsMap)) {
+        html += `
+          <div style="grid-column: 1 / -1; margin-top: 18px; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <h2 style="font-size: 16px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em;">
+                ${secName}
+              </h2>
+              <span style="font-size: 12px; color: var(--text-muted);">${secSlots.length} active media items in this section</span>
+            </div>
+          </div>
+          ${secSlots.map(slot => createSlotCardHTML(slot)).join('')}
+        `;
+      }
+      slotsContainer.innerHTML = html;
+    } else {
+      slotsContainer.innerHTML = filtered.map(slot => createSlotCardHTML(slot)).join('');
+    }
+
     attachSlotCardEvents();
   }
 

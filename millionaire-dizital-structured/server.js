@@ -49,7 +49,7 @@ function getManifest() {
   if (fs.existsSync(MANIFEST_FILE)) {
     try { return JSON.parse(fs.readFileSync(MANIFEST_FILE, 'utf8')); } catch (e) { }
   }
-  return { slots: [] };
+  return { sections: [], slots: [] };
 }
 
 function formatSize(bytes) {
@@ -79,6 +79,46 @@ function getSlotHistory(slotId) {
   return history;
 }
 
+// Multipart parser for binary uploads
+function parseMultipart(buffer, boundary) {
+  const boundaryBuffer = Buffer.from('--' + boundary);
+  const result = { fields: {}, files: {} };
+  let start = 0;
+
+  while ((start = buffer.indexOf(boundaryBuffer, start)) !== -1) {
+    start += boundaryBuffer.length;
+    if (buffer.slice(start, start + 2).toString() === '--') break;
+    if (buffer.slice(start, start + 2).toString() === '\r\n') start += 2;
+
+    const nextBoundary = buffer.indexOf(boundaryBuffer, start);
+    if (nextBoundary === -1) break;
+
+    const partBuffer = buffer.slice(start, nextBoundary - 2); // trim trailing \r\n
+    const headerEnd = partBuffer.indexOf(Buffer.from('\r\n\r\n'));
+    if (headerEnd !== -1) {
+      const headerText = partBuffer.slice(0, headerEnd).toString('utf8');
+      const body = partBuffer.slice(headerEnd + 4);
+
+      const dispMatch = headerText.match(/name="([^"]+)"/);
+      const fileMatch = headerText.match(/filename="([^"]+)"/);
+
+      if (dispMatch) {
+        const fieldName = dispMatch[1];
+        if (fileMatch) {
+          result.files[fieldName] = {
+            filename: fileMatch[1],
+            data: body
+          };
+        } else {
+          result.fields[fieldName] = body.toString('utf8').trim();
+        }
+      }
+    }
+    start = nextBoundary;
+  }
+  return result;
+}
+
 const server = http.createServer((req, res) => {
   const parsedUrl = new URL(req.url, `http://localhost:${PORT}`);
   const pathname = parsedUrl.pathname;
@@ -99,12 +139,15 @@ const server = http.createServer((req, res) => {
     const endpoint = pathname.substring('/api/admin/'.length).replace(/\/$/, '');
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
 
-    let bodyData = '';
-    req.on('data', chunk => { bodyData += chunk; });
+    const chunks = [];
+    req.on('data', chunk => chunks.push(chunk));
     req.on('end', () => {
+      const rawBody = Buffer.concat(chunks);
+
+      // Public Login
       if (endpoint === 'login' && req.method === 'POST') {
         try {
-          const body = JSON.parse(bodyData || '{}');
+          const body = JSON.parse(rawBody.toString('utf8') || '{}');
           const inputPwd = (body.password || '').trim();
           const hash = crypto.createHash('sha256').update(inputPwd).digest('hex');
           const cfg = getConfig();
@@ -124,7 +167,7 @@ const server = http.createServer((req, res) => {
         return;
       }
 
-      // Check auth
+      // Check auth token
       const authHeader = req.headers['authorization'] || '';
       const token = authHeader.startsWith('Bearer ') ? authHeader.substring(7).trim() : '';
       const isAuthed = token && activeSessions.has(token);
@@ -137,10 +180,11 @@ const server = http.createServer((req, res) => {
 
       if (!isAuthed) {
         res.writeHead(401);
-        res.end(JSON.stringify({ error: 'Unauthorized' }));
+        res.end(JSON.stringify({ error: 'Unauthorized. Please login.' }));
         return;
       }
 
+      // 1. Media Catalog Endpoint
       if (endpoint === 'media') {
         const manifest = getManifest();
         const slots = (manifest.slots || []).map(s => {
@@ -156,6 +200,8 @@ const server = http.createServer((req, res) => {
           const history = getSlotHistory(s.id);
           return {
             id: s.id,
+            section_id: s.section_id || s.category,
+            section_name: s.section_name || s.category,
             name: s.name,
             category: s.category,
             type: s.type,
@@ -171,10 +217,86 @@ const server = http.createServer((req, res) => {
           };
         });
         res.writeHead(200);
-        res.end(JSON.stringify({ slots, total_slots: slots.length }));
+        res.end(JSON.stringify({
+          sections: manifest.sections || [],
+          slots: slots,
+          total_slots: slots.length
+        }));
         return;
       }
 
+      // 2. Upload Endpoint
+      if (endpoint === 'upload' && req.method === 'POST') {
+        try {
+          const contentType = req.headers['content-type'] || '';
+          const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
+          if (!boundaryMatch) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: 'Missing boundary in multipart request' }));
+            return;
+          }
+          const boundary = boundaryMatch[1] || boundaryMatch[2];
+          const parsed = parseMultipart(rawBody, boundary);
+
+          const slotId = parsed.fields['slot_id'];
+          const fileObj = parsed.files['file'];
+
+          if (!slotId || !fileObj || !fileObj.data || fileObj.data.length === 0) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: 'Missing slot_id or file data' }));
+            return;
+          }
+
+          const manifest = getManifest();
+          const slot = (manifest.slots || []).find(s => s.id === slotId);
+          if (!slot) {
+            res.writeHead(404);
+            res.end(JSON.stringify({ error: `Slot '${slotId}' not found in manifest` }));
+            return;
+          }
+
+          const targetFull = path.join(DIRECTORY, slot.path);
+          const slotBackupDir = path.join(BACKUP_DIR, slotId);
+          if (!fs.existsSync(slotBackupDir)) {
+            fs.mkdirSync(slotBackupDir, { recursive: true });
+          }
+
+          // Automatic Backup of previous file
+          if (fs.existsSync(targetFull)) {
+            const ts = new Date().toISOString().replace(/[-:T.]/g, '').substring(0, 14);
+            const origName = path.basename(targetFull);
+            const backupPath = path.join(slotBackupDir, `${ts}_${origName}`);
+            fs.copyFileSync(targetFull, backupPath);
+          }
+
+          // Atomically write new file
+          fs.mkdirSync(path.dirname(targetFull), { recursive: true });
+          fs.writeFileSync(targetFull, fileObj.data);
+
+          const st = fs.statSync(targetFull);
+          const history = getSlotHistory(slotId);
+
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            slot_id: slotId,
+            path: slot.path,
+            size_formatted: formatSize(st.size),
+            modified: st.mtime.toISOString().replace('T', ' ').substring(0, 19),
+            preview_url: `${slot.path}?v=${Date.now()}`,
+            history_count: history.length,
+            history: history,
+            message: `Successfully updated '${slot.name}' with auto-backup created.`
+          }));
+        } catch (e) {
+          console.error('Upload error:', e);
+          res.writeHead(500);
+          res.end(JSON.stringify({ error: e.message }));
+        }
+        return;
+      }
+
+      // 3. History Endpoint
       if (endpoint === 'history') {
         const slotId = parsedUrl.searchParams.get('slot_id') || '';
         const history = getSlotHistory(slotId);
@@ -183,38 +305,10 @@ const server = http.createServer((req, res) => {
         return;
       }
 
-      if (endpoint === 'stats') {
-        const imagesDir = path.join(DIRECTORY, 'images');
-        let totalImg = 0;
-        let totalVdo = 0;
-        function countFiles(dir) {
-          if (!fs.existsSync(dir)) return;
-          for (const item of fs.readdirSync(dir)) {
-            const p = path.join(dir, item);
-            const st = fs.statSync(p);
-            if (st.isDirectory()) countFiles(p);
-            else {
-              const ext = path.extname(item).toLowerCase();
-              if (['.mp4', '.mov', '.webm'].includes(ext)) totalVdo++;
-              else if (['.png', '.jpg', '.jpeg', '.webp', '.svg', '.gif'].includes(ext)) totalImg++;
-            }
-          }
-        }
-        countFiles(imagesDir);
-        res.writeHead(200);
-        res.end(JSON.stringify({
-          total_images: totalImg,
-          total_videos: totalVdo,
-          total_media_files: totalImg + totalVdo,
-          total_backups: fs.existsSync(BACKUP_DIR) ? fs.readdirSync(BACKUP_DIR).length : 0,
-          active_sessions: activeSessions.size
-        }));
-        return;
-      }
-
+      // 4. Revert Endpoint
       if (endpoint === 'revert' && req.method === 'POST') {
         try {
-          const body = JSON.parse(bodyData || '{}');
+          const body = JSON.parse(rawBody.toString('utf8') || '{}');
           const manifest = getManifest();
           const slot = (manifest.slots || []).find(s => s.id === body.slot_id);
           if (!slot) {
@@ -241,6 +335,32 @@ const server = http.createServer((req, res) => {
           res.writeHead(500);
           res.end(JSON.stringify({ error: e.message }));
         }
+        return;
+      }
+
+      // 5. Stats Endpoint
+      if (endpoint === 'stats') {
+        const manifest = getManifest();
+        const slots = manifest.slots || [];
+        const totalImg = slots.filter(s => s.type === 'image').length;
+        const totalVdo = slots.filter(s => s.type === 'video').length;
+        let totalBackups = 0;
+        if (fs.existsSync(BACKUP_DIR)) {
+          for (const sub of fs.readdirSync(BACKUP_DIR)) {
+            const p = path.join(BACKUP_DIR, sub);
+            if (fs.statSync(p).isDirectory()) {
+              totalBackups += fs.readdirSync(p).length;
+            }
+          }
+        }
+        res.writeHead(200);
+        res.end(JSON.stringify({
+          total_images: totalImg,
+          total_videos: totalVdo,
+          total_media_files: slots.length,
+          total_backups: totalBackups,
+          active_sessions: activeSessions.size
+        }));
         return;
       }
 
