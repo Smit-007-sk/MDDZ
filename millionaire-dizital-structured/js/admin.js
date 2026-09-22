@@ -191,8 +191,9 @@
       all: allSlots.length,
       hero: allSlots.filter(s => s.category === 'hero').length,
       capabilities: allSlots.filter(s => s.category === 'capabilities').length,
-      work: allSlots.filter(s => s.category === 'work').length,
       showcase: allSlots.filter(s => s.category === 'showcase').length,
+      gallery: allSlots.filter(s => s.category === 'gallery').length,
+      work: allSlots.filter(s => s.category === 'work').length,
       about: allSlots.filter(s => s.category === 'about').length,
       footer: allSlots.filter(s => s.category === 'footer').length,
       branding: allSlots.filter(s => s.category === 'branding').length

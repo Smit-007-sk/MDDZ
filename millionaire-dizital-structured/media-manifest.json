@@ -19,6 +19,12 @@
       "description": "Interactive 3D spinning cube face textures and cinematic showcase background video loops."
     },
     {
+      "id": "gallery",
+      "title": "Selected Works Archive (Digital DNA Gallery)",
+      "badge": "Digital DNA",
+      "description": "The 6 featured showcase cards displayed in 'Archive of The Selected Works by Millionaire — Our Digital DNA' section."
+    },
+    {
       "id": "work",
       "title": "Work Portfolio Section (10 Projects)",
       "badge": "Portfolio",
@@ -103,7 +109,7 @@
       "type": "image",
       "path": "images/after_hero_image/Black and Dark Brown Photo Modern Live Music Party Night Instagram Story.png",
       "description": "Appears when hovering 'Performance Marketing' and 'UGC & Product Content' in the Who We Are section.",
-      "recommended": "PNG or WebP, 1080x1920 Story format"
+      "recommended": "PNG or WebP, 1080x1920"
     },
     {
       "id": "intro_wave_555",
@@ -270,6 +276,73 @@
       "path": "images/main-images/Sindhu by M.mp4",
       "description": "Video reel integrated into the mobile 3D showcase cube.",
       "recommended": "MP4 (H.264), 1080p"
+    },
+
+    {
+      "id": "gallery_item_1",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 01 — Old Elegance Jewellery",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/after_cube/Gold Neutral Modern Jewellery Instagram Post.png",
+      "description": "First showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "gallery_item_2",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 02 — Vision Cinematic Studio",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/after_cube/2nd.jpg",
+      "description": "Second showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "JPG or WebP, 1080x1350"
+    },
+    {
+      "id": "gallery_item_3",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 03 — Borcelle Restaurant & Lounge",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/main-images/Brown and Gold Elegant We are Open Restaurant Instagram Story.png",
+      "description": "Third showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "gallery_item_4",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 04 — Revive Beverages & Smoothies",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/main-images/Pink Vibrant Gradient Weekend Special Promo Smoothie Instagram Post.png",
+      "description": "Fourth showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "PNG or WebP, 1080x1350"
+    },
+    {
+      "id": "gallery_item_5",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 05 — Bee Blend Mustard Honey",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/after_cube/Bb May 2.jpg",
+      "description": "Fifth showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "JPG or WebP, 1080x1350"
+    },
+    {
+      "id": "gallery_item_6",
+      "section_id": "gallery",
+      "section_name": "Selected Works Archive (Digital DNA Gallery)",
+      "name": "Archive Card 06 — 555 Pénte Streetwear Campaign",
+      "category": "gallery",
+      "type": "image",
+      "path": "images/after_cube/3rd.png",
+      "description": "Sixth showcase card in 'The MILLIONAIRE Aesthetic — Archive of Selected Works' section.",
+      "recommended": "PNG or WebP, 1080x1350"
     },
 
     {
