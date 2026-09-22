@@ -44,6 +44,31 @@
   padding: 0;
 }
 
+/* Hide scrollbars across entire Admin panel while maintaining full scrollability */
+html,
+body,
+.admin-sidebar,
+.sidebar-nav,
+.admin-main,
+.admin-content,
+.modal-body {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.admin-sidebar::-webkit-scrollbar,
+.sidebar-nav::-webkit-scrollbar,
+.admin-main::-webkit-scrollbar,
+.admin-content::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
