@@ -2274,61 +2274,33 @@
 
 
     .cc-face[data-face="front"] {
-
       transform: translateZ(calc(var(--s)/2));
-
-      background: #171717 url('../images/home/web_planning.jpg') center/cover no-repeat;
-
+      background: #171717 url('../images/about/box/bg_web_planning.jpg') center/cover no-repeat;
     }
-
-
 
     .cc-face[data-face="back"] {
-
       transform: rotateY(180deg) translateZ(calc(var(--s)/2));
-
-      background: #1A1A1A url('../images/home/list/04.webp') center/cover no-repeat;
-
+      background: #1A1A1A url('../images/about/box/bg_ai_visuals.webp') center/cover no-repeat;
     }
-
-
 
     .cc-face[data-face="right"] {
-
       transform: rotateY(90deg) translateZ(calc(var(--s)/2));
-
-      background: #0D0D0D url('../images/home/list/03.webp') center/cover no-repeat;
-
+      background: #0D0D0D url('../images/about/box/bg_web_design.webp') center/cover no-repeat;
     }
-
-
 
     .cc-face[data-face="left"] {
-
       transform: rotateY(-90deg) translateZ(calc(var(--s)/2));
-
-      background: #171717 url('../images/home/list/05.webp') center/cover no-repeat;
-
+      background: #171717 url('../images/about/box/bg_ai_video.webp') center/cover no-repeat;
     }
-
-
 
     .cc-face[data-face="top"] {
-
       transform: rotateX(-90deg) translateZ(calc(var(--s)/2));
-
-      background: #1a1a1a url('../images/home/list/01.webp') center/cover no-repeat;
-
+      background: #1a1a1a url('../images/about/box/bg_brand_identity.webp') center/cover no-repeat;
     }
 
-
-
     .cc-face[data-face="bottom"] {
-
       transform: rotateX(90deg) translateZ(calc(var(--s)/2));
-
-      background: #111111 url('../images/home/digital_consultant.jpg') center/cover no-repeat;
-
+      background: #111111 url('../images/about/box/bg_digital_consultant.jpg') center/cover no-repeat;
     }
 
 

@@ -408,70 +408,136 @@
     },
 
     {
+      "id": "about_cube_bg_brand_identity",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 01 — Inner Image: Brand Identity (Brand Kits)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_brand_identity.webp",
+      "description": "Inner background photograph for Face 01 (Brand Kits & Identity) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
+      "id": "about_cube_bg_web_planning",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 02 — Inner Image: Web Planning (Conversion Strategy)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_web_planning.jpg",
+      "description": "Inner background photograph for Face 02 (Conversion Strategy) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
+      "id": "about_cube_bg_web_design",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 03 — Inner Image: Web Design (Website Design & Dev)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_web_design.webp",
+      "description": "Inner background photograph for Face 03 (Website Design & Dev) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
+      "id": "about_cube_bg_ai_visuals",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 04 — Inner Image: AI Visuals (Commercial Art)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_ai_visuals.webp",
+      "description": "Inner background photograph for Face 04 (Commercial Art & AI) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
+      "id": "about_cube_bg_ai_video",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 05 — Inner Image: AI Video (AI Motion & Video)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_ai_video.webp",
+      "description": "Inner background photograph for Face 05 (AI Motion & Video) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
+      "id": "about_cube_bg_digital_consultant",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 06 — Inner Image: Digital Consultant (Growth Advisory)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/bg_digital_consultant.jpg",
+      "description": "Inner background photograph for Face 06 (Growth Advisory) on the About 3D Cube.",
+      "recommended": "WebP, JPG, or PNG, 1080x1080 (1:1 square)"
+    },
+    {
       "id": "about_cube_face_top",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 01 (Top) — Brand Identity (Brand Kits)",
+      "name": "About 3D Cube Face 01 (Top) — Overlay SVG Icon (Brand Identity)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c1.svg",
-      "description": "Top face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 01 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
     {
       "id": "about_cube_face_front",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 02 (Front) — Web Planning (Conversion)",
+      "name": "About 3D Cube Face 02 (Front) — Overlay SVG Icon (Web Planning)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c2.svg",
-      "description": "Front face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 02 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
     {
       "id": "about_cube_face_right",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 03 (Right) — Web Design & Dev",
+      "name": "About 3D Cube Face 03 (Right) — Overlay SVG Icon (Web Design)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c3.svg",
-      "description": "Right face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 03 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
     {
       "id": "about_cube_face_back",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 04 (Back) — AI Visuals (Commercial Art)",
+      "name": "About 3D Cube Face 04 (Back) — Overlay SVG Icon (AI Visuals)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c4.svg",
-      "description": "Back face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 04 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
     {
       "id": "about_cube_face_left",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 05 (Left) — AI Video & Motion",
+      "name": "About 3D Cube Face 05 (Left) — Overlay SVG Icon (AI Video)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c5.svg",
-      "description": "Left face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 05 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
     {
       "id": "about_cube_face_bottom",
       "section_id": "about_cube",
       "section_name": "About Page — 3D Capabilities Cube",
-      "name": "About 3D Cube Face 06 (Bottom) — Digital Consultant",
+      "name": "About 3D Cube Face 06 (Bottom) — Overlay SVG Icon (Digital Consultant)",
       "category": "about_cube",
       "type": "image",
       "path": "images/about/box/c6.svg",
-      "description": "Bottom face graphic on the interactive 3D capabilities cube on About page.",
-      "recommended": "SVG Vector or PNG, 800x800 square"
+      "description": "Center overlay icon graphic for Face 06 on the About 3D Cube.",
+      "recommended": "SVG Vector, 800x800 square"
     },
 
     {
