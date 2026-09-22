@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "password_hash": "e674997034cf944439c636f3fa14c7c8ec1d7e22119ae4b64e5be7d47e4eb178",
+    "session_timeout_hours": 72
+  },
+  "site_name": "MILLIONAIRE DIZITAL LLP",
+  "version": "1.0.0",
+  "media_root": "images",
+  "backup_root": "archive/backups",
+  "max_upload_size_mb": 250,
+  "allowed_extensions": [
+    ".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif", ".ico",
+    ".mp4", ".mov", ".webm", ".m4v"
+  ]
+}

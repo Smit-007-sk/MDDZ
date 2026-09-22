@@ -1,0 +1,17 @@
+[Unit]
+Description=Millionaire Dizital Luxury Media Admin Backend
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/vps/mdz-develop/millionaire-dizital-structured
+ExecStart=/usr/bin/python3 /vps/mdz-develop/millionaire-dizital-structured/admin_server.py 8086
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
