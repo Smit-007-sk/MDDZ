@@ -338,6 +338,60 @@ const server = http.createServer((req, res) => {
         return;
       }
 
+      // 5. Delete History Endpoint
+      if ((endpoint === 'delete-history' && req.method === 'POST') || (endpoint === 'history' && req.method === 'DELETE')) {
+        try {
+          const body = req.method === 'POST' ? JSON.parse(rawBody.toString('utf8') || '{}') : {};
+          const slotId = body.slot_id || parsedUrl.searchParams.get('slot_id');
+          const backupFilename = body.backup_filename || parsedUrl.searchParams.get('filename') || parsedUrl.searchParams.get('backup_filename');
+          const deleteAll = body.all === true || parsedUrl.searchParams.get('all') === 'true';
+
+          if (!slotId) {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: 'Missing slot_id' }));
+            return;
+          }
+
+          const slotBackupDir = path.join(BACKUP_DIR, slotId);
+          if (!fs.existsSync(slotBackupDir)) {
+            res.writeHead(200);
+            res.end(JSON.stringify({ success: true, message: 'History already empty', history: [] }));
+            return;
+          }
+
+          if (deleteAll) {
+            const files = fs.readdirSync(slotBackupDir);
+            for (const f of files) {
+              try { fs.unlinkSync(path.join(slotBackupDir, f)); } catch(e){}
+            }
+          } else if (backupFilename) {
+            const safeName = path.basename(backupFilename);
+            const targetFile = path.join(slotBackupDir, safeName);
+            if (fs.existsSync(targetFile)) {
+              fs.unlinkSync(targetFile);
+            }
+          } else {
+            res.writeHead(400);
+            res.end(JSON.stringify({ error: 'Missing backup_filename or all parameter' }));
+            return;
+          }
+
+          const updatedHistory = getSlotHistory(slotId);
+          res.writeHead(200);
+          res.end(JSON.stringify({
+            success: true,
+            slot_id: slotId,
+            history: updatedHistory,
+            message: deleteAll ? 'All history backups cleared' : 'History version deleted successfully'
+          }));
+        } catch (e) {
+          console.error('Delete history error:', e);
+          res.writeHead(500);
+          res.end(JSON.stringify({ error: e.message }));
+        }
+        return;
+      }
+
       // 5. Stats Endpoint
       if (endpoint === 'stats') {
         const manifest = getManifest();

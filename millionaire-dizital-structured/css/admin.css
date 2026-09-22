@@ -236,6 +236,19 @@ body {
   border-color: var(--gold-primary);
 }
 
+.btn-danger {
+  background: rgba(224, 86, 86, 0.12);
+  color: #ff6b6b;
+  border: 1px solid rgba(224, 86, 86, 0.28);
+}
+
+.btn-danger:hover {
+  background: rgba(224, 86, 86, 0.25);
+  border-color: #ff6b6b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 /* --------------------------------------------------------------------------
    MAIN APP LAYOUT
    -------------------------------------------------------------------------- */

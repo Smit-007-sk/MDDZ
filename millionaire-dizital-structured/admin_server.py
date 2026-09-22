@@ -259,6 +259,8 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
                 return self.handle_upload()
             elif endpoint == "revert":
                 return self.handle_revert()
+            elif endpoint == "delete-history":
+                return self.handle_delete_history()
             elif endpoint == "change-password":
                 return self.handle_change_password()
             elif endpoint == "add-slot":
@@ -619,6 +621,48 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
                 "history_count": len(history),
                 "history": history,
                 "message": f"Successfully reverted '{slot_id}' to version '{backup_filename}'."
+            })
+        except Exception as e:
+            return self.send_json_response({"error": str(e)}, 500)
+
+    def handle_delete_history(self):
+        content_len = int(self.headers.get('Content-Length', 0))
+        body = self.rfile.read(content_len).decode('utf-8')
+        try:
+            payload = json.loads(body) if body else {}
+            slot_id = payload.get("slot_id")
+            backup_filename = payload.get("backup_filename")
+            delete_all = payload.get("all", False)
+
+            if not slot_id:
+                return self.send_json_response({"error": "Missing slot_id"}, 400)
+
+            slot_backup_dir = os.path.join(BACKUP_DIR, slot_id)
+            if not os.path.isdir(slot_backup_dir):
+                return self.send_json_response({"success": True, "message": "History already empty", "history": []})
+
+            if delete_all:
+                for f in os.listdir(slot_backup_dir):
+                    fp = os.path.join(slot_backup_dir, f)
+                    if os.path.isfile(fp):
+                        try:
+                            os.remove(fp)
+                        except Exception:
+                            pass
+            elif backup_filename:
+                safe_name = os.path.basename(backup_filename)
+                target_file = os.path.join(slot_backup_dir, safe_name)
+                if os.path.isfile(target_file):
+                    os.remove(target_file)
+            else:
+                return self.send_json_response({"error": "Missing backup_filename or all parameter"}, 400)
+
+            updated_history = get_slot_history(slot_id)
+            return self.send_json_response({
+                "success": True,
+                "slot_id": slot_id,
+                "history": updated_history,
+                "message": "All history backups cleared" if delete_all else "History version deleted successfully"
             })
         except Exception as e:
             return self.send_json_response({"error": str(e)}, 500)

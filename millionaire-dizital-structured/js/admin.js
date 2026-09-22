@@ -466,8 +466,15 @@
       }
 
       historyModalBody.innerHTML = `
-        <div style="margin-bottom: 16px; font-size: 12px; color: var(--text-secondary);">
-          Select any previous version below to instantly revert this live media asset.
+        <div style="margin-bottom: 16px; font-size: 12px; color: var(--text-secondary); display: flex; align-items: center; justify-content: space-between;">
+          <span>Select any version below to revert or delete.</span>
+          <button id="clearAllHistoryBtn" class="btn btn-danger btn-sm" style="padding: 4px 10px; font-size: 11px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            <span>Clear All History</span>
+          </button>
         </div>
         ${history.map(item => `
           <div class="history-version-item">
@@ -492,6 +499,13 @@
                 </svg>
                 <span>Revert to this</span>
               </button>
+              <button class="btn btn-danger btn-sm delete-version-btn" data-backup="${item.filename}" title="Delete this backup version">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+                <span>Delete</span>
+              </button>
             </div>
           </div>
         `).join('')}
@@ -507,8 +521,57 @@
         });
       });
 
+      // Attach delete single version click listeners
+      historyModalBody.querySelectorAll('.delete-version-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const backupFile = btn.dataset.backup;
+          if (confirm(`Delete backup version '${backupFile}'? This cannot be undone.`)) {
+            await executeDeleteHistory(slot, backupFile, false);
+          }
+        });
+      });
+
+      // Attach clear all history click listener
+      const clearAllBtn = document.getElementById('clearAllHistoryBtn');
+      if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', async () => {
+          if (confirm(`Are you sure you want to delete ALL previous versions for '${slot.name}'?`)) {
+            await executeDeleteHistory(slot, null, true);
+          }
+        });
+      }
+
     } catch (err) {
       historyModalBody.innerHTML = `<div style="color:#e05656; padding:20px;">Failed to load history list.</div>`;
+    }
+  }
+
+  async function executeDeleteHistory(slot, backupFilename, deleteAll) {
+    try {
+      const res = await fetch('/api/admin/delete-history', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify({
+          slot_id: slot.id,
+          backup_filename: backupFilename,
+          all: deleteAll
+        })
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        showToast(data.message || 'Backup version deleted', 'success');
+        // Refresh history modal
+        await openHistoryModal(slot);
+        await loadAllData();
+      } else {
+        showToast(data.error || 'Failed to delete history', 'error');
+      }
+    } catch (err) {
+      showToast('Network error while deleting history', 'error');
     }
   }
 
