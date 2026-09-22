@@ -37,6 +37,12 @@
       "description": "The 4 service engine preview cards (Content Engine, Growth Engine, AI Engine, Brand Engine) and cinema reel video on the About page."
     },
     {
+      "id": "about_cube",
+      "title": "About Page — 3D Capabilities Cube",
+      "badge": "About 3D Cube",
+      "description": "The 6 face graphics of the interactive 3D Capabilities Cube on the About page."
+    },
+    {
       "id": "footer",
       "title": "Footer & Global Brand Section",
       "badge": "Global",
@@ -399,6 +405,73 @@
       "path": "images/vdo.mp4",
       "description": "Cinema reel video showcasing the agency background on About page.",
       "recommended": "MP4 (H.264), 1920x1080"
+    },
+
+    {
+      "id": "about_cube_face_top",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 01 (Top) — Brand Identity (Brand Kits)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c1.svg",
+      "description": "Top face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
+    },
+    {
+      "id": "about_cube_face_front",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 02 (Front) — Web Planning (Conversion)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c2.svg",
+      "description": "Front face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
+    },
+    {
+      "id": "about_cube_face_right",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 03 (Right) — Web Design & Dev",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c3.svg",
+      "description": "Right face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
+    },
+    {
+      "id": "about_cube_face_back",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 04 (Back) — AI Visuals (Commercial Art)",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c4.svg",
+      "description": "Back face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
+    },
+    {
+      "id": "about_cube_face_left",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 05 (Left) — AI Video & Motion",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c5.svg",
+      "description": "Left face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
+    },
+    {
+      "id": "about_cube_face_bottom",
+      "section_id": "about_cube",
+      "section_name": "About Page — 3D Capabilities Cube",
+      "name": "About 3D Cube Face 06 (Bottom) — Digital Consultant",
+      "category": "about_cube",
+      "type": "image",
+      "path": "images/about/box/c6.svg",
+      "description": "Bottom face graphic on the interactive 3D capabilities cube on About page.",
+      "recommended": "SVG Vector or PNG, 800x800 square"
     },
 
     {

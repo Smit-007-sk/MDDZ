@@ -195,6 +195,7 @@
       gallery: allSlots.filter(s => s.category === 'gallery').length,
       work: allSlots.filter(s => s.category === 'work').length,
       about: allSlots.filter(s => s.category === 'about').length,
+      about_cube: allSlots.filter(s => s.category === 'about_cube').length,
       footer: allSlots.filter(s => s.category === 'footer').length,
       branding: allSlots.filter(s => s.category === 'branding').length
     };
