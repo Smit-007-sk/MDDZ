@@ -95,18 +95,6 @@
       "recommended": "JPG or WebP, 1080x1350"
     },
     {
-      "id": "hero_video_bg",
-      "section_id": "hero",
-      "section_name": "Hero Section",
-      "name": "Hero Background Video",
-      "category": "hero",
-      "type": "video",
-      "path": "images/HeroFinal/1.mp4",
-      "description": "Cinematic looping video in the hero slideshow section.",
-      "recommended": "MP4 (H.264), 1920x1080"
-    },
-
-    {
       "id": "intro_wave_livemusic",
       "section_id": "capabilities",
       "section_name": "Who We Are & Service Hover Section",
