@@ -2,9 +2,10 @@
   "name": "mddz",
   "version": "1.0.0",
   "description": "Millionaire Dizital website project",
-  "main": "index.html",
+  "main": "millionaire-dizital-structured/server.js",
   "scripts": {
-    "dev": "http-server . -p 8085"
+    "dev": "node millionaire-dizital-structured/server.js",
+    "start": "node millionaire-dizital-structured/server.js"
   },
   "keywords": [],
   "author": "",

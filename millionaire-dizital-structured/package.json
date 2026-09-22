@@ -2,9 +2,11 @@
   "name": "mddz",
   "version": "1.0.0",
   "description": "Millionaire Dizital website project",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "dev": "http-server . -p 8085 --ext html"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "http-server . -p 3000 --ext html"
   },
   "keywords": [],
   "author": "",
