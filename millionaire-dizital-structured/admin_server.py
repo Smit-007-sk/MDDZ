@@ -194,10 +194,13 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
                     return super().do_GET()
 
             # API Routes
-            if parsed.path.startswith("/api/admin/"):
-                endpoint = parsed.path[len("/api/admin/"):]
+            clean_endpoint = parsed.path
+            if clean_endpoint.startswith("/api/admin"):
+                clean_endpoint = clean_endpoint[len("/api/admin"):]
+            clean_endpoint = clean_endpoint.strip("/")
 
-                if endpoint == "check-auth":
+            if clean_endpoint in ["check-auth", "media", "history", "file-tree", "stats", "config"]:
+                if clean_endpoint == "check-auth":
                     auth = is_authenticated(self.headers)
                     return self.send_json_response({"authenticated": auth, "time": time.time()})
 
@@ -205,26 +208,23 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
                 if not is_authenticated(self.headers):
                     return self.send_json_response({"error": "Unauthorized. Please log in."}, 401)
 
-                if endpoint == "media":
+                if clean_endpoint == "media":
                     return self.handle_get_media()
-                elif endpoint == "history":
+                elif clean_endpoint == "history":
                     params = urllib.parse.parse_qs(parsed.query)
                     slot_id = params.get("slot_id", [""])[0]
                     if not slot_id:
                         return self.send_json_response({"error": "Missing slot_id"}, 400)
                     history = get_slot_history(slot_id)
                     return self.send_json_response({"slot_id": slot_id, "history": history})
-                elif endpoint == "file-tree":
+                elif clean_endpoint == "file-tree":
                     return self.handle_get_file_tree()
-                elif endpoint == "stats":
+                elif clean_endpoint == "stats":
                     return self.handle_get_stats()
-                elif endpoint == "config":
+                elif clean_endpoint == "config":
                     cfg = get_config()
-                    # omit sensitive hash
                     safe_cfg = {k: v for k, v in cfg.items() if k != "auth"}
                     return self.send_json_response(safe_cfg)
-                else:
-                    return self.send_json_response({"error": "Endpoint not found"}, 404)
 
             # Static asset serving
             # Clean extensionless URLs for preview
@@ -237,13 +237,20 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
         except (BrokenPipeError, ConnectionResetError):
             pass
 
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE')
+        self.send_header('Access-Control-Allow-Headers', 'Authorization, Content-Type')
+        self.end_headers()
+
     def do_POST(self):
         try:
             parsed = urllib.parse.urlparse(self.path)
-            if not parsed.path.startswith("/api/admin/"):
-                return self.send_json_response({"error": "Invalid endpoint"}, 404)
-
-            endpoint = parsed.path[len("/api/admin/"):]
+            endpoint = parsed.path
+            if endpoint.startswith("/api/admin"):
+                endpoint = endpoint[len("/api/admin"):]
+            endpoint = endpoint.strip("/")
 
             # Public Login Endpoint
             if endpoint == "login":
@@ -268,7 +275,7 @@ class AdminHandler(http.server.SimpleHTTPRequestHandler):
             elif endpoint == "delete-slot":
                 return self.handle_delete_slot()
             else:
-                return self.send_json_response({"error": "Endpoint not found"}, 404)
+                return self.send_json_response({"error": f"Endpoint '{endpoint}' not found"}, 404)
         except (BrokenPipeError, ConnectionResetError):
             pass
         except Exception as e:
