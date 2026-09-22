@@ -32,9 +32,9 @@
     },
     {
       "id": "about",
-      "title": "About & Studio Section",
+      "title": "About Page — Services & Studio Showcase",
       "badge": "About Page",
-      "description": "Studio cinema reel video showcased on the about page."
+      "description": "The 4 service engine preview cards (Content Engine, Growth Engine, AI Engine, Brand Engine) and cinema reel video on the About page."
     },
     {
       "id": "footer",
@@ -346,6 +346,62 @@
     },
 
     {
+      "id": "about_service_01",
+      "section_id": "about",
+      "section_name": "About Page — Services & Studio Showcase",
+      "name": "About Service 01 — Content Engine (Movie Night Poster)",
+      "category": "about",
+      "type": "image",
+      "path": "images/after_hero_image/Black Grunge Movie Night Collage Your Story.png",
+      "description": "Showcase poster for Service 01 Content Engine on About page.",
+      "recommended": "PNG or JPG, 1080x1350 or 600x400"
+    },
+    {
+      "id": "about_service_02",
+      "section_id": "about",
+      "section_name": "About Page — Services & Studio Showcase",
+      "name": "About Service 02 — Growth Engine (7 Days Countdown / Powered By)",
+      "category": "about",
+      "type": "image",
+      "path": "images/after_hero_image/POWERED BY.png",
+      "description": "Showcase poster for Service 02 Growth Engine on About page.",
+      "recommended": "PNG or JPG, 1080x1350 or 600x400"
+    },
+    {
+      "id": "about_service_03",
+      "section_id": "about",
+      "section_name": "About Page — Services & Studio Showcase",
+      "name": "About Service 03 — AI Engine (555 P2 Artwork)",
+      "category": "about",
+      "type": "image",
+      "path": "images/after_hero_image/555 P2.png",
+      "description": "Showcase poster for Service 03 AI Engine on About page.",
+      "recommended": "PNG or JPG, 1080x1350 or 600x400"
+    },
+    {
+      "id": "about_service_04",
+      "section_id": "about",
+      "section_name": "About Page — Services & Studio Showcase",
+      "name": "About Service 04 — Brand Engine (Old Elegance Jewellery)",
+      "category": "about",
+      "type": "image",
+      "path": "images/after_cube/Gold Neutral Modern Jewellery Instagram Post.png",
+      "description": "Showcase poster for Service 04 Brand Engine on About page.",
+      "recommended": "PNG or JPG, 1080x1350 or 600x400"
+    },
+    {
+      "id": "about_main_video",
+      "section_id": "about",
+      "section_name": "About Page — Services & Studio Showcase",
+      "name": "About Page — Studio Reel Cinema Video",
+      "category": "about",
+      "type": "video",
+      "path": "images/vdo.mp4",
+      "description": "Cinema reel video showcasing the agency background on About page.",
+      "recommended": "MP4 (H.264), 1920x1080"
+    },
+
+    {
       "id": "work_01_poster",
       "section_id": "work",
       "section_name": "Work Portfolio Section",
@@ -564,18 +620,6 @@
       "path": "images/work/list/10.mp4",
       "description": "Hover motion video clip for Solar Energy project card.",
       "recommended": "MP4 (H.264), 1080p"
-    },
-
-    {
-      "id": "about_main_video",
-      "section_id": "about",
-      "section_name": "About & Studio Section",
-      "name": "About Page Studio Cinema Reel",
-      "category": "about",
-      "type": "video",
-      "path": "images/vdo.mp4",
-      "description": "Cinema reel video showcasing the agency background on About page.",
-      "recommended": "MP4 (H.264), 1920x1080"
     },
 
     {
